@@ -129,6 +129,7 @@ First, you'll need to add the following secrets to your GitHub repository:
 | `HARBOR_PASSWORD` | Password or access token for Harbor registry |
 | `HARBOR_URL` | URL of your Harbor registry |
 | `HARBOR_PROJECT` | Project name in Harbor |
+| `IMAGE_NAME` | Name of the Docker image |
 
 ### 2. Create the GitHub Actions Workflow File
 
@@ -145,7 +146,6 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: my-application
   IMAGE_TAG: ${{ github.sha }}
 
 jobs:
@@ -211,7 +211,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ env.IMAGE_NAME }}
+          images: ${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ secrets.IMAGE_NAME }}
           tags: |
             type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
             type=sha,format=short
@@ -226,8 +226,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ env.IMAGE_NAME }}:buildcache
-          cache-to: type=registry,ref=${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ env.IMAGE_NAME }}:buildcache,mode=max
+          cache-from: type=registry,ref=${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ secrets.IMAGE_NAME }}:buildcache
+          cache-to: type=registry,ref=${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ secrets.IMAGE_NAME }}:buildcache,mode=max
           platforms: linux/amd64,linux/arm64
           build-args: |
             BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
@@ -237,7 +237,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          image-ref: ${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ secrets.IMAGE_NAME }}:${{ github.sha }}
           format: 'sarif'
           output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH'

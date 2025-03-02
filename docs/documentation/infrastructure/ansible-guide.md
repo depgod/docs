@@ -1,44 +1,4 @@
-%%{init: {'theme': 'dark', 'themeVariables': { 'fontSize': '16px' }}}%%
-graph TD
-    classDef default fill:#2A303C,stroke:#94A3B8,stroke-width:2px;
-    classDef main fill:#4F46E5,stroke:#818CF8,stroke-width:4px;
-    classDef section fill:#1E293B,stroke:#94A3B8,stroke-width:3px;
-
-    A[Ansible Automation]:::main
-    
-    B[Installation & Setup]:::section
-    C[Content Management]:::section
-    D[Use Cases]:::section
-    E[Integrations]:::section
-    
-    A --> B
-    A --> C
-    A --> D
-    A --> E
-    
-    %% Installation Section
-    B --> B1[System Requirements]
-    B --> B2[Installation Steps]
-    B --> B3[Configuration]
-    
-    %% Content Management Section
-    C --> C1[Roles]
-    C --> C2[Collections]
-    C --> C3[Best Practices]
-    
-    %% Use Cases Section
-    D --> D1[Server Setup]
-    D --> D2[Package Management]
-    D --> D3[Docker Deploy]
-    D --> D4[Security Config]
-    
-    %% Integrations Section
-    E --> E1[GitHub Actions]
-    E --> E2[CI/CD Pipeline]
-    E --> E3[Harbor Registry]
-
-    linkStyle default stroke:#94A3B8,stroke-width:2px;
-```
+# Ansible: Automation at Scale
 
 !!! info "Guide Information"
     **Difficulty**: Intermediate  
@@ -234,10 +194,6 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-env:
-  HARBOR_URL: harbor.example.com
-  HARBOR_PROJECT: myproject
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -251,7 +207,7 @@ jobs:
       - name: Login to Harbor
         uses: docker/login-action@v3
         with:
-          registry: ${{ env.HARBOR_URL }}
+          registry: ${{ secrets.HARBOR_URL }}
           username: ${{ secrets.HARBOR_USERNAME }}
           password: ${{ secrets.HARBOR_PASSWORD }}
 
@@ -259,7 +215,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ env.HARBOR_URL }}/${{ env.HARBOR_PROJECT }}/myapp:${{ github.sha }}
+          tags: ${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/myapp:${{ github.sha }}
 
       - name: Install Ansible
         run: |
