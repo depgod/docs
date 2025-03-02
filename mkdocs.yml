@@ -33,12 +33,12 @@ nav:
           - Overview: networking/index.md
       - DevOps:
           - Overview: devops/index.md
-          - Versioning: devops/versioning.md
+          - Versioning: versioning.md
       - Self Hosting:
           - Overview: selfhosting/index.md
       - Misc:
           - Overview: misc/index.md
-          - Markdown Basics: misc/markdown_basics.md
+          - Markdown Basics: markdown_basics.md
   - About:
       - Contributing: about/contributing.md
       - License: about/license.md
