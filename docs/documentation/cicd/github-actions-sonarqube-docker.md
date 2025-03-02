@@ -330,46 +330,6 @@ CMD ["node", "dist/main.js"]
 
 ## Security Best Practices
 
-```mermaid
-graph TD
-    A[Security Best Practices] --> B[Secrets Management]
-    A --> C[Container Security]
-    A --> D[Code Security]
-    A --> E[Access Control]
-    A --> F[Image Security]
-    
-    B --> B1[Use GitHub Secrets]
-    B --> B2[Rotate Regularly]
-    B --> B3[Limit Access Scope]
-    
-    C --> C1[Non-root User]
-    C --> C2[Multi-stage Builds]
-    C --> C3[Minimal Base Images]
-    C --> C4[Regular Updates]
-    
-    D --> D1[SonarQube Scanning]
-    D --> D2[Dependency Scanning]
-    D --> D3[SAST/DAST]
-    D --> D4[Quality Gates]
-    
-    E --> E1[RBAC]
-    E --> E2[Least Privilege]
-    E --> E3[Token-based Auth]
-    E --> E4[Regular Audits]
-    
-    F --> F1[Version Tagging]
-    F --> F2[Image Signing]
-    F --> F3[Vulnerability Scanning]
-    F --> F4[Harbor Security]
-    
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#bbf,stroke:#333,stroke-width:2px
-    style D fill:#bbf,stroke:#333,stroke-width:2px
-    style E fill:#bbf,stroke:#333,stroke-width:2px
-    style F fill:#bbf,stroke:#333,stroke-width:2px
-```
-
 ## Troubleshooting Guide
 
 ```mermaid
