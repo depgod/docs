@@ -1,0 +1,24 @@
+{% macro render(nav_item, path, level) %}
+  {% if nav_item.is_page or nav_item.is_link %}
+    <li class="md-nav__item">
+      <a href="{{ nav_item.url | url }}" class="md-nav__link">
+        {{ nav_item.title }}
+      </a>
+    </li>
+  {% elif nav_item.children %}
+    {% set first = nav_item.children | first %}
+    {% if nav_item.active %}
+      <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+        <a href="{{ first.url | url }}" class="md-nav__link">
+          {{ nav_item.title }}
+        </a>
+      </li>
+    {% else %}
+      <li class="md-nav__item md-nav__item--nested">
+        <a href="{{ first.url | url }}" class="md-nav__link">
+          {{ nav_item.title }}
+        </a>
+      </li>
+    {% endif %}
+  {% endif %}
+{% endmacro %}

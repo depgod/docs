@@ -1,52 +1,97 @@
-/* Animated gradient background for header and tabs */
+/* Base styles for header and tabs */
 .md-header,
 .md-tabs {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    background-color: #222;
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+/* Glitch effect for site name */
+.md-header__title {
+    position: relative;
+    color: #fff;
+    letter-spacing: 4px;
+    font-weight: 700;
 }
 
-/* Custom hover effect for tabs */
-.md-tabs__link {
+.md-header__title:before,
+.md-header__title:after {
+    display: block;
+    content: "DevOps Notes";
+    position: absolute;
+    top: 0;
+    left: 0;
     opacity: 0.8;
-    transition: all 0.3s ease;
+    width: 100%;
 }
 
-.md-tabs__link:hover,
-.md-tabs__link--active {
-    opacity: 1;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+.md-header__title:before {
+    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #00ffff;
+    z-index: -1;
 }
 
-/* Glassmorphism effect for the header */
-.md-header {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+.md-header__title:after {
+    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: #ff00ff;
+    z-index: -2;
 }
 
-/* Custom styling for the search box */
-.md-search__inner {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+/* Glitch effect for tab items */
+.md-tabs__link {
+    position: relative;
+    color: #fff !important;
+    letter-spacing: 2px;
+    font-weight: 600;
 }
 
-/* Smooth transition for navigation items */
-.md-nav__link {
-    transition: color 0.3s ease;
+.md-tabs__link:before,
+.md-tabs__link:after {
+    display: block;
+    content: attr(data-label);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    width: 100%;
+}
+
+.md-tabs__link:before {
+    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #00ffff;
+    z-index: -1;
+}
+
+.md-tabs__link:after {
+    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: #ff00ff;
+    z-index: -2;
+}
+
+/* Glitch animation */
+@keyframes glitch-color {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-3px, 3px);
+    }
+    40% {
+        transform: translate(-3px, -3px);
+    }
+    60% {
+        transform: translate(3px, 3px);
+    }
+    80% {
+        transform: translate(3px, -3px);
+    }
+    to {
+        transform: translate(0);
+    }
+}
+
+/* Dark theme enhancements */
+[data-md-color-scheme="slate"] {
+    --md-default-bg-color: #1a1b1c;
+    --md-default-fg-color: #ffffff;
 }
 
 /* Custom scrollbar */
@@ -59,12 +104,30 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #ee7752, #e73c7e);
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
     border-radius: 4px;
 }
 
-/* Dark mode adjustments */
-[data-md-color-scheme="slate"] {
-    --md-default-bg-color: #1a1b1c;
-    --md-default-fg-color: #ffffff;
+/* Search box styling */
+.md-search__inner {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.md-search__input {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+/* Navigation item hover effects */
+.md-nav__link:hover {
+    color: #00ffff !important;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+/* Active tab indication */
+.md-tabs__link--active,
+.md-tabs__link:hover {
+    color: #fff !important;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
