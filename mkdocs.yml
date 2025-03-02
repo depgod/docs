@@ -1,4 +1,66 @@
-site_name: My site
-site_url: https://depgod.github.io/mysite
+site_name: DevOps Notes
+site_url: https://depgod.github.io
+repo_url: https://github.com/depgod/depgod.github.io
+edit_uri: edit/main/docs/
+
 theme:
   name: material
+  language: en
+  palette:
+    primary: blue
+    accent: deep orange
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - navigation.indexes
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+
+nav:
+  - Home: index.md
+  - Versioning: versioning.md
+
+plugins:
+  - search
+  - table-reader
+  - markdownextradata
+  - mkdocstrings
+  - autolinks
+  - awesome-pages
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - redirects:
+      redirect_maps:
+        old_page.md: new_page.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.extra
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: "#"
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/depgod
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/yourhandle
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - scripts/custom.js
+
