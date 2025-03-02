@@ -43,6 +43,8 @@ nav:
       - ArgoCD Setup: argocd-setup.md
     - CI/CD:
       - Overview: documentation/cicd/index.md
+      - GitHub Actions with SonarQube & Harbor: documentation/cicd/github-actions-sonarqube-docker.md
+      - GitHub Actions Guide: github-actions-guide.md
     - Networking:
       - Overview: documentation/networking/index.md
     - Infrastructure:
