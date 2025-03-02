@@ -303,16 +303,16 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Install Multipass</label><label for="__tabbed_1_2">Verify Installation</label><label for="__tabbed_1_3">List Available Images</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>multipass
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>multipass
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>multipass<span class="w"> </span>version
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>multipass<span class="w"> </span>version
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>multipass<span class="w"> </span>find
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>multipass<span class="w"> </span>find
+</code></pre></div>
 </div>
 </div>
 </input></input></input></div>
@@ -321,40 +321,40 @@
 <p class="admonition-title">Resource Allocation</p>
 <p>We'll create one master node and two worker nodes. Adjust the resources based on your system capabilities.</p>
 </div>
-<div class="language-bash highlight"><span class="filename">Create Cluster Nodes</span><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># Create master node</span>
-</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>multipass<span class="w"> </span>launch<span class="w"> </span>--name<span class="w"> </span>master<span class="w"> </span>--cpus<span class="w"> </span><span class="m">2</span><span class="w"> </span>--mem<span class="w"> </span>4G<span class="w"> </span>--disk<span class="w"> </span>20G<span class="w"> </span>
-</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># Create worker nodes</span>
-</span><span id="__span-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>multipass<span class="w"> </span>launch<span class="w"> </span>--name<span class="w"> </span>worker1<span class="w"> </span>--cpus<span class="w"> </span><span class="m">2</span><span class="w"> </span>--mem<span class="w"> </span>4G<span class="w"> </span>--disk<span class="w"> </span>20G<span class="w"> </span>
-</span><span id="__span-3-6"><a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>multipass<span class="w"> </span>launch<span class="w"> </span>--name<span class="w"> </span>worker2<span class="w"> </span>--cpus<span class="w"> </span><span class="m">2</span><span class="w"> </span>--mem<span class="w"> </span>4G<span class="w"> </span>--disk<span class="w"> </span>20G<span class="w"> </span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Create Cluster Nodes</span><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># Create master node</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>multipass<span class="w"> </span>launch<span class="w"> </span>--name<span class="w"> </span>master<span class="w"> </span>--cpus<span class="w"> </span><span class="m">2</span><span class="w"> </span>--mem<span class="w"> </span>4G<span class="w"> </span>--disk<span class="w"> </span>20G<span class="w"> </span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># Create worker nodes</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>multipass<span class="w"> </span>launch<span class="w"> </span>--name<span class="w"> </span>worker1<span class="w"> </span>--cpus<span class="w"> </span><span class="m">2</span><span class="w"> </span>--mem<span class="w"> </span>4G<span class="w"> </span>--disk<span class="w"> </span>20G<span class="w"> </span>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>multipass<span class="w"> </span>launch<span class="w"> </span>--name<span class="w"> </span>worker2<span class="w"> </span>--cpus<span class="w"> </span><span class="m">2</span><span class="w"> </span>--mem<span class="w"> </span>4G<span class="w"> </span>--disk<span class="w"> </span>20G<span class="w"> </span>
+</code></pre></div>
 <details class="example">
 <summary>Expected Output</summary>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>Launched: master
-</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>Launched: worker1
-</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>Launched: worker2
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>Launched: master
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>Launched: worker1
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>Launched: worker2
+</code></pre></div>
 </details>
 <h3 id="access-nodes">Access Nodes<a class="headerlink" href="#access-nodes" title="Permanent link">¶</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Master Node</label><label for="__tabbed_2_2">Worker Node 1</label><label for="__tabbed_2_3">Worker Node 2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>multipass<span class="w"> </span>shell<span class="w"> </span>master
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>multipass<span class="w"> </span>shell<span class="w"> </span>master
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>multipass<span class="w"> </span>shell<span class="w"> </span>worker1
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>multipass<span class="w"> </span>shell<span class="w"> </span>worker1
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>multipass<span class="w"> </span>shell<span class="w"> </span>worker2
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>multipass<span class="w"> </span>shell<span class="w"> </span>worker2
+</code></pre></div>
 </div>
 </div>
 </input></input></input></div>
 <h3 id="get-node-ips">Get Node IPs<a class="headerlink" href="#get-node-ips" title="Permanent link">¶</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>multipass<span class="w"> </span>list
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>multipass<span class="w"> </span>list
+</code></pre></div>
 <h2 id="server-preparation">Server Preparation<a class="headerlink" href="#server-preparation" title="Permanent link">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
@@ -363,23 +363,23 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"/><div class="tabbed-labels"><label for="__tabbed_3_1">Update System</label><label for="__tabbed_3_2">Install Dependencies</label><label for="__tabbed_3_3">Setup Docker Repository</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>apt-transport-https<span class="w"> </span>ca-certificates<span class="w"> </span>curl<span class="w"> </span>gnupg<span class="w"> </span>lsb-release
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>apt-transport-https<span class="w"> </span>ca-certificates<span class="w"> </span>curl<span class="w"> </span>gnupg<span class="w"> </span>lsb-release
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/apt/keyrings
-</span><span id="__span-11-2"><a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://download.docker.com/linux/ubuntu/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/keyrings/docker.asc<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
-</span><span id="__span-11-3"><a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> stable"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/docker.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/apt/keyrings
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://download.docker.com/linux/ubuntu/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/keyrings/docker.asc<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> stable"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/docker.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+</code></pre></div>
 </div>
 </div>
 </input></input></div>
 <h3 id="install-containerd">Install Containerd<a class="headerlink" href="#install-containerd" title="Permanent link">¶</a></h3>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Install and Configure Containerd</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Install and Configure Containerd</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
@@ -396,25 +396,25 @@
 <span class="normal"><a href="#__codelineno-12-15">15</a></span>
 <span class="normal"><a href="#__codelineno-12-16">16</a></span>
 <span class="normal"><a href="#__codelineno-12-17">17</a></span>
-<span class="normal"><a href="#__codelineno-12-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># Install containerd</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>containerd.io
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="c1"># Enable and start containerd</span>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>containerd
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>containerd
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a>
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="c1"># Generate default config</span>
-</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/containerd
-</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11"></a>containerd<span class="w"> </span>config<span class="w"> </span>default<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/containerd/config.toml
-</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12"></a>
-</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="c1"># Modify containerd configuration</span>
-</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14"></a>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/SystemdCgroup = false/SystemdCgroup = true/'</span><span class="w"> </span>/etc/containerd/config.toml
-</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15"></a>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/^disabled_plugins = \["cri"\]/#disabled_plugins = \["cri"\]/'</span><span class="w"> </span>/etc/containerd/config.toml
-</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16"></a>
-</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="c1"># Restart containerd</span>
-</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>containerd
-</span></code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-12-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># Install containerd</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>containerd.io
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="c1"># Enable and start containerd</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>containerd
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>containerd
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="c1"># Generate default config</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/containerd
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a>containerd<span class="w"> </span>config<span class="w"> </span>default<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/containerd/config.toml
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a>
+<a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="c1"># Modify containerd configuration</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14"></a>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/SystemdCgroup = false/SystemdCgroup = true/'</span><span class="w"> </span>/etc/containerd/config.toml
+<a id="__codelineno-12-15" name="__codelineno-12-15"></a>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/^disabled_plugins = \["cri"\]/#disabled_plugins = \["cri"\]/'</span><span class="w"> </span>/etc/containerd/config.toml
+<a id="__codelineno-12-16" name="__codelineno-12-16"></a>
+<a id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="c1"># Restart containerd</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>containerd
+</code></pre></div></td></tr></table></div>
 <h2 id="configure-system-settings">Configure System Settings<a class="headerlink" href="#configure-system-settings" title="Permanent link">¶</a></h2>
 <div class="admonition danger">
 <p class="admonition-title">Critical Step</p>
@@ -423,29 +423,29 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"/><input id="__tabbed_4_2" name="__tabbed_4" type="radio"/><input id="__tabbed_4_3" name="__tabbed_4" type="radio"/><div class="tabbed-labels"><label for="__tabbed_4_1">Disable Swap</label><label for="__tabbed_4_2">Load Kernel Modules</label><label for="__tabbed_4_3">Configure Sysctl</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>sudo<span class="w"> </span>swapoff<span class="w"> </span>-a
-</span><span id="__span-13-2"><a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'/swap/d'</span><span class="w"> </span>/etc/fstab
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>sudo<span class="w"> </span>swapoff<span class="w"> </span>-a
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'/swap/d'</span><span class="w"> </span>/etc/fstab
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>cat<span class="w"> </span><span class="s">&lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf</span>
-</span><span id="__span-14-2"><a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="s">overlay</span>
-</span><span id="__span-14-3"><a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="s">br_netfilter</span>
-</span><span id="__span-14-4"><a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="s">EOF</span>
-</span><span id="__span-14-5"><a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a>
-</span><span id="__span-14-6"><a href="#__codelineno-14-6" id="__codelineno-14-6" name="__codelineno-14-6"></a>sudo<span class="w"> </span>modprobe<span class="w"> </span>overlay
-</span><span id="__span-14-7"><a href="#__codelineno-14-7" id="__codelineno-14-7" name="__codelineno-14-7"></a>sudo<span class="w"> </span>modprobe<span class="w"> </span>br_netfilter
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>cat<span class="w"> </span><span class="s">&lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf</span>
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="s">overlay</span>
+<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="s">br_netfilter</span>
+<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="s">EOF</span>
+<a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a>
+<a href="#__codelineno-14-6" id="__codelineno-14-6" name="__codelineno-14-6"></a>sudo<span class="w"> </span>modprobe<span class="w"> </span>overlay
+<a href="#__codelineno-14-7" id="__codelineno-14-7" name="__codelineno-14-7"></a>sudo<span class="w"> </span>modprobe<span class="w"> </span>br_netfilter
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>cat<span class="w"> </span><span class="s">&lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf</span>
-</span><span id="__span-15-2"><a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="s">net.bridge.bridge-nf-call-iptables  = 1</span>
-</span><span id="__span-15-3"><a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="s">net.bridge.bridge-nf-call-ip6tables = 1</span>
-</span><span id="__span-15-4"><a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="s">net.ipv4.ip_forward                 = 1</span>
-</span><span id="__span-15-5"><a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="s">EOF</span>
-</span><span id="__span-15-6"><a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a>
-</span><span id="__span-15-7"><a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a>sudo<span class="w"> </span>sysctl<span class="w"> </span>--system
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>cat<span class="w"> </span><span class="s">&lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf</span>
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="s">net.bridge.bridge-nf-call-iptables  = 1</span>
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="s">net.bridge.bridge-nf-call-ip6tables = 1</span>
+<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="s">net.ipv4.ip_forward                 = 1</span>
+<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="s">EOF</span>
+<a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a>
+<a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a>sudo<span class="w"> </span>sysctl<span class="w"> </span>--system
+</code></pre></div>
 </div>
 </div>
 </div>
@@ -454,35 +454,35 @@
 <p class="admonition-title">Version Information</p>
 <p>This guide uses Kubernetes v1.32. Adjust version numbers as needed.</p>
 </div>
-<div class="language-bash highlight"><span class="filename">Install Kubernetes Tools</span><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="hll"><span class="c1"># Add Kubernetes repository</span>
-</span></span><span id="__span-16-2"><a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="hll">curl<span class="w"> </span>-fsSL<span class="w"> </span>https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/etc/apt/keyrings/kubernetes-apt-keyring.gpg
-</span></span><span id="__span-16-3"><a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>
-</span><span id="__span-16-4"><a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/kubernetes.list
-</span><span id="__span-16-5"><a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a>
-</span><span id="__span-16-6"><a href="#__codelineno-16-6" id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="c1"># Install required packages</span>
-</span><span id="__span-16-7"><a href="#__codelineno-16-7" id="__codelineno-16-7" name="__codelineno-16-7"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
-</span><span id="__span-16-8"><a href="#__codelineno-16-8" id="__codelineno-16-8" name="__codelineno-16-8"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>kubelet<span class="w"> </span>kubeadm<span class="w"> </span>kubectl
-</span><span id="__span-16-9"><a href="#__codelineno-16-9" id="__codelineno-16-9" name="__codelineno-16-9"></a>
-</span><span id="__span-16-10"><a href="#__codelineno-16-10" id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="c1"># Prevent accidental upgrades</span>
-</span><span id="__span-16-11"><a href="#__codelineno-16-11" id="__codelineno-16-11" name="__codelineno-16-11"></a>sudo<span class="w"> </span>apt-mark<span class="w"> </span>hold<span class="w"> </span>kubelet<span class="w"> </span>kubeadm<span class="w"> </span>kubectl
-</span><span id="__span-16-12"><a href="#__codelineno-16-12" id="__codelineno-16-12" name="__codelineno-16-12"></a>
-</span><span id="__span-16-13"><a href="#__codelineno-16-13" id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="c1"># Enable kubelet</span>
-</span><span id="__span-16-14"><a href="#__codelineno-16-14" id="__codelineno-16-14" name="__codelineno-16-14"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>kubelet
-</span><span id="__span-16-15"><a href="#__codelineno-16-15" id="__codelineno-16-15" name="__codelineno-16-15"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>kubelet
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Install Kubernetes Tools</span><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="hll"><span class="c1"># Add Kubernetes repository</span>
+</span><a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="hll">curl<span class="w"> </span>-fsSL<span class="w"> </span>https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/etc/apt/keyrings/kubernetes-apt-keyring.gpg
+</span><a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>
+<a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/kubernetes.list
+<a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a>
+<a href="#__codelineno-16-6" id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="c1"># Install required packages</span>
+<a href="#__codelineno-16-7" id="__codelineno-16-7" name="__codelineno-16-7"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<a href="#__codelineno-16-8" id="__codelineno-16-8" name="__codelineno-16-8"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>kubelet<span class="w"> </span>kubeadm<span class="w"> </span>kubectl
+<a href="#__codelineno-16-9" id="__codelineno-16-9" name="__codelineno-16-9"></a>
+<a href="#__codelineno-16-10" id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="c1"># Prevent accidental upgrades</span>
+<a href="#__codelineno-16-11" id="__codelineno-16-11" name="__codelineno-16-11"></a>sudo<span class="w"> </span>apt-mark<span class="w"> </span>hold<span class="w"> </span>kubelet<span class="w"> </span>kubeadm<span class="w"> </span>kubectl
+<a href="#__codelineno-16-12" id="__codelineno-16-12" name="__codelineno-16-12"></a>
+<a href="#__codelineno-16-13" id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="c1"># Enable kubelet</span>
+<a href="#__codelineno-16-14" id="__codelineno-16-14" name="__codelineno-16-14"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>kubelet
+<a href="#__codelineno-16-15" id="__codelineno-16-15" name="__codelineno-16-15"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>kubelet
+</code></pre></div>
 <h2 id="initialize-cluster">Initialize Cluster<a class="headerlink" href="#initialize-cluster" title="Permanent link">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Master Node Only</p>
 <p>Run these commands <strong>ONLY</strong> on the master node.</p>
 </div>
-<div class="language-bash highlight"><span class="filename">Initialize Kubernetes Cluster</span><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="c1"># Initialize cluster</span>
-</span><span id="__span-17-2"><a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>sudo<span class="w"> </span>kubeadm<span class="w"> </span>init<span class="w"> </span>--pod-network-cidr<span class="o">=</span><span class="m">10</span>.244.0.0/16
-</span><span id="__span-17-3"><a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>
-</span><span id="__span-17-4"><a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="c1"># Setup kubeconfig</span>
-</span><span id="__span-17-5"><a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/.kube
-</span><span id="__span-17-6"><a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a>sudo<span class="w"> </span>cp<span class="w"> </span>-i<span class="w"> </span>/etc/kubernetes/admin.conf<span class="w"> </span><span class="nv">$HOME</span>/.kube/config
-</span><span id="__span-17-7"><a href="#__codelineno-17-7" id="__codelineno-17-7" name="__codelineno-17-7"></a>sudo<span class="w"> </span>chown<span class="w"> </span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span>:<span class="k">$(</span>id<span class="w"> </span>-g<span class="k">)</span><span class="w"> </span><span class="nv">$HOME</span>/.kube/config
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Initialize Kubernetes Cluster</span><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="c1"># Initialize cluster</span>
+<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>sudo<span class="w"> </span>kubeadm<span class="w"> </span>init<span class="w"> </span>--pod-network-cidr<span class="o">=</span><span class="m">10</span>.244.0.0/16
+<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>
+<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="c1"># Setup kubeconfig</span>
+<a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/.kube
+<a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a>sudo<span class="w"> </span>cp<span class="w"> </span>-i<span class="w"> </span>/etc/kubernetes/admin.conf<span class="w"> </span><span class="nv">$HOME</span>/.kube/config
+<a href="#__codelineno-17-7" id="__codelineno-17-7" name="__codelineno-17-7"></a>sudo<span class="w"> </span>chown<span class="w"> </span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span>:<span class="k">$(</span>id<span class="w"> </span>-g<span class="k">)</span><span class="w"> </span><span class="nv">$HOME</span>/.kube/config
+</code></pre></div>
 <details class="tip">
 <summary>Save the Join Command</summary>
 <p>The initialization will output a <code>kubeadm join</code> command. Save this for joining worker nodes.</p>
@@ -491,12 +491,12 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"/><input id="__tabbed_5_2" name="__tabbed_5" type="radio"/><div class="tabbed-labels"><label for="__tabbed_5_1">Install Flannel CNI</label><label for="__tabbed_5_2">Verify Installation</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>kube-flannel
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>kube-flannel
+</code></pre></div>
 </div>
 </div>
 </div>
@@ -508,12 +508,12 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"/><input id="__tabbed_6_2" name="__tabbed_6" type="radio"/><div class="tabbed-labels"><label for="__tabbed_6_1">Get Join Command (Master)</label><label for="__tabbed_6_2">Join Cluster (Workers)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>kubeadm<span class="w"> </span>token<span class="w"> </span>create<span class="w"> </span>--print-join-command
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>kubeadm<span class="w"> </span>token<span class="w"> </span>create<span class="w"> </span>--print-join-command
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>sudo<span class="w"> </span>kubeadm<span class="w"> </span>join<span class="w"> </span>&lt;master-ip&gt;:6443<span class="w"> </span>--token<span class="w"> </span>&lt;token&gt;<span class="w"> </span>--discovery-token-ca-cert-hash<span class="w"> </span>sha256:&lt;hash&gt;
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>sudo<span class="w"> </span>kubeadm<span class="w"> </span>join<span class="w"> </span>&lt;master-ip&gt;:6443<span class="w"> </span>--token<span class="w"> </span>&lt;token&gt;<span class="w"> </span>--discovery-token-ca-cert-hash<span class="w"> </span>sha256:&lt;hash&gt;
+</code></pre></div>
 </div>
 </div>
 </div>
@@ -521,12 +521,12 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"/><input id="__tabbed_7_2" name="__tabbed_7" type="radio"/><div class="tabbed-labels"><label for="__tabbed_7_1">Check Node Status</label><label for="__tabbed_7_2">Check Pods</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A
+</code></pre></div>
 </div>
 </div>
 </div>
@@ -546,10 +546,10 @@
 <ol>
 <li>Generate new token: <code>kubeadm token create</code></li>
 <li>Get discovery token CA cert hash:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a>openssl<span class="w"> </span>x509<span class="w"> </span>-pubkey<span class="w"> </span>-in<span class="w"> </span>/etc/kubernetes/pki/ca.crt<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-24-2"><a href="#__codelineno-24-2" id="__codelineno-24-2" name="__codelineno-24-2"></a>openssl<span class="w"> </span>rsa<span class="w"> </span>-pubin<span class="w"> </span>-outform<span class="w"> </span>der<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-24-3"><a href="#__codelineno-24-3" id="__codelineno-24-3" name="__codelineno-24-3"></a>openssl<span class="w"> </span>dgst<span class="w"> </span>-sha256<span class="w"> </span>-hex<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/^.* //'</span>
-</span></code></pre></div></li>
+   <div class="highlight"><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a>openssl<span class="w"> </span>x509<span class="w"> </span>-pubkey<span class="w"> </span>-in<span class="w"> </span>/etc/kubernetes/pki/ca.crt<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-24-2" id="__codelineno-24-2" name="__codelineno-24-2"></a>openssl<span class="w"> </span>rsa<span class="w"> </span>-pubin<span class="w"> </span>-outform<span class="w"> </span>der<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-24-3" id="__codelineno-24-3" name="__codelineno-24-3"></a>openssl<span class="w"> </span>dgst<span class="w"> </span>-sha256<span class="w"> </span>-hex<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/^.* //'</span>
+</code></pre></div></li>
 </ol>
 </div>
 <div class="tabbed-block">
@@ -565,13 +565,13 @@
 <h3 id="backup-procedures">Backup Procedures<a class="headerlink" href="#backup-procedures" title="Permanent link">¶</a></h3>
 <div class="admonition example">
 <p class="admonition-title">Backup etcd</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>etcd-client
-</span><span id="__span-25-2"><a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="nv">ETCDCTL_API</span><span class="o">=</span><span class="m">3</span><span class="w"> </span>etcdctl<span class="w"> </span>--endpoints<span class="o">=</span>https://127.0.0.1:2379<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-25-3"><a href="#__codelineno-25-3" id="__codelineno-25-3" name="__codelineno-25-3"></a>--cacert<span class="o">=</span>/etc/kubernetes/pki/etcd/ca.crt<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-25-4"><a href="#__codelineno-25-4" id="__codelineno-25-4" name="__codelineno-25-4"></a>--cert<span class="o">=</span>/etc/kubernetes/pki/etcd/server.crt<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-25-5"><a href="#__codelineno-25-5" id="__codelineno-25-5" name="__codelineno-25-5"></a>--key<span class="o">=</span>/etc/kubernetes/pki/etcd/server.key<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-25-6"><a href="#__codelineno-25-6" id="__codelineno-25-6" name="__codelineno-25-6"></a>snapshot<span class="w"> </span>save<span class="w"> </span>snapshot.db
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>etcd-client
+<a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="nv">ETCDCTL_API</span><span class="o">=</span><span class="m">3</span><span class="w"> </span>etcdctl<span class="w"> </span>--endpoints<span class="o">=</span>https://127.0.0.1:2379<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-25-3" id="__codelineno-25-3" name="__codelineno-25-3"></a>--cacert<span class="o">=</span>/etc/kubernetes/pki/etcd/ca.crt<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-25-4" id="__codelineno-25-4" name="__codelineno-25-4"></a>--cert<span class="o">=</span>/etc/kubernetes/pki/etcd/server.crt<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-25-5" id="__codelineno-25-5" name="__codelineno-25-5"></a>--key<span class="o">=</span>/etc/kubernetes/pki/etcd/server.key<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-25-6" id="__codelineno-25-6" name="__codelineno-25-6"></a>snapshot<span class="w"> </span>save<span class="w"> </span>snapshot.db
+</code></pre></div>
 </div>
 <h3 id="scaling-the-cluster">Scaling the Cluster<a class="headerlink" href="#scaling-the-cluster" title="Permanent link">¶</a></h3>
 <p>To add more worker nodes:</p>
@@ -584,18 +584,18 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio"/><input id="__tabbed_9_2" name="__tabbed_9" type="radio"/><div class="tabbed-labels"><label for="__tabbed_9_1">Delete Node</label><label for="__tabbed_9_2">Delete VM</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="c1"># On master node</span>
-</span><span id="__span-26-2"><a href="#__codelineno-26-2" id="__codelineno-26-2" name="__codelineno-26-2"></a>kubectl<span class="w"> </span>drain<span class="w"> </span>&lt;node-name&gt;<span class="w"> </span>--ignore-daemonsets
-</span><span id="__span-26-3"><a href="#__codelineno-26-3" id="__codelineno-26-3" name="__codelineno-26-3"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>node<span class="w"> </span>&lt;node-name&gt;
-</span><span id="__span-26-4"><a href="#__codelineno-26-4" id="__codelineno-26-4" name="__codelineno-26-4"></a>
-</span><span id="__span-26-5"><a href="#__codelineno-26-5" id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="c1"># On worker node</span>
-</span><span id="__span-26-6"><a href="#__codelineno-26-6" id="__codelineno-26-6" name="__codelineno-26-6"></a>sudo<span class="w"> </span>kubeadm<span class="w"> </span>reset
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="c1"># On master node</span>
+<a href="#__codelineno-26-2" id="__codelineno-26-2" name="__codelineno-26-2"></a>kubectl<span class="w"> </span>drain<span class="w"> </span>&lt;node-name&gt;<span class="w"> </span>--ignore-daemonsets
+<a href="#__codelineno-26-3" id="__codelineno-26-3" name="__codelineno-26-3"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>node<span class="w"> </span>&lt;node-name&gt;
+<a href="#__codelineno-26-4" id="__codelineno-26-4" name="__codelineno-26-4"></a>
+<a href="#__codelineno-26-5" id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="c1"># On worker node</span>
+<a href="#__codelineno-26-6" id="__codelineno-26-6" name="__codelineno-26-6"></a>sudo<span class="w"> </span>kubeadm<span class="w"> </span>reset
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a>multipass<span class="w"> </span>delete<span class="w"> </span>&lt;vm-name&gt;
-</span><span id="__span-27-2"><a href="#__codelineno-27-2" id="__codelineno-27-2" name="__codelineno-27-2"></a>multipass<span class="w"> </span>purge
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a>multipass<span class="w"> </span>delete<span class="w"> </span>&lt;vm-name&gt;
+<a href="#__codelineno-27-2" id="__codelineno-27-2" name="__codelineno-27-2"></a>multipass<span class="w"> </span>purge
+</code></pre></div>
 </div>
 </div>
 </div>

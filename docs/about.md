@@ -130,14 +130,6 @@ graph TD
 - Hetzner
 - Traditional hosting (Plesk, cPanel)
 
-## Skills & Expertise
-
-- **Languages**: Python, Bash, Go
-- **Infrastructure**: Docker, Kubernetes, Terraform
-- **CI/CD**: Jenkins, GitHub Actions, GitLab CI
-- **Monitoring**: Prometheus, Grafana
-- **Cloud Platforms**: AWS, GCP, Azure
-
 ## Areas of Interest
 
 I'm particularly passionate about:
@@ -156,20 +148,3 @@ This documentation site aims to:
 2. Provide practical guides and tutorials
 3. Document common solutions to technical challenges
 4. Create a reliable reference for DevOps tools and practices
-
-## Let's Connect
-
-Feel free to reach out if you want to:
-
-- Discuss DevOps practices
-- Collaborate on projects
-- Share knowledge and experiences
-- Explore infrastructure solutions
-- Have questions about any of the documentation
-- Want to contribute to the content
-- Need consulting or professional advice
-
-You can find me on:
-- [GitHub](https://github.com/depgod)
-- [LinkedIn](https://www.linkedin.com/in/shashank-bioinformatics)
-- [darkmode.dev](https://darkmode.dev)

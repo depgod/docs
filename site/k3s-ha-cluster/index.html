@@ -337,21 +337,21 @@
 <p>Execute these steps on <strong>ALL</strong> nodes unless specified otherwise.</p>
 </div>
 <h3 id="system-updates">System Updates<a class="headerlink" href="#system-updates" title="Permanent link">¶</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Update package list and upgrade system</span>
-</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
-</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># Install required packages</span>
-</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span>curl<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span>gnupg<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span>nfs-common<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span>open-iscsi<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span>jq<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span>logrotate
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Update package list and upgrade system</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># Install required packages</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span>curl<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span>gnupg<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span>nfs-common<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span>open-iscsi<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span>jq<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span>logrotate
+</code></pre></div>
 <h3 id="configure-log-rotation">Configure Log Rotation<a class="headerlink" href="#configure-log-rotation" title="Permanent link">¶</a></h3>
 <p>Create a logrotate configuration for K3s:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">/etc/logrotate.d/k3s</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">/etc/logrotate.d/k3s</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
@@ -363,22 +363,22 @@
 <span class="normal"><a href="#__codelineno-1-10">10</a></span>
 <span class="normal"><a href="#__codelineno-1-11">11</a></span>
 <span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>/var/log/k3s/*.log<span class="w"> </span><span class="o">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span>daily
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span>rotate<span class="w"> </span><span class="m">7</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span>compress
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span>delaycompress
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span>missingok
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span>notifempty
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span>create<span class="w"> </span><span class="m">0640</span><span class="w"> </span>root<span class="w"> </span>root
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span>postrotate
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span>systemctl<span class="w"> </span>restart<span class="w"> </span>k3s-server<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span>systemctl<span class="w"> </span>restart<span class="w"> </span>k3s-agent<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span>endscript
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="o">}</span>
-</span></code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>/var/log/k3s/*.log<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span>daily
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span>rotate<span class="w"> </span><span class="m">7</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span>compress
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span>delaycompress
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span>missingok
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span>notifempty
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span>create<span class="w"> </span><span class="m">0640</span><span class="w"> </span>root<span class="w"> </span>root
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span>postrotate
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span>systemctl<span class="w"> </span>restart<span class="w"> </span>k3s-server<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span>systemctl<span class="w"> </span>restart<span class="w"> </span>k3s-agent<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span>endscript
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="o">}</span>
+</code></pre></div></td></tr></table></div>
 <h3 id="system-configuration">System Configuration<a class="headerlink" href="#system-configuration" title="Permanent link">¶</a></h3>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">System Settings</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">System Settings</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -388,107 +388,107 @@
 <span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># Enable and start open-iscsi for Longhorn</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>iscsid
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1"># Configure sysctl settings</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>cat<span class="w"> </span><span class="s">&lt;&lt; EOF | sudo tee /etc/sysctl.d/k3s.conf</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="s">net.bridge.bridge-nf-call-iptables = 1</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="s">net.ipv4.ip_forward = 1</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="s">vm.max_map_count = 262144</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="s">EOF</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a>sudo<span class="w"> </span>sysctl<span class="w"> </span>--system
-</span></code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># Enable and start open-iscsi for Longhorn</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>iscsid
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1"># Configure sysctl settings</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>cat<span class="w"> </span><span class="s">&lt;&lt; EOF | sudo tee /etc/sysctl.d/k3s.conf</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="s">net.bridge.bridge-nf-call-iptables = 1</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="s">net.ipv4.ip_forward = 1</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="s">vm.max_map_count = 262144</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="s">EOF</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>sudo<span class="w"> </span>sysctl<span class="w"> </span>--system
+</code></pre></div></td></tr></table></div>
 <h2 id="k3s-installation">K3s Installation<a class="headerlink" href="#k3s-installation" title="Permanent link">¶</a></h2>
 <h3 id="master-node-setup">Master Node Setup<a class="headerlink" href="#master-node-setup" title="Permanent link">¶</a></h3>
 <div class="admonition danger">
 <p class="admonition-title">Master Node Only</p>
 <p>Run these commands <strong>ONLY</strong> on the master node.</p>
 </div>
-<div class="language-bash highlight"><span class="filename">Install K3s Server</span><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># Download K3s installation script</span>
-</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>curl<span class="w"> </span>-sfL<span class="w"> </span>https://get.k3s.io<span class="w"> </span>&gt;<span class="w"> </span>k3s-install.sh
-</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># Install K3s server with HA etcd and VXLAN</span>
-</span><span id="__span-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>sudo<span class="w"> </span><span class="nv">INSTALL_K3S_VERSION</span><span class="o">=</span><span class="s2">"v1.33.0+k3s1"</span><span class="w"> </span>bash<span class="w"> </span>k3s-install.sh<span class="w"> </span>server<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-6"><a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span>--cluster-init<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-7"><a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span>--flannel-backend<span class="o">=</span>vxlan<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-8"><a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span>--disable<span class="w"> </span>traefik<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-9"><a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span>--disable<span class="w"> </span>servicelb<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-10"><a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span>--disable<span class="w"> </span>local-storage<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-11"><a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">    </span>--tls-san<span class="w"> </span><span class="k">$(</span>hostname<span class="w"> </span>-f<span class="k">)</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-12"><a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span>--write-kubeconfig-mode<span class="w"> </span><span class="m">644</span>
-</span><span id="__span-3-13"><a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>
-</span><span id="__span-3-14"><a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="c1"># Get node token for workers</span>
-</span><span id="__span-3-15"><a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>sudo<span class="w"> </span>cat<span class="w"> </span>/var/lib/rancher/k3s/server/node-token
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Install K3s Server</span><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># Download K3s installation script</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>curl<span class="w"> </span>-sfL<span class="w"> </span>https://get.k3s.io<span class="w"> </span>&gt;<span class="w"> </span>k3s-install.sh
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># Install K3s server with HA etcd and VXLAN</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>sudo<span class="w"> </span><span class="nv">INSTALL_K3S_VERSION</span><span class="o">=</span><span class="s2">"v1.33.0+k3s1"</span><span class="w"> </span>bash<span class="w"> </span>k3s-install.sh<span class="w"> </span>server<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span>--cluster-init<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span>--flannel-backend<span class="o">=</span>vxlan<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span>--disable<span class="w"> </span>traefik<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span>--disable<span class="w"> </span>servicelb<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span>--disable<span class="w"> </span>local-storage<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">    </span>--tls-san<span class="w"> </span><span class="k">$(</span>hostname<span class="w"> </span>-f<span class="k">)</span><span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span>--write-kubeconfig-mode<span class="w"> </span><span class="m">644</span>
+<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>
+<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="c1"># Get node token for workers</span>
+<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>sudo<span class="w"> </span>cat<span class="w"> </span>/var/lib/rancher/k3s/server/node-token
+</code></pre></div>
 <h3 id="worker-nodes-setup">Worker Nodes Setup<a class="headerlink" href="#worker-nodes-setup" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Worker Nodes Only</p>
 <p>Replace <code>MASTER_IP</code> and <code>NODE_TOKEN</code> with your actual values.</p>
 </div>
-<div class="language-bash highlight"><span class="filename">Install K3s Agent</span><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Download K3s installation script</span>
-</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>curl<span class="w"> </span>-sfL<span class="w"> </span>https://get.k3s.io<span class="w"> </span>&gt;<span class="w"> </span>k3s-install.sh
-</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
-</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1"># Install K3s agent</span>
-</span><span id="__span-4-5"><a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>sudo<span class="w"> </span><span class="nv">INSTALL_K3S_VERSION</span><span class="o">=</span><span class="s2">"v1.33.0+k3s1"</span><span class="w"> </span><span class="nv">K3S_URL</span><span class="o">=</span><span class="s2">"https://MASTER_IP:6443"</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-6"><a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="nv">K3S_TOKEN</span><span class="o">=</span><span class="s2">"NODE_TOKEN"</span><span class="w"> </span>bash<span class="w"> </span>k3s-install.sh<span class="w"> </span>agent
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Install K3s Agent</span><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Download K3s installation script</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>curl<span class="w"> </span>-sfL<span class="w"> </span>https://get.k3s.io<span class="w"> </span>&gt;<span class="w"> </span>k3s-install.sh
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1"># Install K3s agent</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>sudo<span class="w"> </span><span class="nv">INSTALL_K3S_VERSION</span><span class="o">=</span><span class="s2">"v1.33.0+k3s1"</span><span class="w"> </span><span class="nv">K3S_URL</span><span class="o">=</span><span class="s2">"https://MASTER_IP:6443"</span><span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="nv">K3S_TOKEN</span><span class="o">=</span><span class="s2">"NODE_TOKEN"</span><span class="w"> </span>bash<span class="w"> </span>k3s-install.sh<span class="w"> </span>agent
+</code></pre></div>
 <h3 id="verify-cluster-status">Verify Cluster Status<a class="headerlink" href="#verify-cluster-status" title="Permanent link">¶</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Check Nodes</label><label for="__tabbed_2_2">Check Pods</label><label for="__tabbed_2_3">Check etcd Health</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>-o<span class="w"> </span>wide
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>-o<span class="w"> </span>wide
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>etcd-master<span class="w"> </span>--<span class="w"> </span>etcdctl<span class="w"> </span>endpoint<span class="w"> </span>health
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>etcd-master<span class="w"> </span>--<span class="w"> </span>etcdctl<span class="w"> </span>endpoint<span class="w"> </span>health
+</code></pre></div>
 </div>
 </div>
 </input></input></input></div>
 <h2 id="longhorn-installation">Longhorn Installation<a class="headerlink" href="#longhorn-installation" title="Permanent link">¶</a></h2>
 <h3 id="prerequisites-check">Prerequisites Check<a class="headerlink" href="#prerequisites-check" title="Permanent link">¶</a></h3>
 <p>Run this on all nodes to verify Longhorn requirements:</p>
-<div class="language-bash highlight"><span class="filename">Verify Requirements</span><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>curl<span class="w"> </span>-sSfL<span class="w"> </span>https://raw.githubusercontent.com/longhorn/longhorn/v1.6.0/scripts/environment_check.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Verify Requirements</span><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>curl<span class="w"> </span>-sSfL<span class="w"> </span>https://raw.githubusercontent.com/longhorn/longhorn/v1.6.0/scripts/environment_check.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</code></pre></div>
 <h3 id="install-longhorn">Install Longhorn<a class="headerlink" href="#install-longhorn" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Installation Steps</p>
 <p>Execute these commands on the master node.</p>
 </div>
-<div class="language-bash highlight"><span class="filename">Deploy Longhorn</span><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># Add Longhorn Helm repository</span>
-</span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>longhorn<span class="w"> </span>https://charts.longhorn.io
-</span><span id="__span-9-3"><a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
-</span><span id="__span-9-4"><a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a>
-</span><span id="__span-9-5"><a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="c1"># Install Longhorn</span>
-</span><span id="__span-9-6"><a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a>helm<span class="w"> </span>install<span class="w"> </span>longhorn<span class="w"> </span>longhorn/longhorn<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-9-7"><a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">    </span>--namespace<span class="w"> </span>longhorn-system<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-9-8"><a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">    </span>--create-namespace<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-9-9"><a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">    </span>--version<span class="w"> </span><span class="m">1</span>.6.0<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-9-10"><a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">    </span>--set<span class="w"> </span>defaultSettings.defaultDataPath<span class="o">=</span><span class="s2">"/var/lib/longhorn"</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-9-11"><a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">    </span>--set<span class="w"> </span>defaultSettings.guaranteedEngineManagerCPU<span class="o">=</span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-9-12"><a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">    </span>--set<span class="w"> </span>defaultSettings.guaranteedReplicaManagerCPU<span class="o">=</span><span class="m">5</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Deploy Longhorn</span><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># Add Longhorn Helm repository</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>longhorn<span class="w"> </span>https://charts.longhorn.io
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a>
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="c1"># Install Longhorn</span>
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a>helm<span class="w"> </span>install<span class="w"> </span>longhorn<span class="w"> </span>longhorn/longhorn<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">    </span>--namespace<span class="w"> </span>longhorn-system<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">    </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">    </span>--version<span class="w"> </span><span class="m">1</span>.6.0<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">    </span>--set<span class="w"> </span>defaultSettings.defaultDataPath<span class="o">=</span><span class="s2">"/var/lib/longhorn"</span><span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">    </span>--set<span class="w"> </span>defaultSettings.guaranteedEngineManagerCPU<span class="o">=</span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">    </span>--set<span class="w"> </span>defaultSettings.guaranteedReplicaManagerCPU<span class="o">=</span><span class="m">5</span>
+</code></pre></div>
 <h3 id="verify-longhorn-installation">Verify Longhorn Installation<a class="headerlink" href="#verify-longhorn-installation" title="Permanent link">¶</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"/><div class="tabbed-labels"><label for="__tabbed_3_1">Check Pods</label><label for="__tabbed_3_2">Check StorageClass</label><label for="__tabbed_3_3">Access Dashboard</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>get<span class="w"> </span>pods
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>get<span class="w"> </span>pods
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>sc
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>sc
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># Port forward Longhorn UI</span>
-</span><span id="__span-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>port-forward<span class="w"> </span>svc/longhorn-frontend<span class="w"> </span><span class="m">8000</span>:80
-</span></code></pre></div>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># Port forward Longhorn UI</span>
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>port-forward<span class="w"> </span>svc/longhorn-frontend<span class="w"> </span><span class="m">8000</span>:80
+</code></pre></div>
 Access via: <a href="http://localhost:8000">http://localhost:8000</a></p>
 </div>
 </div>
@@ -502,31 +502,31 @@ Access via: <a href="http://localhost:8000">http://localhost:8000</a></p>
 <div class="tabbed-block">
 <ol>
 <li>Check K3s service status:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>k3s
-</span></code></pre></div></li>
+   <div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>k3s
+</code></pre></div></li>
 <li>View K3s logs:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>k3s
-</span></code></pre></div></li>
+   <div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>k3s
+</code></pre></div></li>
 </ol>
 </div>
 <div class="tabbed-block">
 <ol>
 <li>Check etcd cluster health:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>sudo<span class="w"> </span>k3s<span class="w"> </span>etcd-snapshot<span class="w"> </span>ls
-</span></code></pre></div></li>
+   <div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>sudo<span class="w"> </span>k3s<span class="w"> </span>etcd-snapshot<span class="w"> </span>ls
+</code></pre></div></li>
 <li>Verify etcd member list:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>etcd-master<span class="w"> </span>--<span class="w"> </span>etcdctl<span class="w"> </span>member<span class="w"> </span>list
-</span></code></pre></div></li>
+   <div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>etcd-master<span class="w"> </span>--<span class="w"> </span>etcdctl<span class="w"> </span>member<span class="w"> </span>list
+</code></pre></div></li>
 </ol>
 </div>
 <div class="tabbed-block">
 <ol>
 <li>Check volume status:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>get<span class="w"> </span>volumes
-</span></code></pre></div></li>
+   <div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>get<span class="w"> </span>volumes
+</code></pre></div></li>
 <li>View instance manager logs:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>logs<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>longhorn-manager
-</span></code></pre></div></li>
+   <div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>logs<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>longhorn-manager
+</code></pre></div></li>
 </ol>
 </div>
 </div>
@@ -537,22 +537,22 @@ Access via: <a href="http://localhost:8000">http://localhost:8000</a></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"/><input id="__tabbed_5_2" name="__tabbed_5" type="radio"/><div class="tabbed-labels"><label for="__tabbed_5_1">etcd Backup</label><label for="__tabbed_5_2">Longhorn Backup</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="c1"># Create etcd snapshot</span>
-</span><span id="__span-19-2"><a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a>sudo<span class="w"> </span>k3s<span class="w"> </span>etcd-snapshot<span class="w"> </span>save<span class="w"> </span>--name<span class="w"> </span>etcd-backup-<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="c1"># Create etcd snapshot</span>
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a>sudo<span class="w"> </span>k3s<span class="w"> </span>etcd-snapshot<span class="w"> </span>save<span class="w"> </span>--name<span class="w"> </span>etcd-backup-<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="c1"># Create backup settings</span>
-</span><span id="__span-20-2"><a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
-</span><span id="__span-20-3"><a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="s">apiVersion: longhorn.io/v1beta1</span>
-</span><span id="__span-20-4"><a href="#__codelineno-20-4" id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="s">kind: BackupTarget</span>
-</span><span id="__span-20-5"><a href="#__codelineno-20-5" id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="s">metadata:</span>
-</span><span id="__span-20-6"><a href="#__codelineno-20-6" id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="s">  name: default</span>
-</span><span id="__span-20-7"><a href="#__codelineno-20-7" id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="s">spec:</span>
-</span><span id="__span-20-8"><a href="#__codelineno-20-8" id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="s">  backupTargetURL: s3://your-bucket-name@region/path</span>
-</span><span id="__span-20-9"><a href="#__codelineno-20-9" id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="s">  credentialSecret: aws-secret</span>
-</span><span id="__span-20-10"><a href="#__codelineno-20-10" id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="s">EOF</span>
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="c1"># Create backup settings</span>
+<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="s">apiVersion: longhorn.io/v1beta1</span>
+<a href="#__codelineno-20-4" id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="s">kind: BackupTarget</span>
+<a href="#__codelineno-20-5" id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="s">metadata:</span>
+<a href="#__codelineno-20-6" id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="s">  name: default</span>
+<a href="#__codelineno-20-7" id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="s">spec:</span>
+<a href="#__codelineno-20-8" id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="s">  backupTargetURL: s3://your-bucket-name@region/path</span>
+<a href="#__codelineno-20-9" id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="s">  credentialSecret: aws-secret</span>
+<a href="#__codelineno-20-10" id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="s">EOF</span>
+</code></pre></div>
 </div>
 </div>
 </div>
@@ -568,35 +568,35 @@ Access via: <a href="http://localhost:8000">http://localhost:8000</a></p>
 <ol>
 <li>
 <p>Network Policies
-   <div class="language-yaml highlight"><pre><span></span><code><span id="__span-21-1"><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span>
-</span><span id="__span-21-2"><a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NetworkPolicy</span>
-</span><span id="__span-21-3"><a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-21-4"><a href="#__codelineno-21-4" id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default-deny-all</span>
-</span><span id="__span-21-5"><a href="#__codelineno-21-5" id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="nt">spec</span><span class="p">:</span>
-</span><span id="__span-21-6"><a href="#__codelineno-21-6" id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="w">  </span><span class="nt">podSelector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
-</span><span id="__span-21-7"><a href="#__codelineno-21-7" id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="w">  </span><span class="nt">policyTypes</span><span class="p">:</span>
-</span><span id="__span-21-8"><a href="#__codelineno-21-8" id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ingress</span>
-</span><span id="__span-21-9"><a href="#__codelineno-21-9" id="__codelineno-21-9" name="__codelineno-21-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Egress</span>
-</span></code></pre></div></p>
+   <div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span>
+<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NetworkPolicy</span>
+<a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-21-4" id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default-deny-all</span>
+<a href="#__codelineno-21-5" id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-21-6" id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="w">  </span><span class="nt">podSelector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<a href="#__codelineno-21-7" id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="w">  </span><span class="nt">policyTypes</span><span class="p">:</span>
+<a href="#__codelineno-21-8" id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ingress</span>
+<a href="#__codelineno-21-9" id="__codelineno-21-9" name="__codelineno-21-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Egress</span>
+</code></pre></div></p>
 </li>
 <li>
 <p>Pod Security Standards
-   <div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">constraints.gatekeeper.sh/v1beta1</span>
-</span><span id="__span-22-2"><a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">K8sPSPPrivilegedContainer</span>
-</span><span id="__span-22-3"><a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-22-4"><a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no-privileged-containers</span>
-</span><span id="__span-22-5"><a href="#__codelineno-22-5" id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="nt">spec</span><span class="p">:</span>
-</span><span id="__span-22-6"><a href="#__codelineno-22-6" id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">  </span><span class="nt">enforcementAction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deny</span>
-</span></code></pre></div></p>
+   <div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">constraints.gatekeeper.sh/v1beta1</span>
+<a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">K8sPSPPrivilegedContainer</span>
+<a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no-privileged-containers</span>
+<a href="#__codelineno-22-5" id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-22-6" id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">  </span><span class="nt">enforcementAction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deny</span>
+</code></pre></div></p>
 </li>
 </ol>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">¶</a></h2>
-<ul>
-<li>[ ] Configure external load balancer</li>
-<li>[ ] Set up monitoring and logging</li>
-<li>[ ] Implement backup strategy</li>
-<li>[ ] Configure disaster recovery</li>
-<li>[ ] Set up CI/CD pipelines</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Configure external load balancer</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Set up monitoring and logging</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Implement backup strategy</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Configure disaster recovery</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Set up CI/CD pipelines</li>
 </ul>
 <div class="admonition quote">
 <p class="admonition-title">Need Help?</p>
