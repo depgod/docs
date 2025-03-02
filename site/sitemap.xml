@@ -46,6 +46,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://depgod.github.io/documentation/contents/</loc>
+         <lastmod>2025-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://depgod.github.io/documentation/cicd/</loc>
          <lastmod>2025-03-02</lastmod>
          <changefreq>daily</changefreq>

@@ -33,6 +33,7 @@ nav:
     - Welcome: index.md
   - Documentation:
     - Overview: documentation/index.md
+    - Contents: documentation/contents.md
     - Markdown Guide: markdown_basics.md
     - Versioning Guide: versioning.md
     - Self-Hosting:
