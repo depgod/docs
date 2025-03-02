@@ -49,7 +49,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/myuser
+      link: https://github.com/depgod
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/myuser
   analytics:

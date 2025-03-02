@@ -15,7 +15,7 @@
     
     
       
-        <title>Markdown Basics - DevOps Notes</title>
+        <title>Markdown Guide - DevOps Notes</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#markdown-basics" class="md-skip">
+        <a href="#markdown-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Markdown Basics
+              Markdown Guide
             
           </span>
         </div>
@@ -208,7 +208,7 @@
 
   <li class="md-tabs__item">
     <a href="./" class="md-tabs__link md-tabs__link--active">
-      Markdown Basics
+      Markdown Guide
     </a>
   </li>
 
@@ -313,12 +313,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Markdown Basics
+          Markdown Guide
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Markdown Basics
+        Markdown Guide
       </a>
       
         
@@ -337,9 +337,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#headings" class="md-nav__link">
-    Headings
+  <a href="#basic-syntax" class="md-nav__link">
+    Basic Syntax
   </a>
+  
+    <nav class="md-nav" aria-label="Basic Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-headings" class="md-nav__link">
+    1. Headings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -369,188 +382,275 @@
 
 
 
-<h1 id="markdown-basics">Markdown Basics<a class="headerlink" href="#markdown-basics" title="Permanent link">#</a></h1>
-<ol>
-<li>
-<h4 id="headings">Headings<a class="headerlink" href="#headings" title="Permanent link">#</a></h4>
-</li>
-</ol>
-<p># This is heading 1</p>
-<h1 id="this-is-heading-1">This is heading 1<a class="headerlink" href="#this-is-heading-1" title="Permanent link">#</a></h1>
-<p>## This is heading 2</p>
-<h2 id="this-is-heading-2">This is heading 2<a class="headerlink" href="#this-is-heading-2" title="Permanent link">#</a></h2>
-<p>### Heading 3</p>
-<h3 id="this-is-heading-3">This is heading 3<a class="headerlink" href="#this-is-heading-3" title="Permanent link">#</a></h3>
-<p>#### Heading 4</p>
-<h4 id="this-is-heading-4">This is heading 4<a class="headerlink" href="#this-is-heading-4" title="Permanent link">#</a></h4>
-<p>##### Heading 5</p>
-<h5 id="this-is-heading-5">This is heading 5<a class="headerlink" href="#this-is-heading-5" title="Permanent link">#</a></h5>
-<ol>
-<li>
-<h4 id="italics">Italics<a class="headerlink" href="#italics" title="Permanent link">#</a></h4>
-</li>
-</ol>
-<p>* This is in italics.*
-<em>This text is in italics.</em></p>
-<p>_This is in italics._
-<em>This text is in italics.</em></p>
-<ol>
-<li>
-<h4 id="bold">Bold<a class="headerlink" href="#bold" title="Permanent link">#</a></h4>
-</li>
-</ol>
-<p>**This text is in bold.**
-** This text is in bold.**</p>
-<p>__This text is in bold.__
-__ This text is in bold.__</p>
-<ol>
-<li>
-<h4 id="highlight-text">Highlight text<a class="headerlink" href="#highlight-text" title="Permanent link">#</a></h4>
-</li>
-</ol>
-<p>\=\=This text is highlighted.\=\=
-==This text is highlighted==</p>
-<ol>
-<li>
-<h4 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">#</a></h4>
-</li>
-<li>
-<p>Item 1</p>
-</li>
-<li>Item 2</li>
-<li>Item 3</li>
-<li>
-<p>Item 4</p>
+<h1 id="markdown-guide">Markdown Guide<a class="headerlink" href="#markdown-guide" title="Permanent link">#</a></h1>
+<p>This comprehensive guide will help you master Markdown syntax for creating well-formatted documentation. Each section includes both the Markdown syntax and its rendered output.</p>
+<h2 id="basic-syntax">Basic Syntax<a class="headerlink" href="#basic-syntax" title="Permanent link">#</a></h2>
+<h3 id="1-headings">1. Headings<a class="headerlink" href="#1-headings" title="Permanent link">#</a></h3>
+<p>Markdown provides six levels of headings, using <code>#</code> symbols:</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Heading 1</span>
+<span class="gu">## Heading 2</span>
+<span class="gu">### Heading 3</span>
+<span class="gu">#### Heading 4</span>
+<span class="gu">##### Heading 5</span>
+<span class="gu">###### Heading 6</span>
+</code></pre></div>
+<p>The rendered output looks like this:</p>
+<h1 id="heading-1">Heading 1<a class="headerlink" href="#heading-1" title="Permanent link">#</a></h1>
+<h2 id="heading-2">Heading 2<a class="headerlink" href="#heading-2" title="Permanent link">#</a></h2>
+<h3 id="heading-3">Heading 3<a class="headerlink" href="#heading-3" title="Permanent link">#</a></h3>
+<h4 id="heading-4">Heading 4<a class="headerlink" href="#heading-4" title="Permanent link">#</a></h4>
+<h5 id="heading-5">Heading 5<a class="headerlink" href="#heading-5" title="Permanent link">#</a></h5>
+<h6 id="heading-6">Heading 6<a class="headerlink" href="#heading-6" title="Permanent link">#</a></h6>
+<h3 id="2-text-formatting">2. Text Formatting<a class="headerlink" href="#2-text-formatting" title="Permanent link">#</a></h3>
+<h4 id="bold-text">Bold Text<a class="headerlink" href="#bold-text" title="Permanent link">#</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="gs">**Bold text**</span> or <span class="gs">__Bold text__</span>
+</code></pre></div>
+<strong>Bold text</strong> or <strong>Bold text</strong></p>
+<h4 id="italic-text">Italic Text<a class="headerlink" href="#italic-text" title="Permanent link">#</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="ge">*Italic text*</span> or <span class="ge">_Italic text_</span>
+</code></pre></div>
+<em>Italic text</em> or <em>Italic text</em></p>
+<h4 id="bold-and-italic">Bold and Italic<a class="headerlink" href="#bold-and-italic" title="Permanent link">#</a></h4>
+<p><div class="highlight"><pre><span></span><code>***Bold and italic*** or ___Bold and italic___
+</code></pre></div>
+<strong><em>Bold and italic</em></strong> or <strong><em>Bold and italic</em></strong></p>
+<h4 id="strikethrough">Strikethrough<a class="headerlink" href="#strikethrough" title="Permanent link">#</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="gd">~~Strikethrough text~~</span>
+</code></pre></div>
+~~Strikethrough text~~</p>
+<h3 id="3-lists">3. Lists<a class="headerlink" href="#3-lists" title="Permanent link">#</a></h3>
+<h4 id="unordered-lists">Unordered Lists<a class="headerlink" href="#unordered-lists" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">-</span><span class="w"> </span>First item
+<span class="k">-</span><span class="w"> </span>Second item
+<span class="w">    </span><span class="k">-</span><span class="w"> </span>Indented item
+<span class="w">    </span><span class="k">-</span><span class="w"> </span>Another indented item
+<span class="k">-</span><span class="w"> </span>Third item
+</code></pre></div>
 <ul>
-<li>Item 1</li>
-<li>Item 2</li>
-<li>Item 3</li>
-<li>Item 4</li>
+<li>First item</li>
+<li>Second item<ul>
+<li>Indented item</li>
+<li>Another indented item</li>
 </ul>
 </li>
-<li>
-<p>Item 2</p>
-</li>
-<li>Item 2</li>
-<li>Item 3</li>
-<li>
-<p>Item 4</p>
+<li>Third item</li>
+</ul>
+<h4 id="ordered-lists">Ordered Lists<a class="headerlink" href="#ordered-lists" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">1.</span> First item
+<span class="k">2.</span> Second item
+<span class="w">    </span><span class="k">1.</span> Indented item
+<span class="w">    </span><span class="k">2.</span> Another indented item
+<span class="k">3.</span> Third item
+</code></pre></div>
 <ol>
-<li>Item 2</li>
-<li>Item 2</li>
-<li>Item 3</li>
+<li>First item</li>
+<li>Second item<ol>
+<li>Indented item</li>
+<li>Another indented item</li>
 </ol>
 </li>
-<li>
-<h4 id="images">Images<a class="headerlink" href="#images" title="Permanent link">#</a></h4>
-</li>
+<li>Third item</li>
 </ol>
-<p>![Engelbart](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
-<img alt="Engelbart" src="https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg" /></p>
-<p>![Engelbart] -&gt; Description of the image</p>
-<p>(https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg) -&gt; Link to the image</p>
-<ol>
-<li>
-<h4 id="blockquotes">Blockquotes<a class="headerlink" href="#blockquotes" title="Permanent link">#</a></h4>
-</li>
-</ol>
-<p>&gt; Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.</p>
-<blockquote>
-<p>Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.</p>
-</blockquote>
-<ol>
-<li>
-<h4 id="inline-code">Inline code<a class="headerlink" href="#inline-code" title="Permanent link">#</a></h4>
-</li>
-</ol>
-<p>Text inside <code>backticks</code> will be formatted like code.</p>
-<ol>
-<li>
+<h3 id="4-links">4. Links<a class="headerlink" href="#4-links" title="Permanent link">#</a></h3>
+<h4 id="basic-links">Basic Links<a class="headerlink" href="#basic-links" title="Permanent link">#</a></h4>
+<p><div class="highlight"><pre><span></span><code>[<span class="nt">Visit GitHub</span>](<span class="na">https://github.com</span>)
+</code></pre></div>
+<a href="https://github.com">Visit GitHub</a></p>
+<h4 id="links-with-titles">Links with Titles<a class="headerlink" href="#links-with-titles" title="Permanent link">#</a></h4>
+<p><div class="highlight"><pre><span></span><code>[<span class="nt">GitHub</span>](<span class="na">https://github.com &quot;GitHub&#39;s Homepage&quot;</span>)
+</code></pre></div>
+<a href="https://github.com" title="GitHub's Homepage">GitHub</a></p>
+<h4 id="reference-style-links">Reference-style Links<a class="headerlink" href="#reference-style-links" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>[<span class="nt">GitHub</span>][<span class="nl">1</span>]
+[<span class="nt">DevOps</span>][<span class="nl">2</span>]
+
+[<span class="nl">1</span>]: <span class="na">https://github.com</span>
+[<span class="nl">2</span>]: <span class="na">https://en.wikipedia.org/wiki/DevOps</span>
+</code></pre></div>
+<p><a href="https://github.com">GitHub</a>
+<a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a></p>
+<h3 id="5-images">5. Images<a class="headerlink" href="#5-images" title="Permanent link">#</a></h3>
+<h4 id="basic-image">Basic Image<a class="headerlink" href="#basic-image" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>![<span class="nt">Alt text</span>](<span class="na">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png</span>)
+</code></pre></div>
+<h4 id="image-with-title">Image with Title<a class="headerlink" href="#image-with-title" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>![<span class="nt">GitHub Logo</span>](<span class="na">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png &quot;GitHub Logo&quot;</span>)
+</code></pre></div>
+<h3 id="6-code">6. Code<a class="headerlink" href="#6-code" title="Permanent link">#</a></h3>
+<h4 id="inline-code">Inline Code<a class="headerlink" href="#inline-code" title="Permanent link">#</a></h4>
+<p><div class="highlight"><pre><span></span><code>Use <span class="sb">`git status`</span> to list all changed files.
+</code></pre></div>
+Use <code>git status</code> to list all changed files.</p>
 <h4 id="code-blocks">Code Blocks<a class="headerlink" href="#code-blocks" title="Permanent link">#</a></h4>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">fancyAlert</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">$</span><span class="p">.</span><span class="nx">facebox</span><span class="p">({</span><span class="nx">div</span><span class="o">:</span><span class="s1">&#39;#foo&#39;</span><span class="p">})</span>
-<span class="w">  </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="sb">```python</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello_world</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+<span class="sb">```</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">hello_world</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="syntax-highlighting">Syntax Highlighting<a class="headerlink" href="#syntax-highlighting" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="sb">```javascript</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="sb">```</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<ol class="task-list">
-<li>
-<h4 id="tasks-list">Tasks list<a class="headerlink" href="#tasks-list" title="Permanent link">#</a></h4>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Task 1</p>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Task 2</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Task 3</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Task 4</p>
-</li>
-<li>
-<h4 id="tables">Tables<a class="headerlink" href="#tables" title="Permanent link">#</a></h4>
-</li>
-</ol>
-<p>Title 1 | Title 2
-:--- | ---:
-Some text | Some text
-This text is justified to left | This text is justified to right</p>
+<h3 id="7-tables">7. Tables<a class="headerlink" href="#7-tables" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>| Left-aligned | Center-aligned | Right-aligned |
+|:-------------|:-------------:|-------------:|
+| Content      | Content       | Content      |
+| Left         | Center        | Right        |
+</code></pre></div>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Title 1</th>
-<th style="text-align: right;">Title 2</th>
+<th style="text-align: left;">Left-aligned</th>
+<th style="text-align: center;">Center-aligned</th>
+<th style="text-align: right;">Right-aligned</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Some text</td>
-<td style="text-align: right;">Some text</td>
+<td style="text-align: left;">Content</td>
+<td style="text-align: center;">Content</td>
+<td style="text-align: right;">Content</td>
 </tr>
 <tr>
-<td style="text-align: left;">This text is justified to left</td>
-<td style="text-align: right;">This text is justified to right</td>
-</tr>
-<tr>
-<td style="text-align: left;">Text can be justified to left of right using <code>:</code>.</td>
-<td style="text-align: right;"></td>
+<td style="text-align: left;">Left</td>
+<td style="text-align: center;">Center</td>
+<td style="text-align: right;">Right</td>
 </tr>
 </tbody>
 </table>
+<h3 id="8-blockquotes">8. Blockquotes<a class="headerlink" href="#8-blockquotes" title="Permanent link">#</a></h3>
+<h4 id="simple-blockquote">Simple Blockquote<a class="headerlink" href="#simple-blockquote" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">&gt; </span><span class="ge">This is a blockquote</span>
+</code></pre></div>
+<blockquote>
+<p>This is a blockquote</p>
+</blockquote>
+<h4 id="nested-blockquotes">Nested Blockquotes<a class="headerlink" href="#nested-blockquotes" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">&gt; </span><span class="ge">First level</span>
+&gt;&gt; Second level
+&gt;&gt;&gt; Third level
+</code></pre></div>
+<blockquote>
+<p>First level</p>
+<blockquote>
+<p>Second level</p>
+<blockquote>
+<p>Third level</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="9-task-lists">9. Task Lists<a class="headerlink" href="#9-task-lists" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">- [x]</span> Completed task
+<span class="k">- [ ]</span> Incomplete task
+<span class="w">    </span><span class="k">- [x]</span> Completed subtask
+<span class="w">    </span><span class="k">- [ ]</span> Incomplete subtask
+</code></pre></div>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Completed task</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Incomplete task<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Completed subtask</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Incomplete subtask</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-horizontal-rules">10. Horizontal Rules<a class="headerlink" href="#10-horizontal-rules" title="Permanent link">#</a></h3>
+<p>Any of these will create a horizontal rule:
+<div class="highlight"><pre><span></span><code>---
+***
+___
+</code></pre></div></p>
+<hr />
+<h3 id="11-escaping-characters">11. Escaping Characters<a class="headerlink" href="#11-escaping-characters" title="Permanent link">#</a></h3>
+<p>Use backslash to escape special characters:
+<div class="highlight"><pre><span></span><code>\* Not italic \*
+\` Not code \`
+\[ Not a link \]
+</code></pre></div></p>
+<p>* Not italic *
+` Not code `
+[ Not a link ]</p>
+<h3 id="12-extended-syntax-with-material-for-mkdocs">12. Extended Syntax (with Material for MkDocs)<a class="headerlink" href="#12-extended-syntax-with-material-for-mkdocs" title="Permanent link">#</a></h3>
+<h4 id="highlighting-text">Highlighting Text<a class="headerlink" href="#highlighting-text" title="Permanent link">#</a></h4>
+<p><div class="highlight"><pre><span></span><code>==Highlighted text==
+</code></pre></div>
+==Highlighted text==</p>
+<h4 id="footnotes">Footnotes<a class="headerlink" href="#footnotes" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>Here&#39;s a sentence with a footnote[^1].
+
+[<span class="nl">^1</span>]: <span class="na">This is the footnote.</span>
+</code></pre></div>
+<p>Here's a sentence with a footnote<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<h4 id="definition-lists">Definition Lists<a class="headerlink" href="#definition-lists" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>term
+: definition
+</code></pre></div>
+<p>term
+: definition</p>
+<h4 id="emoji">Emoji<a class="headerlink" href="#emoji" title="Permanent link">#</a></h4>
+<p><div class="highlight"><pre><span></span><code>:smile: :heart: :thumbsup:
+</code></pre></div>
+<img alt="😄" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f604.png" title=":smile:" /> <img alt="❤️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2764.png" title=":heart:" /> <img alt="👍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f44d.png" title=":thumbsup:" /></p>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">#</a></h2>
+<ol>
+<li><strong>Consistency</strong>: Use consistent formatting throughout your document</li>
+<li><strong>Spacing</strong>: Add blank lines before and after headings</li>
+<li><strong>Headers</strong>: Use proper header hierarchy (don't skip levels)</li>
+<li><strong>Lists</strong>: Keep them simple and nested no more than three levels</li>
+<li><strong>Code Blocks</strong>: Always specify the language for syntax highlighting</li>
+<li><strong>Links</strong>: Use descriptive text rather than "click here"</li>
+<li><strong>Images</strong>: Always include alt text for accessibility</li>
+</ol>
+<h2 id="common-pitfalls-to-avoid">Common Pitfalls to Avoid<a class="headerlink" href="#common-pitfalls-to-avoid" title="Permanent link">#</a></h2>
+<ol>
+<li>Forgetting to add two spaces for line breaks</li>
+<li>Incorrect nesting of lists</li>
+<li>Missing blank lines before and after lists and code blocks</li>
+<li>Improper escaping of special characters</li>
+<li>Inconsistent heading hierarchy</li>
+</ol>
+<h2 id="tools-and-resources">Tools and Resources<a class="headerlink" href="#tools-and-resources" title="Permanent link">#</a></h2>
 <ol>
 <li>
-<h4 id="strikethrough">Strikethrough<a class="headerlink" href="#strikethrough" title="Permanent link">#</a></h4>
+<p><strong>Markdown Editors</strong>:</p>
+<ul>
+<li>Visual Studio Code with Markdown extensions</li>
+<li>Typora</li>
+<li>StackEdit (web-based)</li>
+</ul>
 </li>
-</ol>
-<p>Any word wrapped with two tildes (like \~\~this\~\~) will appear crossed out.
-Any word wrapped with two tildes (like ~~this~~) will appear crossed out.</p>
-<ol>
 <li>
-<h4 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h4>
+<p><strong>Online Validators</strong>:</p>
+<ul>
+<li><a href="https://dlaa.me/markdownlint/">MarkdownLint</a></li>
+<li><a href="https://dillinger.io/">Dillinger</a></li>
+</ul>
 </li>
-</ol>
-<p>This is an [example link] (https://www.google.com)</p>
-<ol>
 <li>
-<h4 id="refrencestyle-links">Refrencestyle links:<a class="headerlink" href="#refrencestyle-links" title="Permanent link">#</a></h4>
+<p><strong>Cheat Sheets</strong>:</p>
+<ul>
+<li><a href="https://guides.github.com/features/mastering-markdown/">GitHub Markdown Guide</a></li>
+<li><a href="https://www.markdownguide.org/">Markdown Guide</a></li>
+</ul>
 </li>
 </ol>
-<p>I am learning [markdown][1] . I am also learning [programming][2]. I think I love [informations technology][3].</p>
-<p>I am learning [markdown][1] . I am also learning [programming][2]. I think I love [informations technology][3].</p>
+<div class="footnote">
+<hr />
 <ol>
-<li>
-<h4 id="text-colors-using-html-tags">Text colors using HTML tags<a class="headerlink" href="#text-colors-using-html-tags" title="Permanent link">#</a></h4>
+<li id="fn:1">
+<p>This is the footnote.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
-<p>\<font color='red'>Text\</font>
-<font color='red'>Text</font></p>
-<ol>
-<li>
-<h4 id="center-text-with-html-tag">Center text with HTML tag<a class="headerlink" href="#center-text-with-html-tag" title="Permanent link">#</a></h4>
-</li>
-</ol>
-<p>\<center> This text is in center \</center>
-<center>This text is in center</center></p>
+</div>
 
   <hr>
 <div class="md-source-file">
@@ -616,7 +716,7 @@ Any word wrapped with two tildes (like ~~this~~) will appear crossed out.</p>
       
       
     
-    <a href="https://github.com/myuser" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+    <a href="https://github.com/depgod" target="_blank" rel="noopener" title="github.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
     </a>
   
