@@ -40,6 +40,7 @@ nav:
     - Kubernetes:
       - Multipass Local Cluster: multipass-k8s-cluster.md
       - HA K3s Cluster: k3s-ha-cluster.md
+      - ArgoCD Setup: argocd-setup.md
     - CI/CD:
       - Overview: documentation/cicd/index.md
     - Networking:

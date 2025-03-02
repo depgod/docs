@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://depgod.github.io/argocd-setup/</loc>
+         <lastmod>2025-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://depgod.github.io/contact/</loc>
          <lastmod>2025-03-02</lastmod>
          <changefreq>daily</changefreq>
