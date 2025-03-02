@@ -38,7 +38,7 @@ nav:
     - Self-Hosting:
       - Overview: documentation/selfhosting/index.md
     - Kubernetes:
-      - kube-cluster-multipass.md
+      - multipass-k8s-cluster.md
     - CI/CD:
       - Overview: documentation/cicd/index.md
     - Networking:
