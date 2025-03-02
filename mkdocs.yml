@@ -82,7 +82,8 @@ plugins:
       separator: '[\s\-\.]+'
       min_search_length: 2
   - git-revision-date-localized
-  - mermaid2
+  - mermaid2:
+      version: 10.6.1
 
 extra:
   social:

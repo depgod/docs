@@ -6,28 +6,39 @@
 ## Professional Focus
 
 ```mermaid
-mindmap
-  root((DevOps))
-    Containers
-      Kubernetes
-      Docker
-      Container Security
-    Infrastructure
-      High Availability
-      Distributed Storage
-      Load Balancing
-    Automation
-      CI/CD Pipelines
-      IaC
-      GitOps
-    Security
-      SSO Integration
-      Certificate Management
-      Access Control
-    Monitoring
-      Prometheus
-      Grafana
-      UptimeKuma
+graph TD
+    A[DevOps] --> B[Containers]
+    A --> C[Infrastructure]
+    A --> D[Automation]
+    A --> E[Security]
+    A --> F[Monitoring]
+    
+    B --> B1[Kubernetes]
+    B --> B2[Docker]
+    B --> B3[Container Security]
+    
+    C --> C1[High Availability]
+    C --> C2[Distributed Storage]
+    C --> C3[Load Balancing]
+    
+    D --> D1[CI/CD Pipelines]
+    D --> D2[IaC]
+    D --> D3[GitOps]
+    
+    E --> E1[SSO Integration]
+    E --> E2[Certificate Management]
+    E --> E3[Access Control]
+    
+    F --> F1[Prometheus]
+    F --> F2[Grafana]
+    F --> F3[UptimeKuma]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333
+    style C fill:#bbf,stroke:#333
+    style D fill:#bbf,stroke:#333
+    style E fill:#bbf,stroke:#333
+    style F fill:#bbf,stroke:#333
 ```
 
 ## Core Competencies
