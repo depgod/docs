@@ -6,7 +6,6 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   language: en
-  custom_dir: overrides
   palette:
     scheme: slate
     primary: custom
