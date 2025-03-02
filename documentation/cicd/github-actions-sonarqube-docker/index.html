@@ -1018,6 +1018,10 @@
 <td><code>HARBOR_PROJECT</code></td>
 <td>Project name in Harbor</td>
 </tr>
+<tr>
+<td><code>IMAGE_NAME</code></td>
+<td>Name of the Docker image</td>
+</tr>
 </tbody>
 </table>
 <h3 id="2-create-the-github-actions-workflow-file">2. Create the GitHub Actions Workflow File<a class="headerlink" href="#2-create-the-github-actions-workflow-file" title="Permanent link">&para;</a></h3>
@@ -1032,7 +1036,6 @@
 <span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span>
 
 <span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">IMAGE_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-application</span>
 <span class="w">  </span><span class="nt">IMAGE_TAG</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ github.sha }}</span>
 
 <span class="nt">jobs</span><span class="p">:</span>
@@ -1098,7 +1101,7 @@
 <span class="w">        </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta</span>
 <span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker/metadata-action@v5</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">images</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ env.IMAGE_NAME }}</span>
+<span class="w">          </span><span class="nt">images</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ secrets.IMAGE_NAME }}</span>
 <span class="w">          </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">            </span><span class="no">type=raw,value=latest,enable=${{ github.ref == &#39;refs/heads/main&#39; }}</span>
 <span class="w">            </span><span class="no">type=sha,format=short</span>
@@ -1113,8 +1116,8 @@
 <span class="w">          </span><span class="nt">push</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">          </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ steps.meta.outputs.tags }}</span>
 <span class="w">          </span><span class="nt">labels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ steps.meta.outputs.labels }}</span>
-<span class="w">          </span><span class="nt">cache-from</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type=registry,ref=${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ env.IMAGE_NAME }}:buildcache</span>
-<span class="w">          </span><span class="nt">cache-to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type=registry,ref=${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ env.IMAGE_NAME }}:buildcache,mode=max</span>
+<span class="w">          </span><span class="nt">cache-from</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type=registry,ref=${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ secrets.IMAGE_NAME }}:buildcache</span>
+<span class="w">          </span><span class="nt">cache-to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type=registry,ref=${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ secrets.IMAGE_NAME }}:buildcache,mode=max</span>
 <span class="w">          </span><span class="nt">platforms</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64,linux/arm64</span>
 <span class="w">          </span><span class="nt">build-args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">            </span><span class="no">BUILD_DATE=$(date -u +&#39;%Y-%m-%dT%H:%M:%SZ&#39;)</span>
@@ -1124,7 +1127,7 @@
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Trivy vulnerability scanner</span>
 <span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aquasecurity/trivy-action@master</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">image-ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ env.IMAGE_NAME }}:${{ github.sha }}</span>
+<span class="w">          </span><span class="nt">image-ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ secrets.IMAGE_NAME }}:${{ github.sha }}</span>
 <span class="w">          </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;sarif&#39;</span>
 <span class="w">          </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;trivy-results.sarif&#39;</span>
 <span class="w">          </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;CRITICAL,HIGH&#39;</span>

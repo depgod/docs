@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#prerequisites" class="md-skip">
+        <a href="#ansible-automation-at-scale" class="md-skip">
           Skip to content
         </a>
       
@@ -448,6 +448,8 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Ansible Guide
@@ -463,6 +465,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -493,40 +497,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-package-list" class="md-nav__link">
-    Update package list
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-python-3-and-pip" class="md-nav__link">
-    Install Python 3 and pip
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-ansible-using-pip" class="md-nav__link">
-    Install Ansible using pip
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-installation" class="md-nav__link">
-    Verify installation
-  </a>
-  
-    <nav class="md-nav" aria-label="Verify installation">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#installing-ansible-galaxy" class="md-nav__link">
     Installing Ansible Galaxy
@@ -534,7 +504,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#basic-configuration" class="md-nav__link">
     Basic Configuration
   </a>
@@ -560,8 +535,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#common-tasks-and-playbooks" class="md-nav__link">
     Common Tasks and Playbooks
   </a>
@@ -587,8 +562,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#github-actions-integration" class="md-nav__link">
     GitHub Actions Integration
   </a>
@@ -607,8 +582,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#environment-variables-management" class="md-nav__link">
     Environment Variables Management
   </a>
@@ -627,8 +602,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     Troubleshooting
   </a>
@@ -654,23 +629,18 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#best-practices" class="md-nav__link">
     Best Practices
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     Conclusion
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -940,48 +910,7 @@
 
 
 
-<p>%%{init: {'theme': 'dark', 'themeVariables': { 'fontSize': '16px' }}}%%
-graph TD
-    classDef default fill:#2A303C,stroke:#94A3B8,stroke-width:2px;
-    classDef main fill:#4F46E5,stroke:#818CF8,stroke-width:4px;
-    classDef section fill:#1E293B,stroke:#94A3B8,stroke-width:3px;</p>
-<div class="highlight"><pre><span></span><code>A[Ansible Automation]:::main
-
-B[Installation &amp; Setup]:::section
-C[Content Management]:::section
-D[Use Cases]:::section
-E[Integrations]:::section
-
-A --&gt; B
-A --&gt; C
-A --&gt; D
-A --&gt; E
-
-%% Installation Section
-B --&gt; B1[System Requirements]
-B --&gt; B2[Installation Steps]
-B --&gt; B3[Configuration]
-
-%% Content Management Section
-C --&gt; C1[Roles]
-C --&gt; C2[Collections]
-C --&gt; C3[Best Practices]
-
-%% Use Cases Section
-D --&gt; D1[Server Setup]
-D --&gt; D2[Package Management]
-D --&gt; D3[Docker Deploy]
-D --&gt; D4[Security Config]
-
-%% Integrations Section
-E --&gt; E1[GitHub Actions]
-E --&gt; E2[CI/CD Pipeline]
-E --&gt; E3[Harbor Registry]
-
-linkStyle default stroke:#94A3B8,stroke-width:2px;
-</code></pre></div>
-<p>```
-</p>
+<h1 id="ansible-automation-at-scale">Ansible: Automation at Scale<a class="headerlink" href="#ansible-automation-at-scale" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Guide Information</p>
 <p><strong>Difficulty</strong>: Intermediate<br />
@@ -989,34 +918,30 @@ linkStyle default stroke:#94A3B8,stroke-width:2px;
 <strong>Last Updated</strong>: March 2025<br />
 <strong>Ansible Version</strong>: 9.2.0<br />
 <strong>Ansible Galaxy Version</strong>: 4.5.0<br />
-<strong>Python Version</strong>: 3.12
-</p>
+<strong>Python Version</strong>: 3.12</p>
 </div>
-<p>This comprehensive guide covers Ansible installation, configuration, and practical use cases for DevOps automation. You'll learn how to use Ansible for server preparation, package management, and integrating with GitHub Actions for automated deployments.
-</p>
+<p>This comprehensive guide covers Ansible installation, configuration, and practical use cases for DevOps automation. You'll learn how to use Ansible for server preparation, package management, and integrating with GitHub Actions for automated deployments.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Before starting, ensure you have:
 - Python 3.12 or newer installed
 - Access to target servers (SSH access)
 - Sudo privileges on both control and target machines
 - Basic understanding of YAML syntax
-- GitHub account (for GitHub Actions integration)
-</p>
+- GitHub account (for GitHub Actions integration)</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="installing-ansible">Installing Ansible<a class="headerlink" href="#installing-ansible" title="Permanent link">&para;</a></h3>
-<p>```bash</p>
-<h1 id="update-package-list">Update package list<a class="headerlink" href="#update-package-list" title="Permanent link">&para;</a></h1>
-<p>sudo apt update
-</p>
-<h1 id="install-python-3-and-pip">Install Python 3 and pip<a class="headerlink" href="#install-python-3-and-pip" title="Permanent link">&para;</a></h1>
-<p>sudo apt install -y python3 python3-pip
-</p>
-<h1 id="install-ansible-using-pip">Install Ansible using pip<a class="headerlink" href="#install-ansible-using-pip" title="Permanent link">&para;</a></h1>
-<p>python3 -m pip install --user ansible==9.2.0
-</p>
-<h1 id="verify-installation">Verify installation<a class="headerlink" href="#verify-installation" title="Permanent link">&para;</a></h1>
-<p>ansible --version
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Update package list</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+
+<span class="c1"># Install Python 3 and pip</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>python3<span class="w"> </span>python3-pip
+
+<span class="c1"># Install Ansible using pip</span>
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="nv">ansible</span><span class="o">==</span><span class="m">9</span>.2.0
+
+<span class="c1"># Verify installation</span>
+ansible<span class="w"> </span>--version
+</code></pre></div>
 <h3 id="installing-ansible-galaxy">Installing Ansible Galaxy<a class="headerlink" href="#installing-ansible-galaxy" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Install Ansible Galaxy</span>
 python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>ansible-galaxy
@@ -1153,10 +1078,6 @@ ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/ansible<span
 <span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">main</span><span class="w"> </span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span>
 
-<span class="nt">env</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">HARBOR_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">harbor.example.com</span>
-<span class="w">  </span><span class="nt">HARBOR_PROJECT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myproject</span>
-
 <span class="nt">jobs</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">build-and-deploy</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
@@ -1170,7 +1091,7 @@ ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/ansible<span
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Login to Harbor</span>
 <span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker/login-action@v3</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">registry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ env.HARBOR_URL }}</span>
+<span class="w">          </span><span class="nt">registry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.HARBOR_URL }}</span>
 <span class="w">          </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.HARBOR_USERNAME }}</span>
 <span class="w">          </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.HARBOR_PASSWORD }}</span>
 
@@ -1178,7 +1099,7 @@ ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/ansible<span
 <span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker/build-push-action@v5</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">push</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">          </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ env.HARBOR_URL }}/${{ env.HARBOR_PROJECT }}/myapp:${{ github.sha }}</span>
+<span class="w">          </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/myapp:${{ github.sha }}</span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Ansible</span>
 <span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
