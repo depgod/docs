@@ -29,33 +29,20 @@ theme:
     - search.suggest
 
 nav:
-  - Home: 
-    - Welcome: index.md
   - Documentation:
-    - Overview: documentation/index.md
     - Contents: documentation/contents.md
-    - Markdown Guide: markdown_basics.md
-    - Versioning Guide: versioning.md
-    - Self-Hosting:
-      - Overview: documentation/selfhosting/index.md
-    - Kubernetes:
-      - Multipass Local Cluster: multipass-k8s-cluster.md
-      - HA K3s Cluster: k3s-ha-cluster.md
-      - ArgoCD Setup: argocd-setup.md
     - CI/CD:
       - Overview: documentation/cicd/index.md
       - GitHub Actions with SonarQube & Harbor: documentation/cicd/github-actions-sonarqube-docker.md
-    - Networking:
-      - Overview: documentation/networking/index.md
     - Infrastructure:
       - Overview: documentation/infrastructure/index.md
       - Ansible Guide: documentation/infrastructure/ansible-guide.md
+    - Networking:
+      - Overview: documentation/networking/index.md
     - Miscellaneous:
       - Overview: documentation/miscellaneous/index.md
-  - About:
-    - About Me: about.md
-  - Contact:
-    - Get in Touch: contact.md
+  - About: about.md
+  - Contact: contact.md
 
 markdown_extensions:
   - admonition
