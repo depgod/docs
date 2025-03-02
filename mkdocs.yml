@@ -24,7 +24,7 @@ theme:
 nav:
   - Home: 
       - Welcome: index.md
-  - Docs:
+  - Documentation:
       - Linux:
           - Overview: linux/index.md
       - Kubernetes:
