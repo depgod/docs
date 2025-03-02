@@ -20,6 +20,9 @@ theme:
     - content.tooltips
     - navigation.tabs
     - navigation.tabs.sticky
+    - search.highlight
+    - search.share
+    - search.suggest
   font:
     text: Roboto
     code: Roboto Mono
@@ -49,7 +52,10 @@ markdown_extensions:
   - pymdownx.emoji
 
 plugins:
-  - search
+  - search:
+      lang: en
+      separator: '[\s\-\.]+'
+      min_search_length: 2
   - git-revision-date-localized
   - mermaid2
 

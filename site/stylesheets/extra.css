@@ -1,12 +1,5 @@
 /* Base styles for header and tabs */
-.md-header {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    position: relative;
-    z-index: 2;
-}
-
+.md-header,
 .md-tabs {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
@@ -72,6 +65,19 @@
 [data-md-color-scheme="slate"] {
     --md-default-bg-color: #1a1b1c;
     --md-default-fg-color: #ffffff;
+}
+
+/* Ensure search dialog appears above other elements */
+.md-search__form {
+    z-index: 100;
+}
+
+.md-search__output {
+    position: absolute;
+    width: 100%;
+    background-color: var(--md-default-bg-color);
+    border-radius: 0 0 .2rem .2rem;
+    box-shadow: 0 .4rem .8rem rgba(0,0,0,.1);
 }
 
 /* Custom scrollbar */
