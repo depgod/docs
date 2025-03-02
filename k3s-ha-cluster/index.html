@@ -973,27 +973,44 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <div class="admonition abstract">
 <p class="admonition-title">System Requirements</p>
-<p>=== "Master Node"
-    - 2 CPU cores
-    - 4GB RAM
-    - 40GB disk space
-    - Ubuntu 22.04 LTS
-    - Static IP address</p>
-<p>=== "Worker Nodes"
-    - 2 CPU cores
-    - 8GB RAM
-    - 100GB disk space
-    - Ubuntu 22.04 LTS
-    - Static IP addresses</p>
-<p>=== "Network Requirements"
-    - All nodes must have:
-        - Unrestricted connectivity between nodes
-        - Internet access for package installation
-        - Firewall ports open:
-            - TCP/6443 (K3s API)
-            - TCP/2379-2380 (etcd)
-            - UDP/8472 (VXLAN)
-            - TCP/10250 (kubelet)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Master Node</label><label for="__tabbed_1_2">Worker Nodes</label><label for="__tabbed_1_3">Network Requirements</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>2 CPU cores</li>
+<li>4GB RAM</li>
+<li>40GB disk space</li>
+<li>Ubuntu 22.04 LTS</li>
+<li>Static IP address</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>2 CPU cores</li>
+<li>8GB RAM</li>
+<li>100GB disk space</li>
+<li>Ubuntu 22.04 LTS</li>
+<li>Static IP addresses</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>All nodes must have:<ul>
+<li>Unrestricted connectivity between nodes</li>
+<li>Internet access for package installation</li>
+<li>Firewall ports open:<ul>
+<li>TCP/6443 (K3s API)</li>
+<li>TCP/2379-2380 (etcd)</li>
+<li>UDP/8472 (VXLAN)</li>
+<li>TCP/10250 (kubelet)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <h2 id="server-preparation">Server Preparation</h2>
 <div class="admonition warning">
@@ -1099,15 +1116,22 @@ sudo<span class="w"> </span><span class="nv">INSTALL_K3S_VERSION</span><span cla
 <span class="w">    </span><span class="nv">K3S_TOKEN</span><span class="o">=</span><span class="s2">&quot;NODE_TOKEN&quot;</span><span class="w"> </span>bash<span class="w"> </span>k3s-install.sh<span class="w"> </span>agent
 </code></pre></div>
 <h3 id="verify-cluster-status">Verify Cluster Status</h3>
-<p>=== "Check Nodes"
-    <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>-o<span class="w"> </span>wide
-</code></pre></div></p>
-<p>=== "Check Pods"
-    <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A
-</code></pre></div></p>
-<p>=== "Check etcd Health"
-    <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>etcd-master<span class="w"> </span>--<span class="w"> </span>etcdctl<span class="w"> </span>endpoint<span class="w"> </span>health
-</code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Check Nodes</label><label for="__tabbed_2_2">Check Pods</label><label for="__tabbed_2_3">Check etcd Health</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>-o<span class="w"> </span>wide
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>etcd-master<span class="w"> </span>--<span class="w"> </span>etcdctl<span class="w"> </span>endpoint<span class="w"> </span>health
+</code></pre></div>
+</div>
+</div>
+</div>
 <h2 id="longhorn-installation">Longhorn Installation</h2>
 <h3 id="prerequisites-check">Prerequisites Check</h3>
 <p>Run this on all nodes to verify Longhorn requirements:</p>
@@ -1132,51 +1156,74 @@ helm<span class="w"> </span>install<span class="w"> </span>longhorn<span class="
 <span class="w">    </span>--set<span class="w"> </span>defaultSettings.guaranteedReplicaManagerCPU<span class="o">=</span><span class="m">5</span>
 </code></pre></div>
 <h3 id="verify-longhorn-installation">Verify Longhorn Installation</h3>
-<p>=== "Check Pods"
-    <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>get<span class="w"> </span>pods
-</code></pre></div></p>
-<p>=== "Check StorageClass"
-    <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>sc
-</code></pre></div></p>
-<p>=== "Access Dashboard"
-    <div class="highlight"><pre><span></span><code><span class="c1"># Port forward Longhorn UI</span>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Check Pods</label><label for="__tabbed_3_2">Check StorageClass</label><label for="__tabbed_3_3">Access Dashboard</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>get<span class="w"> </span>pods
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>sc
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Port forward Longhorn UI</span>
 kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>port-forward<span class="w"> </span>svc/longhorn-frontend<span class="w"> </span><span class="m">8000</span>:80
 </code></pre></div>
-    Access via: <a href="http://localhost:8000">http://localhost:8000</a></p>
+Access via: <a href="http://localhost:8000">http://localhost:8000</a></p>
+</div>
+</div>
+</div>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="common-issues">Common Issues</h3>
 <div class="admonition bug">
 <p class="admonition-title">Known Problems and Solutions</p>
-<p>=== "Node Not Ready"
-    1. Check K3s service status:
-       <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>k3s
-</code></pre></div>
-    2. View K3s logs:
-       <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>k3s
-</code></pre></div></p>
-<p>=== "etcd Issues"
-    1. Check etcd cluster health:
-       <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>k3s<span class="w"> </span>etcd-snapshot<span class="w"> </span>ls
-</code></pre></div>
-    2. Verify etcd member list:
-       <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>etcd-master<span class="w"> </span>--<span class="w"> </span>etcdctl<span class="w"> </span>member<span class="w"> </span>list
-</code></pre></div></p>
-<p>=== "Longhorn Volume Issues"
-    1. Check volume status:
-       <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>get<span class="w"> </span>volumes
-</code></pre></div>
-    2. View instance manager logs:
-       <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>logs<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>longhorn-manager
-</code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Node Not Ready</label><label for="__tabbed_4_2">etcd Issues</label><label for="__tabbed_4_3">Longhorn Volume Issues</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>Check K3s service status:
+   <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>k3s
+</code></pre></div></li>
+<li>View K3s logs:
+   <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>k3s
+</code></pre></div></li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Check etcd cluster health:
+   <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>k3s<span class="w"> </span>etcd-snapshot<span class="w"> </span>ls
+</code></pre></div></li>
+<li>Verify etcd member list:
+   <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>etcd-master<span class="w"> </span>--<span class="w"> </span>etcdctl<span class="w"> </span>member<span class="w"> </span>list
+</code></pre></div></li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Check volume status:
+   <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>get<span class="w"> </span>volumes
+</code></pre></div></li>
+<li>View instance manager logs:
+   <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>logs<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>longhorn-manager
+</code></pre></div></li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 <h2 id="maintenance">Maintenance</h2>
 <h3 id="backup-procedures">Backup Procedures</h3>
-<p>=== "etcd Backup"
-    <div class="highlight"><pre><span></span><code><span class="c1"># Create etcd snapshot</span>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">etcd Backup</label><label for="__tabbed_5_2">Longhorn Backup</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Create etcd snapshot</span>
 sudo<span class="w"> </span>k3s<span class="w"> </span>etcd-snapshot<span class="w"> </span>save<span class="w"> </span>--name<span class="w"> </span>etcd-backup-<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>
-</code></pre></div></p>
-<p>=== "Longhorn Backup"
-    <div class="highlight"><pre><span></span><code><span class="c1"># Create backup settings</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Create backup settings</span>
 kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <span class="s">apiVersion: longhorn.io/v1beta1</span>
 <span class="s">kind: BackupTarget</span>
@@ -1186,7 +1233,10 @@ kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span cl
 <span class="s">  backupTargetURL: s3://your-bucket-name@region/path</span>
 <span class="s">  credentialSecret: aws-secret</span>
 <span class="s">EOF</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="monitoring-setup">Monitoring Setup</h3>
 <div class="admonition tip">
 <p class="admonition-title">Monitoring Stack</p>
