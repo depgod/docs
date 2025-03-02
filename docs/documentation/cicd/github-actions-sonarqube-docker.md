@@ -331,7 +331,8 @@ CMD ["node", "dist/main.js"]
 ## Security Best Practices
 
 ```mermaid
-flowchart TD
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '16px', 'fontFamily': 'arial' }, 'securityLevel': 'loose', 'zoom': 1.5 }}%%
+graph TD
     A[Security Best Practices] --> B[Secrets Management]
     A --> C[Container Security]
     A --> D[Code Security]
@@ -362,12 +363,12 @@ flowchart TD
     F --> F3[Vulnerability Scanning]
     F --> F4[Harbor Security]
     
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#bbf,stroke:#333,stroke-width:2px
-    style D fill:#bbf,stroke:#333,stroke-width:2px
-    style E fill:#bbf,stroke:#333,stroke-width:2px
-    style F fill:#bbf,stroke:#333,stroke-width:2px
+    style A fill:#f9f,stroke:#333,stroke-width:3px,text-align:center,width:200px,height:60px
+    style B fill:#bbf,stroke:#333,stroke-width:2px,width:180px
+    style C fill:#bbf,stroke:#333,stroke-width:2px,width:180px
+    style D fill:#bbf,stroke:#333,stroke-width:2px,width:180px
+    style E fill:#bbf,stroke:#333,stroke-width:2px,width:180px
+    style F fill:#bbf,stroke:#333,stroke-width:2px,width:180px
 ```
 
 ## Troubleshooting Guide

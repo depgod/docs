@@ -10,6 +10,7 @@
 ## Professional Focus
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '16px', 'fontFamily': 'arial' }, 'securityLevel': 'loose', 'zoom': 1.5 }}%%
 graph TD
     A[DevOps] --> B[Containers]
     A --> C[Infrastructure]
@@ -37,12 +38,12 @@ graph TD
     F --> F2[Grafana]
     F --> F3[UptimeKuma]
 
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333
-    style C fill:#bbf,stroke:#333
-    style D fill:#bbf,stroke:#333
-    style E fill:#bbf,stroke:#333
-    style F fill:#bbf,stroke:#333
+    style A fill:#f9f,stroke:#333,stroke-width:3px,text-align:center,width:200px,height:60px
+    style B fill:#bbf,stroke:#333,stroke-width:2px,width:180px
+    style C fill:#bbf,stroke:#333,stroke-width:2px,width:180px
+    style D fill:#bbf,stroke:#333,stroke-width:2px,width:180px
+    style E fill:#bbf,stroke:#333,stroke-width:2px,width:180px
+    style F fill:#bbf,stroke:#333,stroke-width:2px,width:180px
 ```
 
 ## Core Competencies

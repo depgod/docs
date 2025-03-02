@@ -790,7 +790,8 @@
 </span><span id="__span-2-50"><a href="#__codelineno-2-50" id="__codelineno-2-50" name="__codelineno-2-50"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"node"</span><span class="p">,</span><span class="w"> </span><span class="s2">"dist/main.js"</span><span class="p">]</span>
 </span></code></pre></div>
 <h2 id="security-best-practices">Security Best Practices<a class="headerlink" href="#security-best-practices" title="Permanent link">¶</a></h2>
-<pre class="mermaid"><code>flowchart TD
+<pre class="mermaid"><code>%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '16px', 'fontFamily': 'arial' }, 'securityLevel': 'loose', 'zoom': 1.5 }}%%
+graph TD
     A[Security Best Practices] --&gt; B[Secrets Management]
     A --&gt; C[Container Security]
     A --&gt; D[Code Security]
@@ -821,12 +822,12 @@
     F --&gt; F3[Vulnerability Scanning]
     F --&gt; F4[Harbor Security]
 
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#bbf,stroke:#333,stroke-width:2px
-    style D fill:#bbf,stroke:#333,stroke-width:2px
-    style E fill:#bbf,stroke:#333,stroke-width:2px
-    style F fill:#bbf,stroke:#333,stroke-width:2px</code></pre>
+    style A fill:#f9f,stroke:#333,stroke-width:3px,text-align:center,width:200px,height:60px
+    style B fill:#bbf,stroke:#333,stroke-width:2px,width:180px
+    style C fill:#bbf,stroke:#333,stroke-width:2px,width:180px
+    style D fill:#bbf,stroke:#333,stroke-width:2px,width:180px
+    style E fill:#bbf,stroke:#333,stroke-width:2px,width:180px
+    style F fill:#bbf,stroke:#333,stroke-width:2px,width:180px</code></pre>
 <h2 id="troubleshooting-guide">Troubleshooting Guide<a class="headerlink" href="#troubleshooting-guide" title="Permanent link">¶</a></h2>
 <pre class="mermaid"><code>flowchart TD
     A[Issue Detected] --&gt; B{Error Type}
