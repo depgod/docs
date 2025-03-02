@@ -8,7 +8,7 @@
 <link href="https://depgod.github.io/k3s-ha-cluster/" rel="canonical"/>
 <link href="../assets/logo.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.2.7" name="generator"/>
-<title>HA K3s Cluster - DevOps Notes</title>
+<title>High Availability K3s Cluster Setup Guide - DevOps Notes</title>
 <link href="../assets/stylesheets/main.9d5733d3.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <meta content="#000000" name="theme-color"/>
@@ -49,7 +49,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              HA K3s Cluster
+              High Availability K3s Cluster Setup Guide
             
           </span>
 </div>
@@ -104,24 +104,19 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="..">
-        Home
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../documentation/">
+<a class="md-tabs__link" href="../documentation/contents/">
         Documentation
       </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../about/">
-        About
-      </a>
+      About
+    </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../contact/">
-        Contact
-      </a>
+      Contact
+    </a>
 </li>
 </ul>
 </div>
@@ -153,28 +148,12 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="..">Home</a>
-</div>
-<nav aria-label="Home" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_1">
-<span class="md-nav__icon md-icon"></span>
-          Home
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../documentation/">Documentation</a>
-<label for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
+<label class="md-nav__link" for="__nav_1">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
 <nav aria-label="Documentation" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
+<label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           Documentation
         </label>
@@ -184,213 +163,16 @@
         Contents
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../markdown_basics/">
-        Markdown Guide
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../versioning/">
-        Versioning Guide
-      </a>
-</li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2_5" id="__nav_2_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../documentation/selfhosting/">Self-Hosting</a>
-</div>
-<nav aria-label="Self-Hosting" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_5">
-<span class="md-nav__icon md-icon"></span>
-          Self-Hosting
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" id="__nav_2_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_6">
-          Kubernetes
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Kubernetes" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_6">
-<span class="md-nav__icon md-icon"></span>
-          Kubernetes
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../multipass-k8s-cluster/">
-        Multipass Local Cluster
-      </a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          HA K3s Cluster
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-        HA K3s Cluster
-      </a>
-<nav aria-label="On this page" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#overview">
-    Overview
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#architecture-overview">
-    Architecture Overview
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prerequisites">
-    Prerequisites
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#server-preparation">
-    Server Preparation
-  </a>
-<nav aria-label="Server Preparation" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#system-updates">
-    System Updates
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#configure-log-rotation">
-    Configure Log Rotation
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#system-configuration">
-    System Configuration
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#k3s-installation">
-    K3s Installation
-  </a>
-<nav aria-label="K3s Installation" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#master-node-setup">
-    Master Node Setup
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#worker-nodes-setup">
-    Worker Nodes Setup
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#verify-cluster-status">
-    Verify Cluster Status
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#longhorn-installation">
-    Longhorn Installation
-  </a>
-<nav aria-label="Longhorn Installation" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prerequisites-check">
-    Prerequisites Check
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#install-longhorn">
-    Install Longhorn
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#verify-longhorn-installation">
-    Verify Longhorn Installation
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#troubleshooting">
-    Troubleshooting
-  </a>
-<nav aria-label="Troubleshooting" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#common-issues">
-    Common Issues
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#maintenance">
-    Maintenance
-  </a>
-<nav aria-label="Maintenance" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#backup-procedures">
-    Backup Procedures
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#monitoring-setup">
-    Monitoring Setup
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#security-recommendations">
-    Security Recommendations
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#next-steps">
-    Next Steps
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../argocd-setup/">
-        ArgoCD Setup
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2_7" id="__nav_2_7" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_1_2" id="__nav_1_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../documentation/cicd/">CI/CD</a>
-<label for="__nav_2_7">
+<label for="__nav_1_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="CI/CD" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_7">
+<label class="md-nav__title" for="__nav_1_2">
 <span class="md-nav__icon md-icon"></span>
           CI/CD
         </label>
@@ -404,29 +186,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2_8" id="__nav_2_8" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../documentation/networking/">Networking</a>
-</div>
-<nav aria-label="Networking" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_8">
-<span class="md-nav__icon md-icon"></span>
-          Networking
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2_9" id="__nav_2_9" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_1_3" id="__nav_1_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../documentation/infrastructure/">Infrastructure</a>
-<label for="__nav_2_9">
+<label for="__nav_1_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Infrastructure" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_9">
+<label class="md-nav__title" for="__nav_1_3">
 <span class="md-nav__icon md-icon"></span>
           Infrastructure
         </label>
@@ -440,12 +208,26 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2_10" id="__nav_2_10" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_1_4" id="__nav_1_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../documentation/networking/">Networking</a>
+</div>
+<nav aria-label="Networking" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_4">
+<span class="md-nav__icon md-icon"></span>
+          Networking
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_1_5" id="__nav_1_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../documentation/miscellaneous/">Miscellaneous</a>
 </div>
 <nav aria-label="Miscellaneous" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_10">
+<label class="md-nav__title" for="__nav_1_5">
 <span class="md-nav__icon md-icon"></span>
           Miscellaneous
         </label>
@@ -456,45 +238,15 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3">
-          About
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="About" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-          About
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../about/">
-        About Me
+        About
       </a>
 </li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4">
-          Contact
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Contact" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
-          Contact
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../contact/">
-        Get in Touch
+        Contact
       </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -723,7 +475,7 @@
 </span><span id="__span-9-12"><a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">    </span>--set<span class="w"> </span>defaultSettings.guaranteedReplicaManagerCPU<span class="o">=</span><span class="m">5</span>
 </span></code></pre></div>
 <h3 id="verify-longhorn-installation">Verify Longhorn Installation<a class="headerlink" href="#verify-longhorn-installation" title="Permanent link">¶</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Check Pods</label><label for="__tabbed_3_2">Check StorageClass</label><label for="__tabbed_3_3">Access Dashboard</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"/><div class="tabbed-labels"><label for="__tabbed_3_1">Check Pods</label><label for="__tabbed_3_2">Check StorageClass</label><label for="__tabbed_3_3">Access Dashboard</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>longhorn-system<span class="w"> </span>get<span class="w"> </span>pods
@@ -740,12 +492,12 @@
 Access via: <a href="http://localhost:8000">http://localhost:8000</a></p>
 </div>
 </div>
-</input></input></input></div>
+</input></input></div>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">¶</a></h2>
 <h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">¶</a></h3>
 <div class="admonition bug">
 <p class="admonition-title">Known Problems and Solutions</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Node Not Ready</label><label for="__tabbed_4_2">etcd Issues</label><label for="__tabbed_4_3">Longhorn Volume Issues</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"/><input id="__tabbed_4_2" name="__tabbed_4" type="radio"/><input id="__tabbed_4_3" name="__tabbed_4" type="radio"/><div class="tabbed-labels"><label for="__tabbed_4_1">Node Not Ready</label><label for="__tabbed_4_2">etcd Issues</label><label for="__tabbed_4_3">Longhorn Volume Issues</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
@@ -778,11 +530,11 @@ Access via: <a href="http://localhost:8000">http://localhost:8000</a></p>
 </ol>
 </div>
 </div>
-</input></input></input></div>
+</div>
 </div>
 <h2 id="maintenance">Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">¶</a></h2>
 <h3 id="backup-procedures">Backup Procedures<a class="headerlink" href="#backup-procedures" title="Permanent link">¶</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">etcd Backup</label><label for="__tabbed_5_2">Longhorn Backup</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"/><input id="__tabbed_5_2" name="__tabbed_5" type="radio"/><div class="tabbed-labels"><label for="__tabbed_5_1">etcd Backup</label><label for="__tabbed_5_2">Longhorn Backup</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="c1"># Create etcd snapshot</span>
@@ -803,7 +555,7 @@ Access via: <a href="http://localhost:8000">http://localhost:8000</a></p>
 </span></code></pre></div>
 </div>
 </div>
-</input></input></div>
+</div>
 <h3 id="monitoring-setup">Monitoring Setup<a class="headerlink" href="#monitoring-setup" title="Permanent link">¶</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Monitoring Stack</p>
@@ -870,34 +622,6 @@ Access via: <a href="http://localhost:8000">http://localhost:8000</a></p>
           </a>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Multipass Local Cluster" class="md-footer__link md-footer__link--prev" href="../multipass-k8s-cluster/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Previous
-              </span>
-              Multipass Local Cluster
-            </div>
-</div>
-</a>
-<a aria-label="Next: ArgoCD Setup" class="md-footer__link md-footer__link--next" href="../argocd-setup/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              ArgoCD Setup
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
