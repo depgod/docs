@@ -8,8 +8,8 @@ theme:
   language: en
   palette:
     scheme: slate
-    primary: custom
-    accent: custom
+    primary: indigo
+    accent: pink
   features:
     - navigation.instant
     - navigation.sections
@@ -23,9 +23,6 @@ theme:
     - search.highlight
     - search.share
     - search.suggest
-  font:
-    text: Roboto
-    code: Roboto Mono
 
 nav:
   - Home: 
