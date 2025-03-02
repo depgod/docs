@@ -23,6 +23,7 @@ theme:
 nav:
   - Home: index.md
   - Versioning: versioning.md
+  - Markdown Basics: Markdown Basics.md
   - About:
       - Contributing: contributing.md
       - License: license.md
