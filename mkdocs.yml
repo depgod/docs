@@ -25,8 +25,8 @@ extra_css:
   - stylesheets/extra.css
 
 nav:
-  - Documentation: documentation/contents.md
-  - Guides:
+  - Documentation:
+    - Overview: documentation/contents.md
     - Markdown Guide: markdown_basics.md
     - Versioning Guide: versioning.md
     - CI/CD:
@@ -36,6 +36,7 @@ nav:
       - Overview: documentation/infrastructure/index.md
       - Ansible Guide: documentation/infrastructure/ansible-guide.md
     - Kubernetes:
+      - Overview: documentation/index.md
       - Multipass Local Cluster: multipass-k8s-cluster.md
       - HA K3s Cluster: k3s-ha-cluster.md
       - ArgoCD Setup: argocd-setup.md
