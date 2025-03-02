@@ -1,20 +1,11 @@
 # Local Kubernetes Cluster with Multipass
 
 ## Overview
-{==
 
-**Difficulty**: Intermediate  
-**Time Required**: ~30 minutes  
-**Last Updated**: March 2024
-
-==}
-
-!!! abstract "Prerequisites"
-    - Ubuntu 24.04 LTS (host OS)
-    - At least 16GB RAM
-    - 50GB free disk space
-    - Virtualization support enabled in BIOS
-    - Administrative (sudo) access
+!!! info "Guide Information"
+    **Difficulty**: Intermediate  
+    **Time Required**: ~30 minutes  
+    **Last Updated**: March 2024
 
 ## Table of Contents
 
