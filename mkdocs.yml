@@ -95,5 +95,6 @@ extra:
   analytics:
     provider: google
     property: UA-XXXXXXXXX-X
-  css:
-    - stylesheets/extra.css
+
+extra_css:
+  - stylesheets/extra.css

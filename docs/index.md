@@ -1,5 +1,5 @@
 <div class="glitch-wrapper">
-  <div class="glitch" data-text="DevOps Journey">DevOps Journey</div>
+   <div class="glitch" data-glitch="DevOps + Linux">DevOps + Linux</div>
 </div>
 
 # Welcome to My DevOps Journey
