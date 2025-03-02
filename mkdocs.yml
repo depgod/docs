@@ -22,27 +22,9 @@ theme:
     - navigation.tabs.sticky
 
 nav:
-  - Home: 
-      - Welcome: index.md
-  - Documentation:
-      - Linux:
-          - Overview: linux/index.md
-      - Kubernetes:
-          - Overview: kubernetes/index.md
-      - Networking:
-          - Overview: networking/index.md
-      - DevOps:
-          - Overview: devops/index.md
-          - Versioning: versioning.md
-      - Self Hosting:
-          - Overview: selfhosting/index.md
-      - Misc:
-          - Overview: misc/index.md
-          - Markdown Basics: markdown_basics.md
-  - About:
-      - Contributing: about/contributing.md
-      - License: about/license.md
-  - Contact: contact.md
+  - index.md
+  - versioning.md
+  - markdown_basics.md
 
 markdown_extensions:
   - toc:
