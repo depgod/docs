@@ -307,6 +307,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../contents/" class="md-nav__link">
+        Contents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../markdown_basics/" class="md-nav__link">
         Markdown Guide
       </a>
@@ -342,18 +356,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4">
+        <label class="md-nav__link" for="__nav_1_5">
           CI/CD
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="CI/CD" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
+        <label class="md-nav__title" for="__nav_1_5">
           <span class="md-nav__icon md-icon"></span>
           CI/CD
         </label>
@@ -577,18 +591,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_5">
+        <label class="md-nav__link" for="__nav_1_6">
           Infrastructure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Infrastructure" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_5">
+        <label class="md-nav__title" for="__nav_1_6">
           <span class="md-nav__icon md-icon"></span>
           Infrastructure
         </label>
@@ -640,18 +654,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_7" type="checkbox" id="__nav_1_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_6">
+        <label class="md-nav__link" for="__nav_1_7">
           Kubernetes
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Kubernetes" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_6">
+        <label class="md-nav__title" for="__nav_1_7">
           <span class="md-nav__icon md-icon"></span>
           Kubernetes
         </label>
@@ -731,18 +745,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_7" type="checkbox" id="__nav_1_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_8" type="checkbox" id="__nav_1_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_7">
+        <label class="md-nav__link" for="__nav_1_8">
           Self-Hosting
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Self-Hosting" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_7">
+        <label class="md-nav__title" for="__nav_1_8">
           <span class="md-nav__icon md-icon"></span>
           Self-Hosting
         </label>
@@ -879,8 +893,8 @@
 
 
 
-<h1 id="github-actions-sonarqube-scanning-docker-image-deployment-to-harbor">GitHub Actions: SonarQube Scanning &amp; Docker Image Deployment to Harbor<a class="headerlink" href="#github-actions-sonarqube-scanning-docker-image-deployment-to-harbor" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h1 id="github-actions-sonarqube-scanning-docker-image-deployment-to-harbor">GitHub Actions: SonarQube Scanning &amp; Docker Image Deployment to Harbor</h1>
+<h2 id="overview">Overview</h2>
 <div class="admonition info">
 <p class="admonition-title">Guide Information</p>
 <p><strong>Difficulty</strong>: Intermediate<br />
@@ -897,7 +911,7 @@
 <li>Builds a Docker image from your codebase</li>
 <li>Pushes the image to a private Harbor registry</li>
 </ol>
-<h2 id="workflow-architecture">Workflow Architecture<a class="headerlink" href="#workflow-architecture" title="Permanent link">&para;</a></h2>
+<h2 id="workflow-architecture">Workflow Architecture</h2>
 <pre class="mermaid"><code>graph TD
     A[Git Push] --&gt;|Trigger| B[GitHub Actions]
     B --&gt; C{Run Jobs}
@@ -924,7 +938,7 @@
     style E fill:#dfd,stroke:#333,stroke-width:2px
     style F fill:#fdd,stroke:#333,stroke-width:2px
     style G fill:#dfd,stroke:#333,stroke-width:2px</code></pre>
-<h2 id="cicd-process-flow">CI/CD Process Flow<a class="headerlink" href="#cicd-process-flow" title="Permanent link">&para;</a></h2>
+<h2 id="cicd-process-flow">CI/CD Process Flow</h2>
 <pre class="mermaid"><code>sequenceDiagram
     participant Dev as Developer
     participant GH as GitHub
@@ -949,7 +963,7 @@
         GA--&gt;&gt;GH: Mark Check as Failed
         GH--&gt;&gt;Dev: Notify Failure
     end</code></pre>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites</h2>
 <p>Before you begin, ensure you have:</p>
 <ul>
 <li>A GitHub account with a private repository containing your application code</li>
@@ -958,7 +972,7 @@
 <li>A Dockerfile in your repository that defines your application image</li>
 <li>Basic understanding of YAML and GitHub Actions concepts</li>
 </ul>
-<h2 id="repository-structure">Repository Structure<a class="headerlink" href="#repository-structure" title="Permanent link">&para;</a></h2>
+<h2 id="repository-structure">Repository Structure</h2>
 <pre class="mermaid"><code>graph TD
     A[Repository Root] --&gt; B[.github]
     B --&gt; C[workflows]
@@ -978,8 +992,8 @@
     style D fill:#bbf,stroke:#333,stroke-width:2px
     style G fill:#bfb,stroke:#333,stroke-width:2px
     style H fill:#bfb,stroke:#333,stroke-width:2px</code></pre>
-<h2 id="step-by-step-implementation">Step-by-Step Implementation<a class="headerlink" href="#step-by-step-implementation" title="Permanent link">&para;</a></h2>
-<h3 id="1-create-github-secrets">1. Create GitHub Secrets<a class="headerlink" href="#1-create-github-secrets" title="Permanent link">&para;</a></h3>
+<h2 id="step-by-step-implementation">Step-by-Step Implementation</h2>
+<h3 id="1-create-github-secrets">1. Create GitHub Secrets</h3>
 <p>First, you'll need to add the following secrets to your GitHub repository:</p>
 <ol>
 <li>Navigate to your GitHub repository</li>
@@ -1024,7 +1038,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="2-create-the-github-actions-workflow-file">2. Create the GitHub Actions Workflow File<a class="headerlink" href="#2-create-the-github-actions-workflow-file" title="Permanent link">&para;</a></h3>
+<h3 id="2-create-the-github-actions-workflow-file">2. Create the GitHub Actions Workflow File</h3>
 <p>Create a new file at <code>.github/workflows/build-scan-deploy.yml</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build, Scan and Deploy</span>
 
@@ -1139,7 +1153,7 @@
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">sarif_file</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;trivy-results.sarif&#39;</span>
 </code></pre></div>
-<h3 id="3-configure-sonarqube-properties">3. Configure SonarQube Properties<a class="headerlink" href="#3-configure-sonarqube-properties" title="Permanent link">&para;</a></h3>
+<h3 id="3-configure-sonarqube-properties">3. Configure SonarQube Properties</h3>
 <p>Create a <code>sonar-project.properties</code> file:</p>
 <div class="highlight"><pre><span></span><code><span class="na">sonar.projectKey</span><span class="o">=</span><span class="s">${PROJECT_KEY}</span>
 <span class="na">sonar.projectName</span><span class="o">=</span><span class="s">${PROJECT_NAME}</span>
@@ -1158,7 +1172,7 @@
 
 <span class="na">sonar.security.config.path</span><span class="o">=</span><span class="s">.sonarqube/security-config.json</span>
 </code></pre></div>
-<h3 id="4-modern-dockerfile-example">4. Modern Dockerfile Example<a class="headerlink" href="#4-modern-dockerfile-example" title="Permanent link">&para;</a></h3>
+<h3 id="4-modern-dockerfile-example">4. Modern Dockerfile Example</h3>
 <div class="highlight"><pre><span></span><code><span class="c"># Syntax version for better caching and security</span>
 <span class="c"># syntax=docker/dockerfile:1.6</span>
 
@@ -1210,7 +1224,7 @@
 <span class="c"># Start application</span>
 <span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dist/main.js&quot;</span><span class="p">]</span>
 </code></pre></div>
-<h2 id="security-best-practices">Security Best Practices<a class="headerlink" href="#security-best-practices" title="Permanent link">&para;</a></h2>
+<h2 id="security-best-practices">Security Best Practices</h2>
 <pre class="mermaid"><code>%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '16px', 'fontFamily': 'arial' }, 'securityLevel': 'loose', 'zoom': 1.5 }}%%
 graph TD
     A[Security Best Practices] --&gt; B[Secrets Management]
@@ -1249,7 +1263,7 @@ graph TD
     style D fill:#bbf,stroke:#333,stroke-width:2px,width:180px
     style E fill:#bbf,stroke:#333,stroke-width:2px,width:180px
     style F fill:#bbf,stroke:#333,stroke-width:2px,width:180px</code></pre>
-<h2 id="troubleshooting-guide">Troubleshooting Guide<a class="headerlink" href="#troubleshooting-guide" title="Permanent link">&para;</a></h2>
+<h2 id="troubleshooting-guide">Troubleshooting Guide</h2>
 <pre class="mermaid"><code>flowchart TD
     A[Issue Detected] --&gt; B{Error Type}
 
@@ -1274,28 +1288,28 @@ graph TD
     style C fill:#9f6,stroke:#333,stroke-width:2px
     style D fill:#9f6,stroke:#333,stroke-width:2px
     style E fill:#9f6,stroke:#333,stroke-width:2px</code></pre>
-<h2 id="common-issues-and-solutions">Common Issues and Solutions<a class="headerlink" href="#common-issues-and-solutions" title="Permanent link">&para;</a></h2>
-<h3 id="sonarqube-analysis-fails">SonarQube Analysis Fails<a class="headerlink" href="#sonarqube-analysis-fails" title="Permanent link">&para;</a></h3>
+<h2 id="common-issues-and-solutions">Common Issues and Solutions</h2>
+<h3 id="sonarqube-analysis-fails">SonarQube Analysis Fails</h3>
 <p><strong>Issue</strong>: SonarQube scan fails with authentication errors.
 <strong>Solution</strong>:
 - Verify SONAR_TOKEN is valid and not expired
 - Check SonarQube instance accessibility
 - Ensure correct project permissions</p>
-<h3 id="docker-build-fails">Docker Build Fails<a class="headerlink" href="#docker-build-fails" title="Permanent link">&para;</a></h3>
+<h3 id="docker-build-fails">Docker Build Fails</h3>
 <p><strong>Issue</strong>: Docker build fails with errors.
 <strong>Solution</strong>:
 - Check Dockerfile syntax
 - Verify build context
 - Check base image availability
 - Validate multi-stage build steps</p>
-<h3 id="harbor-push-fails">Harbor Push Fails<a class="headerlink" href="#harbor-push-fails" title="Permanent link">&para;</a></h3>
+<h3 id="harbor-push-fails">Harbor Push Fails</h3>
 <p><strong>Issue</strong>: Cannot push to Harbor registry.
 <strong>Solution</strong>:
 - Verify Harbor credentials
 - Check project exists and permissions
 - Validate network connectivity
 - Ensure image tag format is correct</p>
-<h2 id="monitoring-and-alerts">Monitoring and Alerts<a class="headerlink" href="#monitoring-and-alerts" title="Permanent link">&para;</a></h2>
+<h2 id="monitoring-and-alerts">Monitoring and Alerts</h2>
 <pre class="mermaid"><code>graph LR
     A[GitHub Actions] --&gt;|Status| B[GitHub Status Checks]
     A --&gt;|Logs| C[GitHub Actions Logs]
@@ -1308,7 +1322,7 @@ graph TD
     style A fill:#f9f,stroke:#333,stroke-width:2px
     style E fill:#9f9,stroke:#333,stroke-width:2px
     style G fill:#f99,stroke:#333,stroke-width:2px</code></pre>
-<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>This GitHub Actions workflow provides a modern, secure CI/CD pipeline that ensures code quality through SonarQube scanning and delivers secure, versioned Docker images to your Harbor registry. The workflow includes best practices for 2025, including:</p>
 <ul>
 <li>Multi-platform builds (amd64/arm64)</li>

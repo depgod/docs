@@ -307,6 +307,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../contents/" class="md-nav__link">
+        Contents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../markdown_basics/" class="md-nav__link">
         Markdown Guide
       </a>
@@ -340,18 +354,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4">
+        <label class="md-nav__link" for="__nav_1_5">
           CI/CD
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="CI/CD" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
+        <label class="md-nav__title" for="__nav_1_5">
           <span class="md-nav__icon md-icon"></span>
           CI/CD
         </label>
@@ -405,18 +419,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_5">
+        <label class="md-nav__link" for="__nav_1_6">
           Infrastructure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Infrastructure" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_5">
+        <label class="md-nav__title" for="__nav_1_6">
           <span class="md-nav__icon md-icon"></span>
           Infrastructure
         </label>
@@ -671,18 +685,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_7" type="checkbox" id="__nav_1_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_6">
+        <label class="md-nav__link" for="__nav_1_7">
           Kubernetes
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Kubernetes" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_6">
+        <label class="md-nav__title" for="__nav_1_7">
           <span class="md-nav__icon md-icon"></span>
           Kubernetes
         </label>
@@ -762,18 +776,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_7" type="checkbox" id="__nav_1_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_8" type="checkbox" id="__nav_1_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_7">
+        <label class="md-nav__link" for="__nav_1_8">
           Self-Hosting
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Self-Hosting" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_7">
+        <label class="md-nav__title" for="__nav_1_8">
           <span class="md-nav__icon md-icon"></span>
           Self-Hosting
         </label>
@@ -910,7 +924,7 @@
 
 
 
-<h1 id="ansible-automation-at-scale">Ansible: Automation at Scale<a class="headerlink" href="#ansible-automation-at-scale" title="Permanent link">&para;</a></h1>
+<h1 id="ansible-automation-at-scale">Ansible: Automation at Scale</h1>
 <div class="admonition info">
 <p class="admonition-title">Guide Information</p>
 <p><strong>Difficulty</strong>: Intermediate<br />
@@ -921,15 +935,15 @@
 <strong>Python Version</strong>: 3.12</p>
 </div>
 <p>This comprehensive guide covers Ansible installation, configuration, and practical use cases for DevOps automation. You'll learn how to use Ansible for server preparation, package management, and integrating with GitHub Actions for automated deployments.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites</h2>
 <p>Before starting, ensure you have:
 - Python 3.12 or newer installed
 - Access to target servers (SSH access)
 - Sudo privileges on both control and target machines
 - Basic understanding of YAML syntax
 - GitHub account (for GitHub Actions integration)</p>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<h3 id="installing-ansible">Installing Ansible<a class="headerlink" href="#installing-ansible" title="Permanent link">&para;</a></h3>
+<h2 id="installation">Installation</h2>
+<h3 id="installing-ansible">Installing Ansible</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Update package list</span>
 sudo<span class="w"> </span>apt<span class="w"> </span>update
 
@@ -942,15 +956,15 @@ python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </s
 <span class="c1"># Verify installation</span>
 ansible<span class="w"> </span>--version
 </code></pre></div>
-<h3 id="installing-ansible-galaxy">Installing Ansible Galaxy<a class="headerlink" href="#installing-ansible-galaxy" title="Permanent link">&para;</a></h3>
+<h3 id="installing-ansible-galaxy">Installing Ansible Galaxy</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Install Ansible Galaxy</span>
 python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>ansible-galaxy
 
 <span class="c1"># Verify installation</span>
 ansible-galaxy<span class="w"> </span>--version
 </code></pre></div>
-<h2 id="basic-configuration">Basic Configuration<a class="headerlink" href="#basic-configuration" title="Permanent link">&para;</a></h2>
-<h3 id="1-configure-inventory">1. Configure Inventory<a class="headerlink" href="#1-configure-inventory" title="Permanent link">&para;</a></h3>
+<h2 id="basic-configuration">Basic Configuration</h2>
+<h3 id="1-configure-inventory">1. Configure Inventory</h3>
 <p>Create an inventory file at <code>/etc/ansible/hosts</code> or in your project directory:</p>
 <div class="highlight"><pre><span></span><code><span class="k">[webservers]</span>
 <span class="na">web1 ansible_host</span><span class="o">=</span><span class="s">192.168.1.101</span>
@@ -968,15 +982,15 @@ ansible-galaxy<span class="w"> </span>--version
 <span class="na">ansible_python_interpreter</span><span class="o">=</span><span class="s">/usr/bin/python3</span>
 <span class="na">ansible_user</span><span class="o">=</span><span class="s">your_ssh_user</span>
 </code></pre></div>
-<h3 id="2-configure-ssh-keys">2. Configure SSH Keys<a class="headerlink" href="#2-configure-ssh-keys" title="Permanent link">&para;</a></h3>
+<h3 id="2-configure-ssh-keys">2. Configure SSH Keys</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Generate SSH key</span>
 ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;ansible&quot;</span>
 
 <span class="c1"># Copy key to remote servers</span>
 ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/ansible<span class="w"> </span>your_user@remote_host
 </code></pre></div>
-<h2 id="common-tasks-and-playbooks">Common Tasks and Playbooks<a class="headerlink" href="#common-tasks-and-playbooks" title="Permanent link">&para;</a></h2>
-<h3 id="server-preparation-playbook">Server Preparation Playbook<a class="headerlink" href="#server-preparation-playbook" title="Permanent link">&para;</a></h3>
+<h2 id="common-tasks-and-playbooks">Common Tasks and Playbooks</h2>
+<h3 id="server-preparation-playbook">Server Preparation Playbook</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># server_prep.yml</span>
 <span class="nn">---</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prepare servers for Kubernetes</span>
@@ -1029,7 +1043,7 @@ ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/ansible<span
 <span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/logrotate.d/custom</span>
 <span class="w">        </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0644&#39;</span>
 </code></pre></div>
-<h3 id="docker-deployment-playbook">Docker Deployment Playbook<a class="headerlink" href="#docker-deployment-playbook" title="Permanent link">&para;</a></h3>
+<h3 id="docker-deployment-playbook">Docker Deployment Playbook</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># docker_deploy.yml</span>
 <span class="nn">---</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy Docker Applications</span>
@@ -1068,8 +1082,8 @@ ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/ansible<span
 <span class="w">        </span><span class="nt">pull</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
 <span class="w">        </span><span class="nt">recreate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
 </code></pre></div>
-<h2 id="github-actions-integration">GitHub Actions Integration<a class="headerlink" href="#github-actions-integration" title="Permanent link">&para;</a></h2>
-<h3 id="workflow-example">Workflow Example<a class="headerlink" href="#workflow-example" title="Permanent link">&para;</a></h3>
+<h2 id="github-actions-integration">GitHub Actions Integration</h2>
+<h3 id="workflow-example">Workflow Example</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># .github/workflows/ansible-deploy.yml</span>
 <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and Deploy with Ansible</span>
 
@@ -1120,8 +1134,8 @@ ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/ansible<span
 <span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">          </span><span class="no">ansible-playbook -i inventory.yml docker_deploy.yml</span>
 </code></pre></div>
-<h2 id="environment-variables-management">Environment Variables Management<a class="headerlink" href="#environment-variables-management" title="Permanent link">&para;</a></h2>
-<h3 id="using-ansible-vault">Using Ansible Vault<a class="headerlink" href="#using-ansible-vault" title="Permanent link">&para;</a></h3>
+<h2 id="environment-variables-management">Environment Variables Management</h2>
+<h3 id="using-ansible-vault">Using Ansible Vault</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Create encrypted variables file</span>
 ansible-vault<span class="w"> </span>create<span class="w"> </span>vars/secrets.yml
 
@@ -1140,8 +1154,8 @@ ansible-playbook<span class="w"> </span>playbook.yml<span class="w"> </span>--as
 <span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dbuser</span>
 <span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dbpassword</span>
 </code></pre></div>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<h3 id="common-issues-and-solutions">Common Issues and Solutions<a class="headerlink" href="#common-issues-and-solutions" title="Permanent link">&para;</a></h3>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues-and-solutions">Common Issues and Solutions</h3>
 <pre class="mermaid"><code>flowchart TD
     A[Issue Detected] --&gt; B{Error Type}
     B --&gt;|Connection| C[SSH Issues]
@@ -1162,7 +1176,7 @@ ansible-playbook<span class="w"> </span>playbook.yml<span class="w"> </span>--as
 
     style A fill:#f96,stroke:#333,stroke-width:2px
     style B fill:#69f,stroke:#333,stroke-width:2px</code></pre>
-<h3 id="debugging-tips">Debugging Tips<a class="headerlink" href="#debugging-tips" title="Permanent link">&para;</a></h3>
+<h3 id="debugging-tips">Debugging Tips</h3>
 <ol>
 <li>
 <p><strong>Verbose Output</strong>
@@ -1180,7 +1194,7 @@ ansible-playbook<span class="w"> </span>playbook.yml<span class="w"> </span>--as
 </code></pre></div></p>
 </li>
 </ol>
-<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h2 id="best-practices">Best Practices</h2>
 <ol>
 <li><strong>Role Organization</strong></li>
 <li>Use roles for reusable configurations</li>
@@ -1211,7 +1225,7 @@ ansible-playbook<span class="w"> </span>playbook.yml<span class="w"> </span>--as
 <li>Regularly rotate credentials</li>
 <li>Limit sudo access to required commands</li>
 </ol>
-<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>This guide covered the essential aspects of using Ansible for automation, from basic setup to advanced integration with GitHub Actions and Harbor. For more information, refer to:</p>
 <ul>
 <li><a href="https://docs.ansible.com/">Ansible Documentation</a></li>
