@@ -51,6 +51,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://depgod.github.io/documentation/cicd/github-actions-sonarqube-docker/</loc>
+         <lastmod>2025-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://depgod.github.io/documentation/infrastructure/</loc>
          <lastmod>2025-03-02</lastmod>
          <changefreq>daily</changefreq>
