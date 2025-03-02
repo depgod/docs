@@ -22,9 +22,15 @@ theme:
     - navigation.tabs.sticky
 
 nav:
-  - index.md
-  - versioning.md
-  - markdown_basics.md
+  - Home: 
+    - Welcome: index.md
+  - Documentation:
+    - Markdown Guide: markdown_basics.md
+    - Versioning Guide: versioning.md
+  - About:
+    - About Me: about.md
+  - Contact:
+    - Get in Touch: contact.md
 
 markdown_extensions:
   - admonition
