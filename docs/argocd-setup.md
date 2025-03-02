@@ -6,8 +6,8 @@
     **Difficulty**: Intermediate  
     **Time Required**: ~45 minutes  
     **Last Updated**: March 2024  
-    **ArgoCD Version**: v2.9.3  
-    **Kubernetes Compatibility**: K3s, K8s 1.24+  
+    **ArgoCD Version**: v2.14.3  
+    **Kubernetes Compatibility**: K3s v1.32.2+k3s1, K8s 1.24+  
     **OS**: Debian 12
 
 This guide provides comprehensive instructions for setting up ArgoCD in a Kubernetes or K3s cluster, configuring Traefik ingress, and securing it with cert-manager for automatic SSL certificate renewal.
@@ -64,7 +64,7 @@ There are two methods to install ArgoCD: using manifests directly or using Helm.
 === "Using Manifests"
     ```bash
     # Apply the ArgoCD installation manifest
-    kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.9.3/manifests/install.yaml
+    kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.14.3/manifests/install.yaml
     
     # Verify pods are running
     kubectl get pods -n argocd
@@ -80,7 +80,7 @@ There are two methods to install ArgoCD: using manifests directly or using Helm.
     helm install argocd argo/argo-cd \
       --namespace argocd \
       --create-namespace \
-      --version 5.51.4 \
+      --version 6.7.0 \
       --set server.extraArgs="{--insecure}" \
       --set controller.metrics.enabled=true \
       --set server.metrics.enabled=true
@@ -225,7 +225,7 @@ Once ArgoCD is installed and the ingress is configured, you can access it via yo
 === "Login via CLI"
     ```bash
     # Install ArgoCD CLI
-    curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/download/v2.9.3/argocd-linux-amd64
+    curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/download/v2.14.3/argocd-linux-amd64
     sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
     rm argocd-linux-amd64
     
@@ -443,7 +443,7 @@ kubectl describe ingress argocd-server-ingress -n argocd
 === "Using Manifests"
     ```bash
     # Update to a new version
-    kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.9.3/manifests/install.yaml
+    kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.14.3/manifests/install.yaml
     ```
 
 === "Using Helm"
@@ -454,7 +454,7 @@ kubectl describe ingress argocd-server-ingress -n argocd
     # Upgrade ArgoCD
     helm upgrade argocd argo/argo-cd \
       --namespace argocd \
-      --version 5.51.4
+      --version 6.7.0
     ```
 
 !!! tip "Backup Before Upgrading"

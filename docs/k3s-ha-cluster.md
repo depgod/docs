@@ -6,7 +6,7 @@
     **Difficulty**: Advanced  
     **Time Required**: ~1 hour  
     **Last Updated**: March 2024  
-    **K3s Version**: v1.29.1+k3s2  
+    **K3s Version**: v1.32.2+k3s1  
     **Longhorn Version**: v1.6.0
 
 ## Architecture Overview
@@ -130,7 +130,7 @@ sudo sysctl --system
 curl -sfL https://get.k3s.io > k3s-install.sh
 
 # Install K3s server with HA etcd and VXLAN
-sudo INSTALL_K3S_VERSION="v1.29.1+k3s2" bash k3s-install.sh server \
+sudo INSTALL_K3S_VERSION="v1.33.0+k3s1" bash k3s-install.sh server \
     --cluster-init \
     --flannel-backend=vxlan \
     --disable traefik \
@@ -153,7 +153,7 @@ sudo cat /var/lib/rancher/k3s/server/node-token
 curl -sfL https://get.k3s.io > k3s-install.sh
 
 # Install K3s agent
-sudo INSTALL_K3S_VERSION="v1.29.1+k3s2" K3S_URL="https://MASTER_IP:6443" \
+sudo INSTALL_K3S_VERSION="v1.33.0+k3s1" K3S_URL="https://MASTER_IP:6443" \
     K3S_TOKEN="NODE_TOKEN" bash k3s-install.sh agent
 ```
 
