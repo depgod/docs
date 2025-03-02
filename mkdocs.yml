@@ -40,7 +40,9 @@ nav:
       - Multipass Local Cluster: multipass-k8s-cluster.md
       - HA K3s Cluster: k3s-ha-cluster.md
       - ArgoCD Setup: argocd-setup.md
-    - Self-Hosting: documentation/selfhosting/index.md
+    - Self-Hosting:
+      - Overview: documentation/selfhosting/index.md
+      - Why Self-Host?: documentation/selfhosting/why-selfhost.md
     - Linux: documentation/linux/index.md
     - Networking: documentation/networking/index.md
     - Miscellaneous: documentation/miscellaneous/index.md
