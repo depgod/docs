@@ -1,5 +1,5 @@
 site_name: DevOps Notes
-site_url: https://depgod.github.io
+site_url: https://depgod.github.io/
 repo_url: https://github.com/depgod/depgod.github.io
 edit_uri: edit/main/docs/
 
@@ -8,58 +8,56 @@ theme:
   language: en
   palette:
     primary: blue
-    accent: deep orange
+    accent: light blue
   features:
-    - navigation.tabs
-    - navigation.top
     - navigation.instant
-    - navigation.tracking
-    - navigation.indexes
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
     - toc.integrate
-    - search.suggest
-    - search.highlight
-    - content.tabs.link
+    - content.code.copy
+    - content.action.edit
+    - content.tooltips
 
 nav:
   - Home: index.md
   - Versioning: versioning.md
+  - About:
+      - Contributing: contributing.md
+      - License: license.md
+
+markdown_extensions:
+  - toc:
+      permalink: "#"
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji
 
 plugins:
   - search
-  - table-reader
-  - markdownextradata
-  - mkdocstrings
-  - autolinks
-  - awesome-pages
-  - git-revision-date-localized:
-      enable_creation_date: true
-  - redirects:
-      redirect_maps:
-        old_page.md: new_page.md
-
-markdown_extensions:
-  - admonition
-  - pymdownx.highlight
-  - pymdownx.superfences
-  - pymdownx.details
-  - pymdownx.emoji
-  - pymdownx.extra
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.tabbed:
-      alternate_style: true
-  - toc:
-      permalink: "#"
+  - git-revision-date-localized
+  - mermaid2
 
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/depgod
+      link: https://github.com/myuser
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/yourhandle
+      link: https://twitter.com/myuser
+  analytics:
+    provider: google
+    property: UA-XXXXXXXXX-X
 
 extra_css:
-  - stylesheets/extra.css
+  - styles/custom.css
 
 extra_javascript:
   - scripts/custom.js
