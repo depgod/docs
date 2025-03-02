@@ -32,9 +32,21 @@ nav:
   - Home: 
     - Welcome: index.md
   - Documentation:
-    - index: documentation/index.md
+    - Overview: documentation/index.md
     - Markdown Guide: markdown_basics.md
     - Versioning Guide: versioning.md
+    - Self-Hosting:
+      - Overview: documentation/selfhosting/index.md
+    - Linux:
+      - Overview: documentation/linux/index.md
+    - CI/CD:
+      - Overview: documentation/cicd/index.md
+    - Networking:
+      - Overview: documentation/networking/index.md
+    - Infrastructure:
+      - Overview: documentation/infrastructure/index.md
+    - Miscellaneous:
+      - Overview: documentation/miscellaneous/index.md
   - About:
     - About Me: about.md
   - Contact:
