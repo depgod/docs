@@ -27,8 +27,6 @@ nav:
   - markdown_basics.md
 
 markdown_extensions:
-  - toc:
-      permalink: "#"
   - admonition
   - codehilite:
       guess_lang: false
