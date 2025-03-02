@@ -1,56 +1,134 @@
-# Hey there! 👋
+# Welcome to My DevOps Journey
 
-I'm a DevOps enthusiast who loves tinkering with cloud infrastructure and automation. Currently working as a Site Reliability Engineer, I spend my days crafting CI/CD pipelines, managing Kubernetes clusters, and making sure systems run smoothly.
+!!! info "About Me"
+    I'm a DevOps Architect and Systems Administrator based in New Delhi, India, with a strong background in Kubernetes, CI/CD, and infrastructure management. My expertise lies in building and maintaining scalable, secure, and automated cloud-native environments.
 
-## What I Do
+## Professional Focus
 
-When I'm not debugging production issues or optimizing deployments, you'll find me:
+```mermaid
+mindmap
+  root((DevOps))
+    Containers
+      Kubernetes
+      Docker
+      Container Security
+    Infrastructure
+      High Availability
+      Distributed Storage
+      Load Balancing
+    Automation
+      CI/CD Pipelines
+      IaC
+      GitOps
+    Security
+      SSO Integration
+      Certificate Management
+      Access Control
+    Monitoring
+      Prometheus
+      Grafana
+      UptimeKuma
+```
 
-- Experimenting with new tools in my home lab
-- Contributing to open-source projects
-- Writing about my tech adventures and learnings
-- Breaking (and fixing!) things in my test environment
+## Core Competencies
 
-## Tech Stack
+=== "Infrastructure & Orchestration"
+    - ⛴️ **Kubernetes Cluster Management**
+        - High Availability setups
+        - Custom resource management
+        - Multi-environment deployments
+    - 🔄 **Container Orchestration**
+        - Docker containerization
+        - Harbor private registry
+        - Image security scanning
+    - 💾 **Storage Solutions**
+        - Distributed storage (Longhorn)
+        - HA database clusters
+        - Backup management
 
-I work with a variety of tools and technologies:
+=== "DevOps & Automation"
+    - 🔄 **CI/CD Implementation**
+        - GitHub Actions
+        - ArgoCD
+        - Automated deployments
+    - 🛠️ **Infrastructure as Code**
+        - Ansible automation
+        - Configuration management
+        - Version control
+    - 🔍 **Monitoring & Logging**
+        - Prometheus metrics
+        - Grafana dashboards
+        - Log aggregation
 
-- **Container Orchestration**: Kubernetes, Docker
-- **Infrastructure as Code**: Terraform, Ansible
-- **Cloud Platforms**: AWS, GCP
-- **CI/CD**: Jenkins, GitHub Actions
-- **Monitoring**: Prometheus, Grafana
-- **Scripting**: Python, Bash
+=== "Security & Networking"
+    - 🔒 **Security Management**
+        - SSL/TLS implementation
+        - SSO integration
+        - Access control
+    - 🌐 **Network Administration**
+        - Traefik ingress control
+        - DNS management
+        - Cloudflare integration
 
-## Current Focus
+## Current Projects
 
-These days, I'm particularly interested in:
+!!! example "HomeLab Environment"
+    A sophisticated home laboratory environment featuring:
+    
+    - K3s Kubernetes cluster (1 master, 2 workers)
+    - Self-hosted services:
+        - Documentation server
+        - Nextcloud
+        - Bitwarden
+        - Jellyfin media server
+    - Secured with:
+        - Cloudflare tunnels
+        - SSO authentication
+        - Custom domain management
 
-- GitOps practices and tools
-- Cloud-native security
-- Infrastructure automation
-- Performance optimization
+## Technical Stack
 
-## Beyond Tech
+### Primary Technologies
 
-When I'm not immersed in DevOps, I enjoy:
+| Category | Technologies |
+|----------|-------------|
+| **Container Platforms** | Kubernetes, Docker, Proxmox |
+| **CI/CD Tools** | GitHub Actions, ArgoCD, Harbor |
+| **Infrastructure** | Ansible, Terraform |
+| **Databases** | PostgreSQL, MariaDB, Redis |
+| **Monitoring** | Grafana, Prometheus, UptimeKuma |
+| **Web Servers** | Nginx, Traefik |
+| **Programming** | Python, Bash |
+| **Version Control** | Git, GitHub |
 
-- 🏃‍♂️ Trail running
-- 📚 Reading tech blogs and sci-fi
-- 🎸 Playing guitar
-- 🌱 Contributing to tech communities
+### Cloud & Hosting Experience
+
+- Digital Ocean
+- AWS
+- Hetzner
+- Traditional hosting (Plesk, cPanel)
+
+## Areas of Interest
+
+I'm particularly passionate about:
+
+- 🏗️ Building scalable infrastructure
+- 🔐 Implementing security best practices
+- 📚 Documentation and knowledge sharing
+- 🤝 Mentoring and team collaboration
+- 🔄 Process automation and optimization
 
 ## Let's Connect
 
 Feel free to reach out if you want to:
 
-- Chat about DevOps and SRE
+- Discuss DevOps practices
 - Collaborate on projects
 - Share knowledge and experiences
-- Just say hi!
+- Explore infrastructure solutions
 
-You can find my contact details in the Contact section, or check out my technical documentation under Documentation.
+You can find my detailed technical documentation under the Documentation section, or connect with me on [LinkedIn](https://www.linkedin.com/in/shashank-bioinformatics).
 
 ---
 
-Homepage: [https://darkmode.dev](https://darkmode.dev)
+🌐 [darkmode.dev](https://darkmode.dev)
