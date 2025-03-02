@@ -1,4 +1,3 @@
-
 ## 1. Git SHA (Commit Hash)
 **Format**: `image:git-sha`  
 **Example**: `myapp:a1b2c3d`
