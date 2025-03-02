@@ -12,21 +12,37 @@ theme:
     accent: pink
   features:
     - navigation.instant
-    - navigation.tabs
     - navigation.sections
     - navigation.top
     - toc.integrate
     - content.code.copy
     - content.action.edit
     - content.tooltips
+    - navigation.tabs
+    - navigation.tabs.sticky
 
 nav:
-  - Home: index.md
-  - Versioning: versioning.md
-  - Markdown Basics: Markdown Basics.md
+  - Home: 
+      - Welcome: index.md
+  - Docs:
+      - Linux:
+          - Overview: linux/index.md
+      - Kubernetes:
+          - Overview: kubernetes/index.md
+      - Networking:
+          - Overview: networking/index.md
+      - DevOps:
+          - Overview: devops/index.md
+          - Versioning: devops/versioning.md
+      - Self Hosting:
+          - Overview: selfhosting/index.md
+      - Misc:
+          - Overview: misc/index.md
+          - Markdown Basics: misc/markdown_basics.md
   - About:
-      - Contributing: contributing.md
-      - License: license.md
+      - Contributing: about/contributing.md
+      - License: about/license.md
+  - Contact: contact.md
 
 markdown_extensions:
   - toc:
@@ -63,4 +79,3 @@ extra_css:
 
 extra_javascript:
   - scripts/custom.js
-
