@@ -7,8 +7,9 @@ theme:
   name: material
   language: en
   palette:
-    primary: blue
-    accent: light blue
+    scheme: slate
+    primary: indigo
+    accent: pink
   features:
     - navigation.instant
     - navigation.tabs
