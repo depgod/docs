@@ -26,7 +26,7 @@ extra_css:
 
 nav:
   - Documentation:
-    - Overview: documentation/contents.md
+    - index.md
     - Markdown Guide: markdown_basics.md
     - Versioning Guide: versioning.md
     - CI/CD:
@@ -40,14 +40,10 @@ nav:
       - Multipass Local Cluster: multipass-k8s-cluster.md
       - HA K3s Cluster: k3s-ha-cluster.md
       - ArgoCD Setup: argocd-setup.md
-    - Self-Hosting:
-      - Overview: documentation/selfhosting/index.md
-    - Linux:
-      - Overview: documentation/linux/index.md
-    - Networking:
-      - Overview: documentation/networking/index.md
-    - Miscellaneous:
-      - Overview: documentation/miscellaneous/index.md
+    - Self-Hosting: documentation/selfhosting/index.md
+    - Linux: documentation/linux/index.md
+    - Networking: documentation/networking/index.md
+    - Miscellaneous: documentation/miscellaneous/index.md
   - About: about.md
   - Contact: contact.md
 
