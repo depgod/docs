@@ -56,55 +56,7 @@
 
 .glitch:before,
 .glitch:after {
-    display: block;
-    content: attr(data-glitch);
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.8;
-}
-
-.glitch:before {
-    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-    color: #00ffff;
-    z-index: -1;
-}
-
-.glitch:after {
-    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
-    color: #ff00ff;
-    z-index: -2;
-}
-
-@keyframes glitch-color {
-    0% {
-        transform: translate(0);
-    }
-    20% {
-        transform: translate(-3px, 3px);
-    }
-    40% {
-        transform: translate(-3px, -3px);
-    }
-    60% {
-        transform: translate(3px, 3px);
-    }
-    80% {
-        transform: translate(3px, -3px);
-    }
-    to {
-        transform: translate(0);
-    }
-}
-
-/* Make header content visible over the glitch */
-.md-header__title,
-.md-header__topic,
-.md-search,
-.md-header__source,
-.md-tabs__link {
-    color: #fff !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    display: none;
 }
 
 /* Main content area */
@@ -149,15 +101,13 @@
 
 /* Navigation item hover effects */
 .md-nav__link:hover {
-    color: #00ffff !important;
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+    color: #fff !important;
 }
 
 /* Active tab indication */
 .md-tabs__link--active,
 .md-tabs__link:hover {
     opacity: 1;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 .md-tabs__link {
