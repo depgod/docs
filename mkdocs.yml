@@ -48,6 +48,7 @@ nav:
       - Overview: documentation/networking/index.md
     - Infrastructure:
       - Overview: documentation/infrastructure/index.md
+      - Ansible Guide: documentation/infrastructure/ansible-guide.md
     - Miscellaneous:
       - Overview: documentation/miscellaneous/index.md
   - About:
