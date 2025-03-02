@@ -1,10 +1,7 @@
 # About Me
 
 !!! info "Welcome"
-    I'm a DevOps enthusiast passionate about automation, infrastructure as code, and continuous integration/deployment practices. This documentation site serves as both a personal knowledge base and a resource for others in the DevOps community.
-
-!!! info "Welcome"
-    I'm a DevOps Architect and Systems Administrator based in New Delhi, India, with a strong background in Kubernetes, CI/CD, and infrastructure management. My expertise lies in building and maintaining scalable, secure, and automated cloud-native environments.
+    I'm a DevOps Architect and Systems Administrator based in New Delhi, India, with a strong background in Kubernetes, CI/CD, and infrastructure management. My expertise lies in building and maintaining scalable, secure, and automated cloud-native environments. This documentation site serves as both a personal knowledge base and a resource for others in the DevOps community.
 
 ## Professional Focus
 
