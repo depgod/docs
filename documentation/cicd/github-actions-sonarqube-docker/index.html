@@ -790,6 +790,43 @@
 </span><span id="__span-2-50"><a href="#__codelineno-2-50" id="__codelineno-2-50" name="__codelineno-2-50"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"node"</span><span class="p">,</span><span class="w"> </span><span class="s2">"dist/main.js"</span><span class="p">]</span>
 </span></code></pre></div>
 <h2 id="security-best-practices">Security Best Practices<a class="headerlink" href="#security-best-practices" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>flowchart TD
+    A[Security Best Practices] --&gt; B[Secrets Management]
+    A --&gt; C[Container Security]
+    A --&gt; D[Code Security]
+    A --&gt; E[Access Control]
+    A --&gt; F[Image Security]
+
+    B --&gt; B1[Use GitHub Secrets]
+    B --&gt; B2[Rotate Regularly]
+    B --&gt; B3[Limit Access Scope]
+
+    C --&gt; C1[Non-root User]
+    C --&gt; C2[Multi-stage Builds]
+    C --&gt; C3[Minimal Base Images]
+    C --&gt; C4[Regular Updates]
+
+    D --&gt; D1[SonarQube Scanning]
+    D --&gt; D2[Dependency Scanning]
+    D --&gt; D3[SAST/DAST]
+    D --&gt; D4[Quality Gates]
+
+    E --&gt; E1[RBAC]
+    E --&gt; E2[Least Privilege]
+    E --&gt; E3[Token-based Auth]
+    E --&gt; E4[Regular Audits]
+
+    F --&gt; F1[Version Tagging]
+    F --&gt; F2[Image Signing]
+    F --&gt; F3[Vulnerability Scanning]
+    F --&gt; F4[Harbor Security]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bbf,stroke:#333,stroke-width:2px
+    style D fill:#bbf,stroke:#333,stroke-width:2px
+    style E fill:#bbf,stroke:#333,stroke-width:2px
+    style F fill:#bbf,stroke:#333,stroke-width:2px</code></pre>
 <h2 id="troubleshooting-guide">Troubleshooting Guide<a class="headerlink" href="#troubleshooting-guide" title="Permanent link">¶</a></h2>
 <pre class="mermaid"><code>flowchart TD
     A[Issue Detected] --&gt; B{Error Type}
