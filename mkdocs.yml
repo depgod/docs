@@ -18,28 +18,31 @@ theme:
     - navigation.top
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.indexes
-    - navigation.expand
     - toc.integrate
     - content.code.copy
-    - content.action.edit
-    - content.tooltips
-    - search.highlight
-    - search.share
-    - search.suggest
 
 extra_css:
   - stylesheets/extra.css
 
 nav:
-  - Documentation:
-    - Contents: documentation/contents.md
+  - Documentation: documentation/contents.md
+  - Guides:
+    - Markdown Guide: markdown_basics.md
+    - Versioning Guide: versioning.md
     - CI/CD:
       - Overview: documentation/cicd/index.md
       - GitHub Actions with SonarQube & Harbor: documentation/cicd/github-actions-sonarqube-docker.md
     - Infrastructure:
       - Overview: documentation/infrastructure/index.md
       - Ansible Guide: documentation/infrastructure/ansible-guide.md
+    - Kubernetes:
+      - Multipass Local Cluster: multipass-k8s-cluster.md
+      - HA K3s Cluster: k3s-ha-cluster.md
+      - ArgoCD Setup: argocd-setup.md
+    - Self-Hosting:
+      - Overview: documentation/selfhosting/index.md
+    - Linux:
+      - Overview: documentation/linux/index.md
     - Networking:
       - Overview: documentation/networking/index.md
     - Miscellaneous:
@@ -47,34 +50,17 @@ nav:
   - About: about.md
   - Contact: contact.md
 
+docs_dir: docs
+use_directory_urls: true
+strict: true
+
 markdown_extensions:
   - admonition
   - attr_list
   - def_list
-  - footnotes
-  - meta
-  - md_in_html
   - toc:
       permalink: true
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.caret
-  - pymdownx.details
-  - pymdownx.emoji:
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-      emoji_index: !!python/name:materialx.emoji.twemoji
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.magiclink:
-      repo_url_shorthand: true
-      user: squidfunk
-      repo: mkdocs-material
-  - pymdownx.mark
-  - pymdownx.smartsymbols
+  - pymdownx.highlight
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -82,25 +68,6 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.tilde
 
 plugins:
-  - search:
-      lang: en
-      separator: '[\s\-\.]+'
-      min_search_length: 2
-  - git-revision-date-localized
-  - mermaid2:
-      version: 10.6.1
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/depgod
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/myuser
-  analytics:
-    provider: google
-    property: UA-XXXXXXXXX-X
+  - search

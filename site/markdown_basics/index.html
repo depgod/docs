@@ -46,16 +46,6 @@
     <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-XXXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
-
 
     
     
@@ -134,16 +124,10 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
-          </a>
-        
         <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
         </button>
       </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -185,12 +169,26 @@
   
 
 
+  <li class="md-tabs__item">
+    <a href="../documentation/contents/" class="md-tabs__link">
+      Documentation
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
   
   
   
     <li class="md-tabs__item">
-      <a href="../documentation/contents/" class="md-tabs__link">
-        Documentation
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Guides
       </a>
     </li>
   
@@ -278,36 +276,41 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../documentation/contents/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
     
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" data-md-state="indeterminate" type="checkbox" id="__nav_1" checked>
       
       
       
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <label class="md-nav__link" for="__nav_1">
-          Documentation
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Guides
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Documentation" data-md-level="1">
-        <label class="md-nav__title" for="__nav_1">
+      <nav class="md-nav" aria-label="Guides" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          Documentation
+          Guides
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -315,10 +318,78 @@
               
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Markdown Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Markdown Guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-syntax" class="md-nav__link">
+    Basic Syntax
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-headings" class="md-nav__link">
+    1. Headings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
-      <a href="../documentation/contents/" class="md-nav__link">
-        Contents
+      <a href="../versioning/" class="md-nav__link">
+        Versioning Guide
       </a>
     </li>
   
@@ -336,37 +407,35 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" data-md-state="indeterminate" type="checkbox" id="__nav_1_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
       
       
-        
-          
-            
-          
-        
-          
-        
       
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../documentation/cicd/">CI/CD</a>
-          
-            <label for="__nav_1_2">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
+        <label class="md-nav__link" for="__nav_2_3">
+          CI/CD
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <nav class="md-nav" aria-label="CI/CD" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_2">
+        <label class="md-nav__title" for="__nav_2_3">
           <span class="md-nav__icon md-icon"></span>
           CI/CD
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/cicd/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
             
           
             
@@ -401,37 +470,35 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" data-md-state="indeterminate" type="checkbox" id="__nav_1_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
       
       
       
-        
-          
-            
-          
-        
-          
-        
       
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../documentation/infrastructure/">Infrastructure</a>
-          
-            <label for="__nav_1_3">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
+        <label class="md-nav__link" for="__nav_2_4">
+          Infrastructure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <nav class="md-nav" aria-label="Infrastructure" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_3">
+        <label class="md-nav__title" for="__nav_2_4">
           <span class="md-nav__icon md-icon"></span>
           Infrastructure
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/infrastructure/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
             
           
             
@@ -466,31 +533,63 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" data-md-state="indeterminate" type="checkbox" id="__nav_1_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
       
       
       
-        
-          
-            
-          
-        
       
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../documentation/networking/">Networking</a>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="Networking" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
+        <label class="md-nav__link" for="__nav_2_5">
+          Kubernetes
           <span class="md-nav__icon md-icon"></span>
-          Networking
+        </label>
+      
+      <nav class="md-nav" aria-label="Kubernetes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Kubernetes
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multipass-k8s-cluster/" class="md-nav__link">
+        Multipass Local Cluster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k3s-ha-cluster/" class="md-nav__link">
+        HA K3s Cluster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argocd-setup/" class="md-nav__link">
+        ArgoCD Setup
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -511,31 +610,182 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" data-md-state="indeterminate" type="checkbox" id="__nav_1_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
       
       
       
-        
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          Self-Hosting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Self-Hosting" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Self-Hosting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/selfhosting/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
           
-        
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../documentation/miscellaneous/">Miscellaneous</a>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
-        </div>
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/linux/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8">
+          Networking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Networking" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Networking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/networking/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9">
+          Miscellaneous
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <nav class="md-nav" aria-label="Miscellaneous" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_5">
+        <label class="md-nav__title" for="__nav_2_9">
           <span class="md-nav__icon md-icon"></span>
           Miscellaneous
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/miscellaneous/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -604,12 +854,12 @@
 <h2 id="basic-syntax">Basic Syntax<a class="headerlink" href="#basic-syntax" title="Permanent link">&para;</a></h2>
 <h3 id="1-headings">1. Headings<a class="headerlink" href="#1-headings" title="Permanent link">&para;</a></h3>
 <p>Markdown provides six levels of headings, using <code>#</code> symbols:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gh"># Heading 1</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gu">## Heading 2</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gu">### Heading 3</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gu">#### Heading 4</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gu">##### Heading 5</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gu">###### Heading 6</span>
+<div class="highlight"><pre><span></span><code><span class="gh"># Heading 1</span>
+<span class="gu">## Heading 2</span>
+<span class="gu">### Heading 3</span>
+<span class="gu">#### Heading 4</span>
+<span class="gu">##### Heading 5</span>
+<span class="gu">###### Heading 6</span>
 </code></pre></div>
 <p>The rendered output looks like this:</p>
 <h1 id="heading-1">Heading 1<a class="headerlink" href="#heading-1" title="Permanent link">&para;</a></h1>
@@ -620,28 +870,28 @@
 <h6 id="heading-6">Heading 6<a class="headerlink" href="#heading-6" title="Permanent link">&para;</a></h6>
 <h3 id="2-text-formatting">2. Text Formatting<a class="headerlink" href="#2-text-formatting" title="Permanent link">&para;</a></h3>
 <h4 id="bold-text">Bold Text<a class="headerlink" href="#bold-text" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gs">**Bold text**</span> or <span class="gs">__Bold text__</span>
+<p><div class="highlight"><pre><span></span><code><span class="gs">**Bold text**</span> or <span class="gs">__Bold text__</span>
 </code></pre></div>
 <strong>Bold text</strong> or <strong>Bold text</strong></p>
 <h4 id="italic-text">Italic Text<a class="headerlink" href="#italic-text" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="ge">*Italic text*</span> or <span class="ge">_Italic text_</span>
+<p><div class="highlight"><pre><span></span><code><span class="ge">*Italic text*</span> or <span class="ge">_Italic text_</span>
 </code></pre></div>
 <em>Italic text</em> or <em>Italic text</em></p>
 <h4 id="bold-and-italic">Bold and Italic<a class="headerlink" href="#bold-and-italic" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>***Bold and italic*** or ___Bold and italic___
+<p><div class="highlight"><pre><span></span><code>***Bold and italic*** or ___Bold and italic___
 </code></pre></div>
 <strong><em>Bold and italic</em></strong> or <strong><em>Bold and italic</em></strong></p>
 <h4 id="strikethrough">Strikethrough<a class="headerlink" href="#strikethrough" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gd">~~Strikethrough text~~</span>
+<p><div class="highlight"><pre><span></span><code><span class="gd">~~Strikethrough text~~</span>
 </code></pre></div>
-<del>Strikethrough text</del></p>
+~~Strikethrough text~~</p>
 <h3 id="3-lists">3. Lists<a class="headerlink" href="#3-lists" title="Permanent link">&para;</a></h3>
 <h4 id="unordered-lists">Unordered Lists<a class="headerlink" href="#unordered-lists" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">-</span><span class="w"> </span>First item
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">-</span><span class="w"> </span>Second item
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>Indented item
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>Another indented item
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">-</span><span class="w"> </span>Third item
+<div class="highlight"><pre><span></span><code><span class="k">-</span><span class="w"> </span>First item
+<span class="k">-</span><span class="w"> </span>Second item
+<span class="w">    </span><span class="k">-</span><span class="w"> </span>Indented item
+<span class="w">    </span><span class="k">-</span><span class="w"> </span>Another indented item
+<span class="k">-</span><span class="w"> </span>Third item
 </code></pre></div>
 <ul>
 <li>First item</li>
@@ -653,11 +903,11 @@
 <li>Third item</li>
 </ul>
 <h4 id="ordered-lists">Ordered Lists<a class="headerlink" href="#ordered-lists" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">1.</span> First item
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">2.</span> Second item
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="k">1.</span> Indented item
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="k">2.</span> Another indented item
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">3.</span> Third item
+<div class="highlight"><pre><span></span><code><span class="k">1.</span> First item
+<span class="k">2.</span> Second item
+<span class="w">    </span><span class="k">1.</span> Indented item
+<span class="w">    </span><span class="k">2.</span> Another indented item
+<span class="k">3.</span> Third item
 </code></pre></div>
 <ol>
 <li>First item</li>
@@ -670,59 +920,59 @@
 </ol>
 <h3 id="4-links">4. Links<a class="headerlink" href="#4-links" title="Permanent link">&para;</a></h3>
 <h4 id="basic-links">Basic Links<a class="headerlink" href="#basic-links" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[<span class="nt">Visit GitHub</span>](<span class="na">https://github.com</span>)
+<p><div class="highlight"><pre><span></span><code>[<span class="nt">Visit GitHub</span>](<span class="na">https://github.com</span>)
 </code></pre></div>
 <a href="https://github.com">Visit GitHub</a></p>
 <h4 id="links-with-titles">Links with Titles<a class="headerlink" href="#links-with-titles" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[<span class="nt">GitHub</span>](<span class="na">https://github.com &quot;GitHub&#39;s Homepage&quot;</span>)
+<p><div class="highlight"><pre><span></span><code>[<span class="nt">GitHub</span>](<span class="na">https://github.com &quot;GitHub&#39;s Homepage&quot;</span>)
 </code></pre></div>
 <a href="https://github.com" title="GitHub's Homepage">GitHub</a></p>
 <h4 id="reference-style-links">Reference-style Links<a class="headerlink" href="#reference-style-links" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>[<span class="nt">GitHub</span>][<span class="nl">1</span>]
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>[<span class="nt">DevOps</span>][<span class="nl">2</span>]
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>[<span class="nl">1</span>]: <span class="na">https://github.com</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>[<span class="nl">2</span>]: <span class="na">https://en.wikipedia.org/wiki/DevOps</span>
+<div class="highlight"><pre><span></span><code>[<span class="nt">GitHub</span>][<span class="nl">1</span>]
+[<span class="nt">DevOps</span>][<span class="nl">2</span>]
+
+[<span class="nl">1</span>]: <span class="na">https://github.com</span>
+[<span class="nl">2</span>]: <span class="na">https://en.wikipedia.org/wiki/DevOps</span>
 </code></pre></div>
 <p><a href="https://github.com">GitHub</a>
 <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a></p>
 <h3 id="5-images">5. Images<a class="headerlink" href="#5-images" title="Permanent link">&para;</a></h3>
 <h4 id="basic-image">Basic Image<a class="headerlink" href="#basic-image" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>![<span class="nt">Alt text</span>](<span class="na">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png</span>)
+<div class="highlight"><pre><span></span><code>![<span class="nt">Alt text</span>](<span class="na">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png</span>)
 </code></pre></div>
 <h4 id="image-with-title">Image with Title<a class="headerlink" href="#image-with-title" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>![<span class="nt">GitHub Logo</span>](<span class="na">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png &quot;GitHub Logo&quot;</span>)
+<div class="highlight"><pre><span></span><code>![<span class="nt">GitHub Logo</span>](<span class="na">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png &quot;GitHub Logo&quot;</span>)
 </code></pre></div>
 <h3 id="6-code">6. Code<a class="headerlink" href="#6-code" title="Permanent link">&para;</a></h3>
 <h4 id="inline-code">Inline Code<a class="headerlink" href="#inline-code" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Use <span class="sb">`git status`</span> to list all changed files.
+<p><div class="highlight"><pre><span></span><code>Use <span class="sb">`git status`</span> to list all changed files.
 </code></pre></div>
 Use <code>git status</code> to list all changed files.</p>
 <h4 id="code-blocks">Code Blocks<a class="headerlink" href="#code-blocks" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="sb">```python</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">hello_world</span><span class="p">():</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="sb">```</span>
+<div class="highlight"><pre><span></span><code><span class="sb">```python</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello_world</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+<span class="sb">```</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">hello_world</span><span class="p">():</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">hello_world</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="syntax-highlighting">Syntax Highlighting<a class="headerlink" href="#syntax-highlighting" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="sb">```javascript</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">}</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="sb">```</span>
+<div class="highlight"><pre><span></span><code><span class="sb">```javascript</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="sb">```</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
 <h3 id="7-tables">7. Tables<a class="headerlink" href="#7-tables" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>| Left-aligned | Center-aligned | Right-aligned |
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>|:-------------|:-------------:|-------------:|
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>| Content      | Content       | Content      |
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>| Left         | Center        | Right        |
+<div class="highlight"><pre><span></span><code>| Left-aligned | Center-aligned | Right-aligned |
+|:-------------|:-------------:|-------------:|
+| Content      | Content       | Content      |
+| Left         | Center        | Right        |
 </code></pre></div>
 <table>
 <thead>
@@ -747,15 +997,15 @@ Use <code>git status</code> to list all changed files.</p>
 </table>
 <h3 id="8-blockquotes">8. Blockquotes<a class="headerlink" href="#8-blockquotes" title="Permanent link">&para;</a></h3>
 <h4 id="simple-blockquote">Simple Blockquote<a class="headerlink" href="#simple-blockquote" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">&gt; </span><span class="ge">This is a blockquote</span>
+<div class="highlight"><pre><span></span><code><span class="k">&gt; </span><span class="ge">This is a blockquote</span>
 </code></pre></div>
 <blockquote>
 <p>This is a blockquote</p>
 </blockquote>
 <h4 id="nested-blockquotes">Nested Blockquotes<a class="headerlink" href="#nested-blockquotes" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">&gt; </span><span class="ge">First level</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>&gt;&gt; Second level
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>&gt;&gt;&gt; Third level
+<div class="highlight"><pre><span></span><code><span class="k">&gt; </span><span class="ge">First level</span>
+&gt;&gt; Second level
+&gt;&gt;&gt; Third level
 </code></pre></div>
 <blockquote>
 <p>First level</p>
@@ -767,58 +1017,59 @@ Use <code>git status</code> to list all changed files.</p>
 </blockquote>
 </blockquote>
 <h3 id="9-task-lists">9. Task Lists<a class="headerlink" href="#9-task-lists" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">- [x]</span> Completed task
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">- [ ]</span> Incomplete task
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="k">- [x]</span> Completed subtask
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="k">- [ ]</span> Incomplete subtask
+<div class="highlight"><pre><span></span><code><span class="k">- [x]</span> Completed task
+<span class="k">- [ ]</span> Incomplete task
+<span class="w">    </span><span class="k">- [x]</span> Completed subtask
+<span class="w">    </span><span class="k">- [ ]</span> Incomplete subtask
 </code></pre></div>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Completed task</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Incomplete task<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Completed subtask</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Incomplete subtask</li>
+<ul>
+<li>[x] Completed task</li>
+<li>[ ] Incomplete task<ul>
+<li>[x] Completed subtask</li>
+<li>[ ] Incomplete subtask</li>
 </ul>
 </li>
 </ul>
 <h3 id="10-horizontal-rules">10. Horizontal Rules<a class="headerlink" href="#10-horizontal-rules" title="Permanent link">&para;</a></h3>
 <p>Any of these will create a horizontal rule:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>---
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>***
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>___
+<div class="highlight"><pre><span></span><code>---
+***
+___
 </code></pre></div></p>
 <hr />
 <h3 id="11-escaping-characters">11. Escaping Characters<a class="headerlink" href="#11-escaping-characters" title="Permanent link">&para;</a></h3>
 <p>Use backslash to escape special characters:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>\* Not italic \*
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>\` Not code \`
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>\[ Not a link \]
+<div class="highlight"><pre><span></span><code>\* Not italic \*
+\` Not code \`
+\[ Not a link \]
 </code></pre></div></p>
 <p>* Not italic *
 ` Not code `
 [ Not a link ]</p>
 <h3 id="12-extended-syntax-with-material-for-mkdocs">12. Extended Syntax (with Material for MkDocs)<a class="headerlink" href="#12-extended-syntax-with-material-for-mkdocs" title="Permanent link">&para;</a></h3>
 <h4 id="highlighting-text">Highlighting Text<a class="headerlink" href="#highlighting-text" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>==Highlighted text==
+<p><div class="highlight"><pre><span></span><code>==Highlighted text==
 </code></pre></div>
-<mark>Highlighted text</mark></p>
+==Highlighted text==</p>
 <h4 id="footnotes">Footnotes<a class="headerlink" href="#footnotes" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Here&#39;s a sentence with a footnote[^1].
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>[<span class="nl">^1</span>]: <span class="na">This is the footnote.</span>
+<div class="highlight"><pre><span></span><code>Here&#39;s a sentence with a footnote[^1].
+
+[<span class="nl">^1</span>]: <span class="na">This is the footnote.</span>
 </code></pre></div>
-<p>Here's a sentence with a footnote<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+<p>Here's a sentence with a footnote[^1].</p>
+<p>[^1]: This is the footnote.</p>
 <h4 id="definition-lists">Definition Lists<a class="headerlink" href="#definition-lists" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>term
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>: definition
+<div class="highlight"><pre><span></span><code>term
+: definition
 </code></pre></div>
 <dl>
 <dt>term</dt>
 <dd>definition</dd>
 </dl>
 <h4 id="emoji">Emoji<a class="headerlink" href="#emoji" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>:smile: :heart: :thumbsup:
+<p><div class="highlight"><pre><span></span><code>:smile: :heart: :thumbsup:
 </code></pre></div>
-<img alt="😄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f604.svg" title=":smile:" /> <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2764.svg" title=":heart:" /> <img alt="👍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f44d.svg" title=":thumbsup:" /></p>
+:smile: :heart: :thumbsup:</p>
 <h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>Consistency</strong>: Use consistent formatting throughout your document</li>
@@ -862,25 +1113,6 @@ Use <code>git status</code> to list all changed files.</p>
 </ul>
 </li>
 </ol>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>This is the footnote.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
-
-  <hr>
-<div class="md-source-file">
-  <small>
-    
-      Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 2, 2025</span>
-      
-    
-  </small>
-</div>
 
               
             </article>
@@ -896,6 +1128,41 @@ Use <code>git status</code> to list all changed files.</p>
       
         <footer class="md-footer">
   
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../documentation/contents/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Documentation" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Documentation
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../versioning/" class="md-footer__link md-footer__link--next" aria-label="Next: Versioning Guide" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Versioning Guide
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -908,28 +1175,6 @@ Use <code>git status</code> to list all changed files.</p>
   
 </div>
       
-        <div class="md-social">
-  
-    
-    
-      
-      
-    
-    <a href="https://github.com/depgod" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-    </a>
-  
-    
-    
-      
-      
-    
-    <a href="https://twitter.com/myuser" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-    </a>
-  
-</div>
-      
     </div>
   </div>
 </footer>
@@ -938,7 +1183,7 @@ Use <code>git status</code> to list all changed files.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.expand", "toc.integrate", "content.code.copy", "content.action.edit", "content.tooltips", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.5e67fbfe.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "toc.integrate", "content.code.copy"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.5e67fbfe.min.js"}</script>
     
     
       <script src="../assets/javascripts/bundle.e87a5f81.min.js"></script>
