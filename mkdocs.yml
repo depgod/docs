@@ -37,8 +37,8 @@ nav:
     - Versioning Guide: versioning.md
     - Self-Hosting:
       - Overview: documentation/selfhosting/index.md
-    - Linux:
-      - Overview: documentation/linux/index.md
+    - Kubernetes:
+      - kube-cluster-multipass.md
     - CI/CD:
       - Overview: documentation/cicd/index.md
     - Networking:

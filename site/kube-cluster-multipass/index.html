@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://depgod.github.io/versioning/">
+        <link rel="canonical" href="https://depgod.github.io/kube-cluster-multipass/">
       
       <link rel="icon" href="../assets/logo.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.7">
     
     
       
-        <title>Versioning Guide - DevOps Notes</title>
+        <title>Kube cluster multipass - DevOps Notes</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-git-sha-commit-hash" class="md-skip">
+        <a href="#setup-multipass" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Versioning Guide
+              Kube cluster multipass
             
           </span>
         </div>
@@ -419,279 +419,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Versioning Guide
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../versioning/" class="md-nav__link">
         Versioning Guide
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-git-sha-commit-hash" class="md-nav__link">
-    1. Git SHA (Commit Hash)
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Git SHA (Commit Hash)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pros" class="md-nav__link">
-    Pros:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cons" class="md-nav__link">
-    Cons:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detailed-explanation" class="md-nav__link">
-    Detailed Explanation:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-semantic-versioning" class="md-nav__link">
-    2. Semantic Versioning
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Semantic Versioning">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pros_1" class="md-nav__link">
-    Pros:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cons_1" class="md-nav__link">
-    Cons:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detailed-explanation_1" class="md-nav__link">
-    Detailed Explanation:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-git-tag-based" class="md-nav__link">
-    3. Git Tag Based
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Git Tag Based">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pros_2" class="md-nav__link">
-    Pros:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cons_2" class="md-nav__link">
-    Cons:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detailed-explanation_2" class="md-nav__link">
-    Detailed Explanation:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-environment-based" class="md-nav__link">
-    4. Environment Based
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Environment Based">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pros_3" class="md-nav__link">
-    Pros:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cons_3" class="md-nav__link">
-    Cons:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detailed-explanation_3" class="md-nav__link">
-    Detailed Explanation:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-latest-tag" class="md-nav__link">
-    5. Latest Tag
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Latest Tag">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pros_4" class="md-nav__link">
-    Pros:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cons_4" class="md-nav__link">
-    Cons:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detailed-explanation_4" class="md-nav__link">
-    Detailed Explanation:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    Best Practices
-  </a>
-  
-    <nav class="md-nav" aria-label="Best Practices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-cicd-pipeline" class="md-nav__link">
-    For CI/CD Pipeline:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-production" class="md-nav__link">
-    For Production:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-argocd" class="md-nav__link">
-    For ArgoCD:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-strategy" class="md-nav__link">
-    Recommended Strategy
-  </a>
-  
-    <nav class="md-nav" aria-label="Recommended Strategy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#combined-strategy-explanation" class="md-nav__link">
-    Combined Strategy Explanation:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#automation-tips" class="md-nav__link">
-    Automation Tips
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-stakeholder-considerations" class="md-nav__link">
-    Key Stakeholder Considerations
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -746,14 +478,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" data-md-state="indeterminate" type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" checked>
       
       
       
@@ -778,11 +512,104 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../kube-cluster-multipass/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Kube cluster multipass
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Kube cluster multipass
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup-multipass" class="md-nav__link">
+    Setup multipass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provision-virtual-machines-using-multipass" class="md-nav__link">
+    Provision Virtual Machines Using Multipass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-preparation" class="md-nav__link">
+    Server preparation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-vm-systems-settings-for-kubernetes" class="md-nav__link">
+    Configure vm systems settings for kubernetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-kubernetes-componenets" class="md-nav__link">
+    Install kubernetes componenets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initilize-the-kubernetes-cluster-master-node-only" class="md-nav__link">
+    Initilize the kubernetes cluster (Master node only)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-a-container-network-interface-cni" class="md-nav__link">
+    Setup a container network interface (cni)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#join-all-worker-vmsnodes" class="md-nav__link">
+    Join all worker vms/nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-kubernetes-cluster" class="md-nav__link">
+    Verify kubernetes cluster
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1097,161 +924,133 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/depgod/depgod.github.io/edit/main/docs/versioning.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/depgod/depgod.github.io/edit/main/docs/kube-cluster-multipass.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-  <h1>Versioning Guide</h1>
+  <h1>Kube cluster multipass</h1>
 
-<h2 id="1-git-sha-commit-hash">1. Git SHA (Commit Hash)</h2>
-<p><strong>Format</strong>: <code>image:git-sha</code><br />
-<strong>Example</strong>: <code>myapp:a1b2c3d</code></p>
-<h3 id="pros">Pros:</h3>
-<ul>
-<li>Precise tracking to source code</li>
-<li>Immutable and unique</li>
-<li>Easy to debug and rollback</li>
-<li>Perfect for development environments</li>
-</ul>
-<h3 id="cons">Cons:</h3>
-<ul>
-<li>Not human-readable</li>
-<li>Difficult to determine version order</li>
-<li>No immediate indication of stability level</li>
-</ul>
-<h3 id="detailed-explanation">Detailed Explanation:</h3>
-<p>Git SHA versioning uses the unique hash identifier that Git generates for each commit in your repository. When you build a Docker image using this approach, you take the first few characters (usually 7-8) of the commit hash and use it as your image tag. This method creates an unbreakable link between your source code and the Docker image, making it extremely useful for debugging and traceability. For instance, if you discover an issue in production, you can immediately identify the exact code commit that produced that image. However, these hashes are not human-friendly - you can't tell at a glance which version came first or what changes it contains. This makes it less ideal for release management but perfect for development and testing environments where precise code tracking is crucial.</p>
-<h2 id="2-semantic-versioning">2. Semantic Versioning</h2>
-<p><strong>Format</strong>: <code>image:MAJOR.MINOR.PATCH</code><br />
-<strong>Example</strong>: <code>myapp:1.2.3</code></p>
-<h3 id="pros_1">Pros:</h3>
-<ul>
-<li>Clear indication of change magnitude</li>
-<li>Well understood by developers</li>
-<li>Good for stable releases</li>
-<li>Easy to automate with conventional commits</li>
-</ul>
-<h3 id="cons_1">Cons:</h3>
-<ul>
-<li>Can be subjective (what constitutes a breaking change?)</li>
-<li>Multiple tags might point to same image</li>
-</ul>
-<h3 id="detailed-explanation_1">Detailed Explanation:</h3>
-<p>Semantic Versioning follows a structured numbering system with three components: MAJOR.MINOR.PATCH. Each component has a specific meaning - MAJOR versions indicate breaking changes that might require users to modify their code, MINOR versions add new features while maintaining backward compatibility, and PATCH versions represent bug fixes. This system is particularly valuable when your Docker image contains an application or service that other systems depend on. Users can quickly understand the impact of upgrading to a new version. For example, if you're currently using version 1.2.3 and see version 1.2.4, you know it's safe to upgrade since it's just a patch. However, if you see version 2.0.0, you know to carefully review the changes as it contains breaking changes. The main challenge with SemVer is maintaining discipline in version number assignment - teams need to consistently agree on what constitutes a breaking change versus a minor feature addition.</p>
-<h2 id="3-git-tag-based">3. Git Tag Based</h2>
-<p><strong>Format</strong>: <code>image:v1.2.3</code><br />
-<strong>Example</strong>: <code>myapp:v1.2.3</code></p>
-<h3 id="pros_2">Pros:</h3>
-<ul>
-<li>Direct correlation with Git releases</li>
-<li>Good for release automation</li>
-<li>Clear release history</li>
-</ul>
-<h3 id="cons_2">Cons:</h3>
-<ul>
-<li>Requires disciplined tag management</li>
-<li>May need additional CI/CD configuration</li>
-<li>Can be confusing with multiple release branches</li>
-</ul>
-<h3 id="detailed-explanation_2">Detailed Explanation:</h3>
-<p>Git tag based versioning aligns your Docker image versions with your Git repository's release tags. This approach creates a natural workflow where creating a Git tag automatically triggers a new Docker image build with the same version. It's particularly powerful when combined with semantic versioning - for example, tagging a release as v1.2.3 in Git automatically produces a Docker image tagged 1.2.3. This method works exceptionally well with automated release processes and provides clear documentation of your release history. The challenge comes when managing multiple release branches or when hotfixes need to be applied to older versions. You need robust processes to handle these scenarios and ensure tags are created consistently across branches.</p>
-<h2 id="4-environment-based">4. Environment Based</h2>
-<p><strong>Format</strong>: <code>image:env-timestamp</code><br />
-<strong>Example</strong>: <code>myapp:prod-20250302</code></p>
-<h3 id="pros_3">Pros:</h3>
-<ul>
-<li>Clear deployment target</li>
-<li>Easy to track when image was built</li>
-<li>Good for environment-specific configurations</li>
-</ul>
-<h3 id="cons_3">Cons:</h3>
-<ul>
-<li>Less precise source tracking</li>
-<li>Potential confusion with multiple deployments per day</li>
-<li>Additional storage overhead</li>
-</ul>
-<h3 id="detailed-explanation_3">Detailed Explanation:</h3>
-<p>Environment based versioning adds context about where and when an image is intended to be used. This approach often combines an environment identifier with a timestamp or build number, such as prod-20250302 or staging-build123. This strategy is particularly useful in organizations with complex deployment pipelines involving multiple environments (development, staging, QA, production). It makes it immediately clear which images are approved for which environments and when they were built. The timestamp component helps track the age of deployments and can be crucial for compliance requirements. However, this approach can lead to image proliferation and doesn't inherently track the relationship between images across environments. You might need additional tooling to know that prod-20250302 and dev-20250301 contain the same code.</p>
-<h2 id="5-latest-tag">5. Latest Tag</h2>
-<p><strong>Format</strong>: <code>image:latest</code><br />
-<strong>Example</strong>: <code>myapp:latest</code></p>
-<h3 id="pros_4">Pros:</h3>
-<ul>
-<li>Simple to use</li>
-<li>Always points to newest version</li>
-<li>Good for development</li>
-</ul>
-<h3 id="cons_4">Cons:</h3>
-<ul>
-<li>Unreliable for production</li>
-<li>Can lead to inconsistent deployments</li>
-<li>Hard to track actual version deployed</li>
-</ul>
-<h3 id="detailed-explanation_4">Detailed Explanation:</h3>
-<p>The 'latest' tag is a special convention in Docker that typically points to the most recent version of an image. While simple and convenient, especially during development, it's considered an anti-pattern for production use. The main issue is its mutability - the 'latest' tag can point to different images at different times, making it impossible to guarantee consistency across deployments. For example, if two developers pull 'latest' at different times, they might get different versions. This can lead to the "it works on my machine" problem and make debugging extremely difficult. Latest tags are best reserved for development environments or automated testing where having the newest version is more important than version stability.</p>
-<h2 id="best-practices">Best Practices</h2>
-<h3 id="for-cicd-pipeline">For CI/CD Pipeline:</h3>
-<ol>
-<li>Always use immutable tags</li>
-<li>Include build metadata (e.g., <code>myapp:1.2.3-a1b2c3d</code>)</li>
-<li>Implement automated version bumping</li>
-<li>Use multi-stage builds to reduce image size</li>
-</ol>
-<h3 id="for-production">For Production:</h3>
-<ol>
-<li>Never use <code>:latest</code> tag</li>
-<li>Always specify exact version</li>
-<li>Implement image scanning</li>
-<li>Keep image history for rollbacks</li>
-</ol>
-<h3 id="for-argocd">For ArgoCD:</h3>
-<ol>
-<li>Use specific versions in manifests</li>
-<li>Implement automatic image updater</li>
-<li>Configure image pull policies</li>
-<li>Set up proper RBAC for image repositories</li>
-</ol>
-<h2 id="recommended-strategy">Recommended Strategy</h2>
-<p>For a robust production setup, combine multiple approaches:</p>
-<div class="highlight"><pre><span></span><code>myapp:1.2.3-a1b2c3d-20250302
-│     │     │      └─ Build timestamp
-│     │     └──────── Git SHA (short)
-│     └─────────────── Semantic version
-└───────────────────── Image name
+<hr />
+<p>These steps assume we are using Ubuntu 24.04 LTS for host os and vm images.</p>
+<h2 id="setup-multipass">Setup multipass</h2>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>multipass
 </code></pre></div>
-<p>This provides:
-- Clear version tracking
-- Easy rollbacks
-- Build traceability
-- Deployment history</p>
-<h3 id="combined-strategy-explanation">Combined Strategy Explanation:</h3>
-<p>Many organizations adopt a hybrid approach that combines multiple versioning strategies to get the best of each. A common pattern is to tag each image with both a semantic version and a Git SHA (e.g., myapp:1.2.3-a1b2c3d). This provides both human-readable version information and precise code traceability. Some teams also add build metadata like timestamps or CI build numbers. While this approach provides comprehensive information, it requires more sophisticated build and deployment automation to manage the multiple tags correctly.</p>
-<h2 id="automation-tips">Automation Tips</h2>
-<ol>
-<li>Use GitHub Actions to automatically:</li>
-<li>Generate versions based on conventional commits</li>
-<li>Tag Docker images</li>
-<li>Push to registry</li>
-<li>
-<p>Update deployment manifests</p>
-</li>
-<li>
-<p>Use ArgoCD to:</p>
-</li>
-<li>Monitor image repositories</li>
-<li>Auto-sync new versions</li>
-<li>Maintain deployment history</li>
-<li>Enable easy rollbacks</li>
-</ol>
-<h2 id="key-stakeholder-considerations">Key Stakeholder Considerations</h2>
-<p>The key to successful Docker image versioning is choosing a strategy that balances the needs of different stakeholders:
-- Developers need to quickly identify and debug issues
-- Operations teams need stable, traceable deployments
-- Release managers need clear version progression
-- Security teams need audit capabilities
-- End users need clear upgrade paths</p>
+<h2 id="provision-virtual-machines-using-multipass">Provision Virtual Machines Using Multipass</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create master and worker nodes </span>
+$<span class="w"> </span>multipass<span class="w"> </span>launch<span class="w"> </span>--name<span class="w"> </span>master<span class="w"> </span>--cpus<span class="w"> </span><span class="m">2</span><span class="w"> </span>--mem<span class="w"> </span>4G<span class="w"> </span>--disk<span class="w"> </span>20G<span class="w"> </span>
+$<span class="w"> </span>multipass<span class="w"> </span>launch<span class="w"> </span>--name<span class="w"> </span>worker1<span class="w"> </span>--cpus<span class="w"> </span><span class="m">2</span><span class="w"> </span>--mem<span class="w"> </span>4G<span class="w"> </span>--disk<span class="w"> </span>20G<span class="w"> </span>
+$<span class="w"> </span>multipass<span class="w"> </span>launch<span class="w"> </span>--name<span class="w"> </span>worker2<span class="w"> </span>--cpus<span class="w"> </span><span class="m">2</span><span class="w"> </span>--mem<span class="w"> </span>4G<span class="w"> </span>--disk<span class="w"> </span>20G<span class="w"> </span>
+
+<span class="c1"># Get shell access to nodes </span>
+$<span class="w"> </span>multipass<span class="w"> </span>shell<span class="w"> </span>master<span class="w"> </span>
+$<span class="w"> </span>multipass<span class="w"> </span>shell<span class="w"> </span>worker1<span class="w"> </span>
+$<span class="w"> </span>multipass<span class="w"> </span>shell<span class="w"> </span>worker2<span class="w"> </span>
+
+<span class="c1"># Get IP addresses of nodes </span>
+$<span class="w"> </span>multipass<span class="w"> </span>list
+</code></pre></div>
+<h2 id="server-preparation">Server preparation</h2>
+<p>Run these on all multipass vms</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Update system packages</span>
+$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+
+<span class="c1"># Install required dependencies</span>
+$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>apt-transport-https<span class="w"> </span>ca-certificates<span class="w"> </span>curl<span class="w"> </span>gnupg<span class="w"> </span>lsb-release
+
+<span class="c1"># Add Docker repository</span>
+$<span class="w"> </span>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/apt/keyrings
+$<span class="w"> </span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://download.docker.com/linux/ubuntu/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/keyrings/docker.asc<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> stable&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/docker.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+
+<span class="c1"># Install containerd</span>
+$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>containerd.io
+
+<span class="c1"># Enable and start containerd</span>
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>containerd
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>containerd
+
+<span class="c1"># Generate default config</span>
+$<span class="w"> </span>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/containerd
+$<span class="w"> </span>containerd<span class="w"> </span>config<span class="w"> </span>default<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/containerd/config.toml
+
+<span class="c1"># Modify config.toml</span>
+$<span class="w"> </span>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/SystemdCgroup = false/SystemdCgroup = true/&#39;</span><span class="w"> </span>/etc/containerd/config.toml
+
+$<span class="w"> </span>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/^disabled_plugins = \[&quot;cri&quot;\]/#disabled_plugins = \[&quot;cri&quot;\]/&#39;</span><span class="w"> </span>/etc/containerd/config.toml
+
+<span class="c1"># Restart containerd</span>
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>containerd
+</code></pre></div>
+<h2 id="configure-vm-systems-settings-for-kubernetes">Configure vm systems settings for kubernetes</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Disable swap</span>
+$<span class="w"> </span>sudo<span class="w"> </span>swapoff<span class="w"> </span>-a
+$<span class="w"> </span>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;/swap/d&#39;</span><span class="w"> </span>/etc/fstab
+
+<span class="c1"># Load kernel modules</span>
+$<span class="w"> </span>cat<span class="w"> </span><span class="s">&lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf</span>
+<span class="s">overlay</span>
+<span class="s">br_netfilter</span>
+<span class="s">EOF</span>
+
+$<span class="w"> </span>sudo<span class="w"> </span>modprobe<span class="w"> </span>overlay
+$<span class="w"> </span>sudo<span class="w"> </span>modprobe<span class="w"> </span>br_netfilter
+
+<span class="c1"># Configure sysctl params</span>
+$<span class="w"> </span>cat<span class="w"> </span><span class="s">&lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf</span>
+<span class="s">net.bridge.bridge-nf-call-iptables  = 1</span>
+<span class="s">net.bridge.bridge-nf-call-ip6tables = 1</span>
+<span class="s">net.ipv4.ip_forward                 = 1</span>
+<span class="s">EOF</span>
+
+$<span class="w"> </span>sudo<span class="w"> </span>sysctl<span class="w"> </span>--system
+</code></pre></div>
+<h2 id="install-kubernetes-componenets">Install kubernetes componenets</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add Kubernetes repository</span>
+$<span class="w"> </span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/kubernetes.list
+
+<span class="c1"># Install kubeadm, kubelet, kubectl</span>
+$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>kubelet<span class="w"> </span>kubeadm<span class="w"> </span>kubectl
+
+<span class="c1"># Prevent accidental upgrades</span>
+$<span class="w"> </span>sudo<span class="w"> </span>apt-mark<span class="w"> </span>hold<span class="w"> </span>kubelet<span class="w"> </span>kubeadm<span class="w"> </span>kubectl
+
+<span class="c1"># Enable and start kubelet</span>
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>kubelet
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>kubelet
+</code></pre></div>
+<h2 id="initilize-the-kubernetes-cluster-master-node-only">Initilize the kubernetes cluster (Master node only)</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Initialize cluster, if it runs successfully it will print a kubeadm join command which can be used to make worker nodes/vms to the cluster</span>
+$<span class="w"> </span>sudo<span class="w"> </span>kubeadm<span class="w"> </span>init<span class="w"> </span>--pod-network-cidr<span class="o">=</span><span class="m">10</span>.244.0.0/16
+
+<span class="c1"># Setup kubeconfig for non-root user</span>
+$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/.kube
+$<span class="w"> </span>sudo<span class="w"> </span>cp<span class="w"> </span>-i<span class="w"> </span>/etc/kubernetes/admin.conf<span class="w"> </span><span class="nv">$HOME</span>/.kube/config
+$<span class="w"> </span>sudo<span class="w"> </span>chown<span class="w"> </span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span>:<span class="k">$(</span>id<span class="w"> </span>-g<span class="k">)</span><span class="w"> </span><span class="nv">$HOME</span>/.kube/config
+</code></pre></div>
+<h2 id="setup-a-container-network-interface-cni">Setup a container network interface (cni)</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install Flannel CNI</span>
+$<span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+</code></pre></div>
+<h2 id="join-all-worker-vmsnodes">Join all worker vms/nodes</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Retrieve join command from master node</span>
+$<span class="w"> </span>kubeadm<span class="w"> </span>token<span class="w"> </span>create<span class="w"> </span>--print-join-command
+
+<span class="c1"># Run the outputted command on worker nodes</span>
+$<span class="w"> </span>sudo<span class="w"> </span>kubeadm<span class="w"> </span>join<span class="w"> </span>&lt;master-ip&gt;:6443<span class="w"> </span>--token<span class="w"> </span>&lt;token&gt;<span class="w"> </span>--discovery-token-ca-cert-hash<span class="w"> </span>sha256:&lt;hash&gt;
+</code></pre></div>
+<h2 id="verify-kubernetes-cluster">Verify kubernetes cluster</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check node status</span>
+$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
+
+<span class="c1"># Verify all pods are running</span>
+$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
@@ -1281,7 +1080,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../markdown_basics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Markdown Guide" rel="prev">
+        <a href="../documentation/selfhosting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1290,14 +1089,14 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Markdown Guide
+              Overview
             </div>
           </div>
         </a>
       
       
         
-        <a href="../documentation/selfhosting/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview" rel="next">
+        <a href="../documentation/cicd/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
