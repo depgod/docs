@@ -8,8 +8,8 @@ theme:
   language: en
   palette:
     scheme: slate
-    primary: indigo
-    accent: pink
+    primary: custom
+    accent: custom
   features:
     - navigation.instant
     - navigation.sections
@@ -20,6 +20,9 @@ theme:
     - content.tooltips
     - navigation.tabs
     - navigation.tabs.sticky
+  font:
+    text: Roboto
+    code: Roboto Mono
 
 nav:
   - Home: 
@@ -61,7 +64,7 @@ extra:
     property: UA-XXXXXXXXX-X
 
 extra_css:
-  - styles/custom.css
+  - stylesheets/extra.css
 
 extra_javascript:
   - scripts/custom.js
