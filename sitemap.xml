@@ -61,6 +61,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://depgod.github.io/documentation/infrastructure/ansible-guide/</loc>
+         <lastmod>2025-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://depgod.github.io/documentation/linux/</loc>
          <lastmod>2025-03-02</lastmod>
          <changefreq>daily</changefreq>
