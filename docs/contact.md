@@ -4,11 +4,13 @@
 
 I'm always interested in connecting with fellow DevOps practitioners, developers, and technology enthusiasts. Feel free to reach out through any of the following channels:
 
-### Social Media
+### Social Media & Messaging
 
 - **GitHub**: [github.com/depgod](https://github.com/depgod)
-- **Twitter**: [@myuser](https://twitter.com/myuser)
-- **LinkedIn**: [LinkedIn Profile](#)
+- **Telegram**: [@yourusername](https://t.me/yourusername)
+- **Discord**: [Join our server](https://discord.gg/yourinvite)
+- **Matrix**: [@yourusername:matrix.org](https://matrix.to/#/@yourusername:matrix.org)
+- **XMPP**: [yourusername@xmpp.org](xmpp:yourusername@xmpp.org)
 
 ### Professional Inquiries
 
@@ -18,7 +20,7 @@ For professional inquiries regarding:
 - Speaking engagements
 - Training sessions
 
-Please reach out via [email](#) or connect on LinkedIn.
+Please reach out via any of the channels above.
 
 ### Contributing
 

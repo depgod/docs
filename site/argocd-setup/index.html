@@ -307,6 +307,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../documentation/contents/" class="md-nav__link">
+        Contents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../markdown_basics/" class="md-nav__link">
         Markdown Guide
       </a>
@@ -340,18 +354,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_4">
+        <label class="md-nav__link" for="__nav_1_5">
           CI/CD
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="CI/CD" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_4">
+        <label class="md-nav__title" for="__nav_1_5">
           <span class="md-nav__icon md-icon"></span>
           CI/CD
         </label>
@@ -403,18 +417,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_5">
+        <label class="md-nav__link" for="__nav_1_6">
           Infrastructure
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Infrastructure" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_5">
+        <label class="md-nav__title" for="__nav_1_6">
           <span class="md-nav__icon md-icon"></span>
           Infrastructure
         </label>
@@ -468,18 +482,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_7" type="checkbox" id="__nav_1_7" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_6">
+        <label class="md-nav__link" for="__nav_1_7">
           Kubernetes
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Kubernetes" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_6">
+        <label class="md-nav__title" for="__nav_1_7">
           <span class="md-nav__icon md-icon"></span>
           Kubernetes
         </label>
@@ -818,18 +832,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_7" type="checkbox" id="__nav_1_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_8" type="checkbox" id="__nav_1_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_1_7">
+        <label class="md-nav__link" for="__nav_1_8">
           Self-Hosting
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Self-Hosting" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_7">
+        <label class="md-nav__title" for="__nav_1_8">
           <span class="md-nav__icon md-icon"></span>
           Self-Hosting
         </label>
@@ -966,8 +980,8 @@
 
 
 
-<h1 id="argocd-setup-guide-for-kubernetes">ArgoCD Setup Guide for Kubernetes<a class="headerlink" href="#argocd-setup-guide-for-kubernetes" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h1 id="argocd-setup-guide-for-kubernetes">ArgoCD Setup Guide for Kubernetes</h1>
+<h2 id="overview">Overview</h2>
 <div class="admonition info">
 <p class="admonition-title">Guide Information</p>
 <p><strong>Difficulty</strong>: Intermediate<br />
@@ -978,7 +992,7 @@
 <strong>OS</strong>: Debian 12</p>
 </div>
 <p>This guide provides comprehensive instructions for setting up ArgoCD in a Kubernetes or K3s cluster, configuring Traefik ingress, and securing it with cert-manager for automatic SSL certificate renewal.</p>
-<h2 id="what-is-argocd">What is ArgoCD?<a class="headerlink" href="#what-is-argocd" title="Permanent link">&para;</a></h2>
+<h2 id="what-is-argocd">What is ArgoCD?</h2>
 <p>ArgoCD is a declarative, GitOps continuous delivery tool for Kubernetes. It automates the deployment of applications to Kubernetes clusters by monitoring Git repositories and applying changes when they occur.</p>
 <pre class="mermaid"><code>graph LR
     A[Git Repository] --&gt;|Contains manifests| B[ArgoCD]
@@ -986,7 +1000,7 @@
     D[Developers] --&gt;|Push changes| A
     E[ArgoCD UI/CLI] --&gt;|Manage| B
     style B fill:#f9f,stroke:#333,stroke-width:2px</code></pre>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites</h2>
 <div class="admonition abstract">
 <p class="admonition-title">Requirements</p>
 <ul>
@@ -998,42 +1012,33 @@
 <li>Administrative access to your cluster</li>
 </ul>
 </div>
-<h2 id="installation-steps">Installation Steps<a class="headerlink" href="#installation-steps" title="Permanent link">&para;</a></h2>
-<h3 id="1-prepare-your-cluster">1. Prepare Your Cluster<a class="headerlink" href="#1-prepare-your-cluster" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">For Standard Kubernetes</label><label for="__tabbed_1_2">For K3s</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="c1"># Verify cluster access</span>
+<h2 id="installation-steps">Installation Steps</h2>
+<h3 id="1-prepare-your-cluster">1. Prepare Your Cluster</h3>
+<p>=== "For Standard Kubernetes"
+    <div class="highlight"><pre><span></span><code><span class="c1"># Verify cluster access</span>
 kubectl<span class="w"> </span>cluster-info
 
 <span class="c1"># Create namespace for ArgoCD</span>
 kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>argocd
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="c1"># Verify K3s is running</span>
+</code></pre></div></p>
+<p>=== "For K3s"
+    <div class="highlight"><pre><span></span><code><span class="c1"># Verify K3s is running</span>
 sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>k3s
 
 <span class="c1"># Create namespace for ArgoCD</span>
 kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>argocd
-</code></pre></div>
-</div>
-</div>
-</div>
-<h3 id="2-install-argocd">2. Install ArgoCD<a class="headerlink" href="#2-install-argocd" title="Permanent link">&para;</a></h3>
+</code></pre></div></p>
+<h3 id="2-install-argocd">2. Install ArgoCD</h3>
 <p>There are two methods to install ArgoCD: using manifests directly or using Helm.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Using Manifests</label><label for="__tabbed_2_2">Using Helm</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="c1"># Apply the ArgoCD installation manifest</span>
+<p>=== "Using Manifests"
+    <div class="highlight"><pre><span></span><code><span class="c1"># Apply the ArgoCD installation manifest</span>
 kubectl<span class="w"> </span>apply<span class="w"> </span>-n<span class="w"> </span>argocd<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/argoproj/argo-cd/v2.14.3/manifests/install.yaml
 
 <span class="c1"># Verify pods are running</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>argocd
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="c1"># Add ArgoCD Helm repository</span>
+</code></pre></div></p>
+<p>=== "Using Helm"
+    <div class="highlight"><pre><span></span><code><span class="c1"># Add ArgoCD Helm repository</span>
 helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>argo<span class="w"> </span>https://argoproj.github.io/argo-helm
 helm<span class="w"> </span>repo<span class="w"> </span>update
 
@@ -1045,10 +1050,7 @@ helm<span class="w"> </span>install<span class="w"> </span>argocd<span class="w"
 <span class="w">  </span>--set<span class="w"> </span>server.extraArgs<span class="o">=</span><span class="s2">&quot;{--insecure}&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--set<span class="w"> </span>controller.metrics.enabled<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--set<span class="w"> </span>server.metrics.enabled<span class="o">=</span><span class="nb">true</span>
-</code></pre></div>
-</div>
-</div>
-</div>
+</code></pre></div></p>
 <div class="admonition tip">
 <p class="admonition-title">Resource Requirements</p>
 <p>ArgoCD is relatively lightweight, but for production use, consider allocating:
@@ -1056,7 +1058,7 @@ helm<span class="w"> </span>install<span class="w"> </span>argocd<span class="w"
 - 1GB RAM for the ArgoCD controller
 - 512MB RAM for the ArgoCD server</p>
 </div>
-<h3 id="3-install-cert-manager">3. Install cert-manager<a class="headerlink" href="#3-install-cert-manager" title="Permanent link">&para;</a></h3>
+<h3 id="3-install-cert-manager">3. Install cert-manager</h3>
 <p>cert-manager is required to automatically provision and manage TLS certificates.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Add Jetstack Helm repository</span>
 helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>jetstack<span class="w"> </span>https://charts.jetstack.io
@@ -1072,7 +1074,7 @@ helm<span class="w"> </span>install<span class="w"> </span>cert-manager<span cla
 <span class="c1"># Verify cert-manager pods are running</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>cert-manager
 </code></pre></div>
-<h3 id="4-configure-clusterissuer-for-lets-encrypt">4. Configure ClusterIssuer for Let's Encrypt<a class="headerlink" href="#4-configure-clusterissuer-for-lets-encrypt" title="Permanent link">&para;</a></h3>
+<h3 id="4-configure-clusterissuer-for-lets-encrypt">4. Configure ClusterIssuer for Let's Encrypt</h3>
 <p>Create a ClusterIssuer to obtain certificates from Let's Encrypt:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">letsencrypt-issuer.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1113,7 +1115,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>clusterissuer<span cla
 <p class="admonition-title">Rate Limits</p>
 <p>Let's Encrypt has rate limits: 50 certificates per domain per week. Use the staging server (<code>https://acme-staging-v02.api.letsencrypt.org/directory</code>) for testing.</p>
 </div>
-<h3 id="5-configure-traefik-ingress-for-argocd">5. Configure Traefik Ingress for ArgoCD<a class="headerlink" href="#5-configure-traefik-ingress-for-argocd" title="Permanent link">&para;</a></h3>
+<h3 id="5-configure-traefik-ingress-for-argocd">5. Configure Traefik Ingress for ArgoCD</h3>
 <p>Create an Ingress resource for ArgoCD:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">argocd-ingress.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1198,21 +1200,18 @@ kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> <
 <span class="c1"># Check the status of the ingress</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>ingress<span class="w"> </span>-n<span class="w"> </span>argocd
 </code></pre></div>
-<h2 id="accessing-argocd">Accessing ArgoCD<a class="headerlink" href="#accessing-argocd" title="Permanent link">&para;</a></h2>
-<h3 id="initial-login">Initial Login<a class="headerlink" href="#initial-login" title="Permanent link">&para;</a></h3>
+<h2 id="accessing-argocd">Accessing ArgoCD</h2>
+<h3 id="initial-login">Initial Login</h3>
 <p>Once ArgoCD is installed and the ingress is configured, you can access it via your domain (e.g., <code>https://argocd.example.com</code>).</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Get Initial Password</label><label for="__tabbed_3_2">Login via CLI</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="c1"># For manifest installation</span>
+<p>=== "Get Initial Password"
+    <div class="highlight"><pre><span></span><code><span class="c1"># For manifest installation</span>
 kubectl<span class="w"> </span>-n<span class="w"> </span>argocd<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>argocd-initial-admin-secret<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.data.password}&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
 
 <span class="c1"># For Helm installation (if using default values)</span>
 kubectl<span class="w"> </span>-n<span class="w"> </span>argocd<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>argocd-initial-admin-secret<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.data.password}&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="c1"># Install ArgoCD CLI</span>
+</code></pre></div></p>
+<p>=== "Login via CLI"
+    <div class="highlight"><pre><span></span><code><span class="c1"># Install ArgoCD CLI</span>
 curl<span class="w"> </span>-sSL<span class="w"> </span>-o<span class="w"> </span>argocd-linux-amd64<span class="w"> </span>https://github.com/argoproj/argo-cd/releases/download/v2.14.3/argocd-linux-amd64
 sudo<span class="w"> </span>install<span class="w"> </span>-m<span class="w"> </span><span class="m">555</span><span class="w"> </span>argocd-linux-amd64<span class="w"> </span>/usr/local/bin/argocd
 rm<span class="w"> </span>argocd-linux-amd64
@@ -1222,15 +1221,12 @@ argocd<span class="w"> </span>login<span class="w"> </span>argocd.example.com
 
 <span class="c1"># Change the default password</span>
 argocd<span class="w"> </span>account<span class="w"> </span>update-password
-</code></pre></div>
-</div>
-</div>
-</div>
+</code></pre></div></p>
 <div class="admonition danger">
 <p class="admonition-title">Security Note</p>
 <p>Always change the default admin password immediately after the first login!</p>
 </div>
-<h3 id="setting-up-your-first-application">Setting Up Your First Application<a class="headerlink" href="#setting-up-your-first-application" title="Permanent link">&para;</a></h3>
+<h3 id="setting-up-your-first-application">Setting Up Your First Application</h3>
 <p>After logging in, you can deploy your first application:</p>
 <ol>
 <li>Click on "+ New App" in the UI</li>
@@ -1243,7 +1239,7 @@ argocd<span class="w"> </span>account<span class="w"> </span>update-password
 <li>Cluster: <code>https://kubernetes.default.svc</code> (for in-cluster deployment)</li>
 <li>Namespace: Your target namespace</li>
 </ol>
-<h2 id="security-hardening">Security Hardening<a class="headerlink" href="#security-hardening" title="Permanent link">&para;</a></h2>
+<h2 id="security-hardening">Security Hardening</h2>
 <div class="admonition security">
 <p class="admonition-title">Security Best Practices</p>
 <ol>
@@ -1253,7 +1249,7 @@ argocd<span class="w"> </span>account<span class="w"> </span>update-password
 <li><strong>Secrets Management</strong>: Use external secret stores</li>
 </ol>
 </div>
-<h3 id="configure-rbac">Configure RBAC<a class="headerlink" href="#configure-rbac" title="Permanent link">&para;</a></h3>
+<h3 id="configure-rbac">Configure RBAC</h3>
 <p>Create a custom RBAC policy:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">argocd-rbac-cm.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1288,7 +1284,7 @@ argocd<span class="w"> </span>account<span class="w"> </span>update-password
 <p>Apply the ConfigMap:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>argocd-rbac-cm.yaml
 </code></pre></div>
-<h3 id="configure-sso-github-example">Configure SSO (GitHub Example)<a class="headerlink" href="#configure-sso-github-example" title="Permanent link">&para;</a></h3>
+<h3 id="configure-sso-github-example">Configure SSO (GitHub Example)</h3>
 <p>Update the ArgoCD ConfigMap:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">argocd-cm.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1331,7 +1327,7 @@ argocd<span class="w"> </span>account<span class="w"> </span>update-password
 <p>Apply the ConfigMap:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>argocd-cm.yaml
 </code></pre></div>
-<h2 id="network-policies">Network Policies<a class="headerlink" href="#network-policies" title="Permanent link">&para;</a></h2>
+<h2 id="network-policies">Network Policies</h2>
 <p>Restrict network traffic to ArgoCD:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">argocd-network-policy.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1374,55 +1370,60 @@ argocd<span class="w"> </span>account<span class="w"> </span>update-password
 <p>Apply the network policy:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>argocd-network-policy.yaml
 </code></pre></div>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<h3 id="common-issues-and-solutions">Common Issues and Solutions<a class="headerlink" href="#common-issues-and-solutions" title="Permanent link">&para;</a></h3>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues-and-solutions">Common Issues and Solutions</h3>
 <div class="admonition bug">
 <p class="admonition-title">Common Problems</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Ingress Not Working</label><label for="__tabbed_4_2">Certificate Issues</label><label for="__tabbed_4_3">ArgoCD Server Crashes</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><strong>Symptoms</strong>: Unable to access ArgoCD through the domain</p>
-<p><strong>Solutions</strong>:
+<p>=== "Ingress Not Working"
+    <strong>Symptoms</strong>: Unable to access ArgoCD through the domain</p>
+<pre><code>**Solutions**:
 1. Check if the certificate is issued correctly:
-   <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>certificate<span class="w"> </span>-n<span class="w"> </span>argocd
-</code></pre></div>
+   ```bash
+   kubectl get certificate -n argocd
+   ```
 2. Verify Traefik is properly configured:
-   <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>ingressroute<span class="w"> </span>-A
-</code></pre></div>
+   ```bash
+   kubectl get ingressroute -A
+   ```
 3. Check the Traefik logs:
-   <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/name<span class="o">=</span>traefik
-</code></pre></div></p>
-</div>
-<div class="tabbed-block">
-<p><strong>Symptoms</strong>: SSL errors or certificate not issuing</p>
-<p><strong>Solutions</strong>:
+   ```bash
+   kubectl logs -n kube-system -l app.kubernetes.io/name=traefik
+   ```
+</code></pre>
+<p>=== "Certificate Issues"
+    <strong>Symptoms</strong>: SSL errors or certificate not issuing</p>
+<pre><code>**Solutions**:
 1. Check cert-manager logs:
-   <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>cert-manager<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>cert-manager
-</code></pre></div>
+   ```bash
+   kubectl logs -n cert-manager -l app=cert-manager
+   ```
 2. Verify the ClusterIssuer status:
-   <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>describe<span class="w"> </span>clusterissuer<span class="w"> </span>letsencrypt-prod
-</code></pre></div>
+   ```bash
+   kubectl describe clusterissuer letsencrypt-prod
+   ```
 3. Check certificate request status:
-   <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>certificaterequest<span class="w"> </span>-n<span class="w"> </span>argocd
-</code></pre></div></p>
-</div>
-<div class="tabbed-block">
-<p><strong>Symptoms</strong>: ArgoCD UI unavailable, server pods restarting</p>
-<p><strong>Solutions</strong>:
+   ```bash
+   kubectl get certificaterequest -n argocd
+   ```
+</code></pre>
+<p>=== "ArgoCD Server Crashes"
+    <strong>Symptoms</strong>: ArgoCD UI unavailable, server pods restarting</p>
+<pre><code>**Solutions**:
 1. Check server logs:
-   <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>argocd<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/name<span class="o">=</span>argocd-server
-</code></pre></div>
+   ```bash
+   kubectl logs -n argocd -l app.kubernetes.io/name=argocd-server
+   ```
 2. Verify resource allocation:
-   <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>top<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>argocd
-</code></pre></div>
+   ```bash
+   kubectl top pods -n argocd
+   ```
 3. Check for eviction events:
-   <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>events<span class="w"> </span>-n<span class="w"> </span>argocd
-</code></pre></div></p>
+   ```bash
+   kubectl get events -n argocd
+   ```
+</code></pre>
 </div>
-</div>
-</div>
-</div>
-<h3 id="diagnostic-commands">Diagnostic Commands<a class="headerlink" href="#diagnostic-commands" title="Permanent link">&para;</a></h3>
+<h3 id="diagnostic-commands">Diagnostic Commands</h3>
 <p>Here are some useful commands for diagnosing issues:</p>
 <div class="highlight"><span class="filename">Diagnostic Commands</span><pre><span></span><code><span class="c1"># Check all ArgoCD components</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>argocd
@@ -1439,34 +1440,28 @@ kubectl<span class="w"> </span>get<span class="w"> </span>certificate<span class
 <span class="c1"># Check ingress status</span>
 kubectl<span class="w"> </span>describe<span class="w"> </span>ingress<span class="w"> </span>argocd-server-ingress<span class="w"> </span>-n<span class="w"> </span>argocd
 </code></pre></div>
-<h2 id="maintenance">Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h2>
-<h3 id="upgrading-argocd">Upgrading ArgoCD<a class="headerlink" href="#upgrading-argocd" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Using Manifests</label><label for="__tabbed_5_2">Using Helm</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="c1"># Update to a new version</span>
+<h2 id="maintenance">Maintenance</h2>
+<h3 id="upgrading-argocd">Upgrading ArgoCD</h3>
+<p>=== "Using Manifests"
+    <div class="highlight"><pre><span></span><code><span class="c1"># Update to a new version</span>
 kubectl<span class="w"> </span>apply<span class="w"> </span>-n<span class="w"> </span>argocd<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/argoproj/argo-cd/v2.14.3/manifests/install.yaml
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="c1"># Update Helm repositories</span>
+</code></pre></div></p>
+<p>=== "Using Helm"
+    <div class="highlight"><pre><span></span><code><span class="c1"># Update Helm repositories</span>
 helm<span class="w"> </span>repo<span class="w"> </span>update
 
 <span class="c1"># Upgrade ArgoCD</span>
 helm<span class="w"> </span>upgrade<span class="w"> </span>argocd<span class="w"> </span>argo/argo-cd<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--namespace<span class="w"> </span>argocd<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--version<span class="w"> </span><span class="m">6</span>.7.0
-</code></pre></div>
-</div>
-</div>
-</div>
+</code></pre></div></p>
 <div class="admonition tip">
 <p class="admonition-title">Backup Before Upgrading</p>
 <p>Always backup your ArgoCD settings before upgrading:
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>-n<span class="w"> </span>argocd<span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span>configmap,secret,application<span class="w"> </span>&gt;<span class="w"> </span>argocd-backup.yaml
 </code></pre></div></p>
 </div>
-<h3 id="monitoring-argocd">Monitoring ArgoCD<a class="headerlink" href="#monitoring-argocd" title="Permanent link">&para;</a></h3>
+<h3 id="monitoring-argocd">Monitoring ArgoCD</h3>
 <p>ArgoCD exposes Prometheus metrics that can be scraped for monitoring:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">argocd-prometheus-servicemonitor.yaml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1490,8 +1485,8 @@ helm<span class="w"> </span>upgrade<span class="w"> </span>argocd<span class="w"
 <span class="w">  </span><span class="nt">endpoints</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metrics</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="advanced-configuration">Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">&para;</a></h2>
-<h3 id="gitops-workflow-example">GitOps Workflow Example<a class="headerlink" href="#gitops-workflow-example" title="Permanent link">&para;</a></h3>
+<h2 id="advanced-configuration">Advanced Configuration</h2>
+<h3 id="gitops-workflow-example">GitOps Workflow Example</h3>
 <pre class="mermaid"><code>sequenceDiagram
     participant Dev as Developer
     participant Git as Git Repository
@@ -1506,7 +1501,7 @@ helm<span class="w"> </span>upgrade<span class="w"> </span>argocd<span class="w"
     Argo-&gt;&gt;K8s: Apply changes
     K8s-&gt;&gt;Argo: Report status
     Argo-&gt;&gt;Git: Update deployment status</code></pre>
-<h3 id="multi-cluster-setup">Multi-Cluster Setup<a class="headerlink" href="#multi-cluster-setup" title="Permanent link">&para;</a></h3>
+<h3 id="multi-cluster-setup">Multi-Cluster Setup</h3>
 <p>For managing multiple clusters with ArgoCD:</p>
 <ol>
 <li>
@@ -1537,7 +1532,7 @@ helm<span class="w"> </span>upgrade<span class="w"> </span>argocd<span class="w"
 </code></pre></div></p>
 </li>
 </ol>
-<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>You now have a fully functional ArgoCD setup with:</p>
 <ul>
 <li>Secure access via HTTPS</li>
@@ -1554,7 +1549,7 @@ helm<span class="w"> </span>upgrade<span class="w"> </span>argocd<span class="w"
 <li>Explore ApplicationSets for multi-cluster management</li>
 </ul>
 </div>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<h2 id="references">References</h2>
 <ul>
 <li><a href="https://argo-cd.readthedocs.io/en/stable/">ArgoCD Documentation</a></li>
 <li><a href="https://cert-manager.io/docs/">cert-manager Documentation</a></li>

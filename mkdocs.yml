@@ -27,6 +27,7 @@ extra_css:
 nav:
   - Documentation:
     - index.md
+    - Contents: documentation/contents.md
     - Markdown Guide: markdown_basics.md
     - Versioning Guide: versioning.md
     - CI/CD:
@@ -55,18 +56,15 @@ strict: true
 
 markdown_extensions:
   - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - attr_list
-  - def_list
-  - toc:
-      permalink: true
-  - pymdownx.highlight
+  - md_in_html
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed:
-      alternate_style: true
 
 plugins:
   - search
