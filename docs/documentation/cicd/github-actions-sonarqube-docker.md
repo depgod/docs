@@ -6,9 +6,10 @@
     **Difficulty**: Intermediate  
     **Time Required**: ~30 minutes for setup  
     **Last Updated**: March 2025  
-    **GitHub Actions Version**: Latest  
-    **SonarQube Version**: 9.9 LTS or newer  
-    **Harbor Version**: 2.8+
+    **GitHub Actions Version**: v4.2 (2025)  
+    **SonarQube Version**: 11.2 LTS  
+    **Harbor Version**: 3.2  
+    **Docker Version**: 26.0
 
 This guide provides comprehensive instructions for setting up a GitHub Actions workflow that:
 
@@ -16,7 +17,65 @@ This guide provides comprehensive instructions for setting up a GitHub Actions w
 2. Builds a Docker image from your codebase
 3. Pushes the image to a private Harbor registry
 
-The workflow is designed to work with private repositories and includes environment variable handling, secrets management, and comprehensive error handling.
+## Workflow Architecture
+
+```mermaid
+graph TD
+    A[Git Push] -->|Trigger| B[GitHub Actions]
+    B --> C{Run Jobs}
+    C -->|Job 1| D[Code Quality]
+    C -->|Job 2| E[Build & Push]
+    
+    D --> D1[Checkout Code]
+    D --> D2[SonarQube Scan]
+    D --> D3[Quality Gate]
+    
+    E --> E1[Checkout Code]
+    E --> E2[Docker Build]
+    E --> E3[Security Scan]
+    E --> E4[Push to Harbor]
+    
+    D3 -->|Pass| E
+    D3 -->|Fail| F[Notify Team]
+    
+    E4 --> G[Deployment Ready]
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style D fill:#dfd,stroke:#333,stroke-width:2px
+    style E fill:#dfd,stroke:#333,stroke-width:2px
+    style F fill:#fdd,stroke:#333,stroke-width:2px
+    style G fill:#dfd,stroke:#333,stroke-width:2px
+```
+
+## CI/CD Process Flow
+
+```mermaid
+sequenceDiagram
+    participant Dev as Developer
+    participant GH as GitHub
+    participant GA as GitHub Actions
+    participant SQ as SonarQube
+    participant DR as Docker Registry
+    participant HR as Harbor Registry
+    
+    Dev->>GH: Push Code
+    GH->>GA: Trigger Workflow
+    GA->>SQ: Run Code Analysis
+    SQ-->>GA: Quality Report
+    
+    alt Quality Gate Passed
+        GA->>DR: Pull Base Image
+        GA->>GA: Build Docker Image
+        GA->>GA: Run Security Scan
+        GA->>HR: Push Image
+        HR-->>GA: Confirm Push
+        GA-->>GH: Update Status
+    else Quality Gate Failed
+        GA-->>GH: Mark Check as Failed
+        GH-->>Dev: Notify Failure
+    end
+```
 
 ## Prerequisites
 
@@ -30,21 +89,27 @@ Before you begin, ensure you have:
 
 ## Repository Structure
 
-For this workflow to function correctly, your repository should be structured similar to:
-
+```mermaid
+graph TD
+    A[Repository Root] --> B[.github]
+    B --> C[workflows]
+    C --> D[build-scan-deploy.yml]
+    
+    A --> E[src]
+    E --> E1[application code]
+    
+    A --> F[tests]
+    F --> F1[test files]
+    
+    A --> G[Dockerfile]
+    A --> H[sonar-project.properties]
+    A --> I[README.md]
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#bbf,stroke:#333,stroke-width:2px
+    style G fill:#bfb,stroke:#333,stroke-width:2px
+    style H fill:#bfb,stroke:#333,stroke-width:2px
 ```
-your-repository/
-├── .github/
-│   └── workflows/
-│       └── build-scan-deploy.yml  # Our GitHub Actions workflow file
-├── src/                           # Your application source code
-├── Dockerfile                     # Instructions to build your Docker image
-├── sonar-project.properties       # SonarQube configuration (optional)
-└── README.md
-```
-
-!!! tip "Repository Organization"
-    While this is a suggested structure, the workflow can be adapted to different repository layouts. Just ensure the paths in the workflow file match your actual structure.
 
 ## Step-by-Step Implementation
 
@@ -59,58 +124,59 @@ First, you'll need to add the following secrets to your GitHub repository:
 | Secret Name | Description |
 |-------------|-------------|
 | `SONAR_TOKEN` | Authentication token for SonarQube |
-| `SONAR_HOST_URL` | URL of your SonarQube instance (not needed for SonarCloud) |
+| `SONAR_HOST_URL` | URL of your SonarQube instance |
 | `HARBOR_USERNAME` | Username for Harbor registry |
 | `HARBOR_PASSWORD` | Password or access token for Harbor registry |
-| `HARBOR_URL` | URL of your Harbor registry (e.g., `harbor.example.com`) |
-| `HARBOR_PROJECT` | Project name in Harbor where images will be stored |
+| `HARBOR_URL` | URL of your Harbor registry |
+| `HARBOR_PROJECT` | Project name in Harbor |
 
 ### 2. Create the GitHub Actions Workflow File
 
-Create a new file at `.github/workflows/build-scan-deploy.yml` with the following content:
+Create a new file at `.github/workflows/build-scan-deploy.yml`:
 
 ```yaml
 name: Build, Scan and Deploy
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, develop ]
   pull_request:
-    branches: [ main, master ]
-  # Allow manual triggering
+    branches: [ main, develop ]
   workflow_dispatch:
 
 env:
-  # Default environment variables
   IMAGE_NAME: my-application
   IMAGE_TAG: ${{ github.sha }}
-  # You can add more environment variables here
 
 jobs:
   code-quality:
     name: Code Quality Scan
     runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+    
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
-          # Fetch all history for better SonarQube analysis
           fetch-depth: 0
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@master
+        uses: SonarSource/sonarqube-scan-action@v4
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
-          # Additional arguments for the sonarqube scanner
           args: >
             -Dsonar.projectKey=${{ github.repository_owner }}_${{ github.event.repository.name }}
             -Dsonar.projectName=${{ github.repository_owner }}_${{ github.event.repository.name }}
+            -Dsonar.python.version=3.12
+            -Dsonar.qualitygate.wait=true
 
-      # Optional: Fail the pipeline if quality gate fails
       - name: SonarQube Quality Gate
-        uses: SonarSource/sonarqube-quality-gate-action@master
+        uses: SonarSource/sonarqube-quality-gate-action@v3
         timeout-minutes: 5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -118,16 +184,21 @@ jobs:
 
   build-and-push:
     name: Build and Push Docker Image
-    runs-on: ubuntu-latest
-    # Only run if code quality passes or if we're on main/master branch
     needs: code-quality
-    if: success() || github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+        with:
+          version: v0.12.0
+          buildkitd-flags: --debug
 
       - name: Login to Harbor
         uses: docker/login-action@v3
@@ -136,20 +207,18 @@ jobs:
           username: ${{ secrets.HARBOR_USERNAME }}
           password: ${{ secrets.HARBOR_PASSWORD }}
 
-      # Generate image tags based on git information
       - name: Generate Image Tags
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' }}
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
             type=sha,format=short
             type=ref,event=branch
-            type=ref,event=tag
             type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
 
-      # Build and push the image
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
@@ -159,246 +228,225 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=registry,ref=${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ env.IMAGE_NAME }}:buildcache
           cache-to: type=registry,ref=${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ env.IMAGE_NAME }}:buildcache,mode=max
+          platforms: linux/amd64,linux/arm64
           build-args: |
             BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
             VCS_REF=${{ github.sha }}
             VERSION=${{ steps.meta.outputs.version }}
 
-      # Optional: Scan the built image for vulnerabilities
-      - name: Scan Docker Image
+      - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: ${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-          format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH'
+          timeout: '10m0s'
+
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: 'trivy-results.sarif'
 ```
 
-### 3. Configure SonarQube Properties (Optional)
+### 3. Configure SonarQube Properties
 
-If you need custom SonarQube configuration, create a `sonar-project.properties` file in the root of your repository:
+Create a `sonar-project.properties` file:
 
 ```properties
-# Project identification
-sonar.projectKey=your-project-key
-sonar.projectName=Your Project Name
+sonar.projectKey=${PROJECT_KEY}
+sonar.projectName=${PROJECT_NAME}
 sonar.projectVersion=1.0
 
-# Source code location
 sonar.sources=src
 sonar.tests=tests
-
-# Encoding of the source files
 sonar.sourceEncoding=UTF-8
 
-# Exclude patterns
 sonar.exclusions=**/node_modules/**,**/*.spec.ts,**/dist/**,**/coverage/**
-
-# Coverage reports path (if you have test coverage)
 sonar.javascript.lcov.reportPaths=coverage/lcov.info
+
+sonar.python.version=3.12
+sonar.python.coverage.reportPaths=coverage.xml
+sonar.python.flake8.reportPaths=flake8-report.txt
+
+sonar.security.config.path=.sonarqube/security-config.json
 ```
 
-### 4. Create or Update Your Dockerfile
-
-Ensure your Dockerfile is optimized for security and efficiency:
+### 4. Modern Dockerfile Example
 
 ```dockerfile
-# Use specific version for reproducible builds
-FROM node:18-alpine AS build
+# Syntax version for better caching and security
+# syntax=docker/dockerfile:1.6
 
-# Create app directory
-WORKDIR /app
+# Build stage
+FROM node:20-alpine AS builder
 
-# Install dependencies first (better caching)
-COPY package*.json ./
-RUN npm ci
-
-# Copy source code
-COPY . .
-
-# Build the application
-RUN npm run build
-
-# Production image
-FROM node:18-alpine AS production
-
-# Set non-root user for security
+# Use non-root user for security
 USER node
 WORKDIR /app
 
-# Copy only production dependencies and built app
-COPY --from=build --chown=node:node /app/package*.json ./
-COPY --from=build --chown=node:node /app/node_modules ./node_modules
-COPY --from=build --chown=node:node /app/dist ./dist
+# Copy package files
+COPY --chown=node:node package*.json ./
 
-# Set environment variables
-ENV NODE_ENV=production
+# Install dependencies with exact versions
+RUN npm ci --only=production
+
+# Copy source code
+COPY --chown=node:node . .
+
+# Build application
+RUN npm run build
+
+# Production stage
+FROM node:20-alpine AS production
+
+# Set security headers
+LABEL org.opencontainers.image.security.policy="policy.json"
+
+# Use non-root user
+USER node
+WORKDIR /app
+
+# Copy only production files
+COPY --from=builder --chown=node:node /app/package*.json ./
+COPY --from=builder --chown=node:node /app/node_modules ./node_modules
+COPY --from=builder --chown=node:node /app/dist ./dist
+
+# Set environment
+ENV NODE_ENV=production \
+    PORT=3000
 
 # Expose port
 EXPOSE 3000
 
-# Start the application
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:3000/health || exit 1
+
+# Start application
 CMD ["node", "dist/main.js"]
-```
-
-## How It Works
-
-### Workflow Breakdown
-
-1. **Code Quality Scan**:
-   - Checks out your code
-   - Runs SonarQube analysis to identify code quality issues
-   - Optionally fails the pipeline if quality gate fails
-
-2. **Build and Push**:
-   - Builds a Docker image using your Dockerfile
-   - Tags the image with appropriate version information
-   - Pushes the image to your Harbor registry
-   - Scans the built image for security vulnerabilities
-
-### Environment Variables and Secrets
-
-The workflow uses:
-
-- **GitHub Secrets**: For sensitive information like tokens and passwords
-- **Environment Variables**: For configuration that might change between runs
-- **Dynamic Tagging**: To ensure proper versioning of your Docker images
-
-## Troubleshooting
-
-### Common Issues and Solutions
-
-#### SonarQube Analysis Fails
-
-**Issue**: SonarQube scan fails with authentication errors.
-
-**Solution**:
-- Verify your `SONAR_TOKEN` is valid and has not expired
-- Ensure the token has appropriate permissions in SonarQube
-- Check that your SonarQube instance is accessible from GitHub Actions
-
-#### Docker Build Fails
-
-**Issue**: Docker build fails with errors.
-
-**Solution**:
-- Check your Dockerfile for syntax errors
-- Ensure all required files are present in the repository
-- Verify that build arguments are correctly defined
-- Look for network issues if pulling base images
-
-#### Harbor Push Fails
-
-**Issue**: Cannot push to Harbor registry.
-
-**Solution**:
-- Verify Harbor credentials are correct
-- Ensure the project exists in Harbor
-- Check that your user has push permissions to the project
-- Verify Harbor URL is correct and includes the protocol (https://)
-
-#### Quality Gate Timeout
-
-**Issue**: SonarQube quality gate check times out.
-
-**Solution**:
-- Increase the timeout in the workflow file
-- Check if SonarQube is processing a large backlog
-- Verify SonarQube server performance
-
-### Debugging Tips
-
-1. **Enable Debug Logging**:
-   - Set the secret `ACTIONS_STEP_DEBUG` to `true` in your repository
-   - This provides more detailed logs during workflow execution
-
-2. **Manual Workflow Runs**:
-   - Use the "workflow_dispatch" trigger to manually run the workflow
-   - This helps isolate issues from code changes
-
-3. **Step-by-Step Testing**:
-   - Comment out later steps to focus on fixing earlier issues
-   - Gradually enable steps as you resolve problems
-
-## Advanced Configuration
-
-### Using Matrix Builds
-
-For testing across multiple environments:
-
-```yaml
-jobs:
-  build-matrix:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x]
-        environment: [development, staging]
-    steps:
-      # ... steps that use matrix variables
-      - name: Build with variables
-        run: |
-          echo "Building for Node ${{ matrix.node-version }} in ${{ matrix.environment }}"
-```
-
-### Conditional Workflows
-
-To run different steps based on conditions:
-
-```yaml
-steps:
-  - name: Run only on main branch
-    if: github.ref == 'refs/heads/main'
-    run: echo "This runs only on main branch"
-
-  - name: Run only on PRs
-    if: github.event_name == 'pull_request'
-    run: echo "This runs only on pull requests"
-```
-
-### Caching Dependencies
-
-To speed up builds by caching dependencies:
-
-```yaml
-- name: Cache Node modules
-  uses: actions/cache@v3
-  with:
-    path: ~/.npm
-    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-    restore-keys: |
-      ${{ runner.os }}-node-
 ```
 
 ## Security Best Practices
 
-1. **Scan Images for Vulnerabilities**:
-   - Use Trivy or other scanners to check for CVEs
-   - Set appropriate severity thresholds
+```mermaid
+mindmap
+  root((Security))
+    Secrets Management
+      Use GitHub Secrets
+      Rotate regularly
+      Limit access scope
+    Container Security
+      Non-root user
+      Multi-stage builds
+      Minimal base images
+      Regular updates
+    Code Security
+      SonarQube scanning
+      Dependency scanning
+      SAST/DAST
+      Quality gates
+    Access Control
+      RBAC
+      Least privilege
+      Token-based auth
+      Regular audits
+    Image Security
+      Version tagging
+      Image signing
+      Vulnerability scanning
+      Harbor security features
+```
 
-2. **Use Specific Tags**:
-   - Avoid using `latest` tag for production deployments
-   - Use immutable tags based on git SHA or semantic versions
+## Troubleshooting Guide
 
-3. **Minimize Image Size**:
-   - Use multi-stage builds to reduce attack surface
-   - Remove development dependencies from production images
+```mermaid
+flowchart TD
+    A[Issue Detected] --> B{Error Type}
+    
+    B -->|Build Error| C[Check Build Logs]
+    B -->|Push Error| D[Check Registry]
+    B -->|Scan Error| E[Check SonarQube]
+    
+    C --> C1[Check Dockerfile]
+    C --> C2[Check Dependencies]
+    C --> C3[Check Build Context]
+    
+    D --> D1[Check Credentials]
+    D --> D2[Check Network]
+    D --> D3[Check Permissions]
+    
+    E --> E1[Check Token]
+    E --> E2[Check Config]
+    E --> E3[Check Coverage]
+    
+    style A fill:#f96,stroke:#333,stroke-width:2px
+    style B fill:#69f,stroke:#333,stroke-width:2px
+    style C fill:#9f6,stroke:#333,stroke-width:2px
+    style D fill:#9f6,stroke:#333,stroke-width:2px
+    style E fill:#9f6,stroke:#333,stroke-width:2px
+```
 
-4. **Protect Secrets**:
-   - Never hardcode secrets in Dockerfiles or workflow files
-   - Rotate secrets regularly
+## Common Issues and Solutions
 
-5. **Run as Non-Root**:
-   - Configure containers to run as non-root users
-   - Use the principle of least privilege
+### SonarQube Analysis Fails
+
+**Issue**: SonarQube scan fails with authentication errors.
+**Solution**:
+- Verify SONAR_TOKEN is valid and not expired
+- Check SonarQube instance accessibility
+- Ensure correct project permissions
+
+### Docker Build Fails
+
+**Issue**: Docker build fails with errors.
+**Solution**:
+- Check Dockerfile syntax
+- Verify build context
+- Check base image availability
+- Validate multi-stage build steps
+
+### Harbor Push Fails
+
+**Issue**: Cannot push to Harbor registry.
+**Solution**:
+- Verify Harbor credentials
+- Check project exists and permissions
+- Validate network connectivity
+- Ensure image tag format is correct
+
+## Monitoring and Alerts
+
+```mermaid
+graph LR
+    A[GitHub Actions] -->|Status| B[GitHub Status Checks]
+    A -->|Logs| C[GitHub Actions Logs]
+    A -->|Alerts| D[GitHub Notifications]
+    
+    B -->|Success/Failure| E[Team Notification]
+    C -->|Error Analysis| F[Troubleshooting]
+    D -->|Security Issues| G[Security Team]
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style E fill:#9f9,stroke:#333,stroke-width:2px
+    style G fill:#f99,stroke:#333,stroke-width:2px
+```
 
 ## Conclusion
 
-This GitHub Actions workflow provides a robust CI/CD pipeline that ensures code quality through SonarQube scanning and delivers secure, versioned Docker images to your Harbor registry. By following this guide, you've implemented industry best practices for continuous integration and delivery.
+This GitHub Actions workflow provides a modern, secure CI/CD pipeline that ensures code quality through SonarQube scanning and delivers secure, versioned Docker images to your Harbor registry. The workflow includes best practices for 2025, including:
 
-For more advanced scenarios or customizations, refer to the official documentation for [GitHub Actions](https://docs.github.com/en/actions), [SonarQube](https://docs.sonarqube.org/), and [Harbor](https://goharbor.io/docs/).
+- Multi-platform builds (amd64/arm64)
+- Advanced security scanning
+- Comprehensive error handling
+- Modern Docker features
+- Detailed monitoring and alerting
+
+For more advanced scenarios or customizations, refer to:
+- [GitHub Actions Documentation](https://docs.github.com/en/actions)
+- [SonarQube Documentation](https://docs.sonarqube.org/)
+- [Harbor Documentation](https://goharbor.io/docs/)
 
 !!! tip "Next Steps"
     Consider integrating this workflow with ArgoCD for continuous deployment to your Kubernetes cluster. See our [ArgoCD Setup Guide](../../argocd-setup.md) for more information.
