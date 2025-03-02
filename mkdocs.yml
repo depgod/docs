@@ -10,23 +10,23 @@ theme:
   favicon: assets/logo.png
   palette:
     scheme: slate
-    primary: indigo
-    accent: pink
+    primary: black
+    accent: indigo
   features:
     - navigation.instant
     - navigation.sections
     - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.expand
     - toc.integrate
     - content.code.copy
     - content.action.edit
     - content.tooltips
-    - navigation.tabs
-    - navigation.tabs.sticky
     - search.highlight
     - search.share
     - search.suggest
-    - navigation.expand
-    - navigation.indexes
 
 nav:
   - Home: 

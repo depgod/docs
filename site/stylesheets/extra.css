@@ -66,3 +66,112 @@
       transform: translate(0);
    }
 }
+
+/* Custom theme colors */
+:root {
+    --md-primary-fg-color: #000000;
+    --md-primary-fg-color--light: #000000;
+    --md-primary-fg-color--dark: #000000;
+    --md-accent-fg-color: #536dfe;
+    --md-accent-fg-color--transparent: #536dfe1a;
+    --md-accent-bg-color: #fff;
+    --md-accent-bg-color--light: #ffffffb3;
+}
+
+/* Main content background */
+.md-main {
+    background-color: #2f2f2f;
+}
+
+/* Content area background */
+.md-content {
+    background-color: #2f2f2f;
+}
+
+/* Navigation background */
+.md-nav {
+    background-color: #2f2f2f;
+}
+
+/* Header and tabs */
+.md-header {
+    background-color: #000000 !important;
+    color: #ffffff;
+}
+
+.md-tabs {
+    background-color: #000000 !important;
+    color: #ffffff;
+}
+
+/* Adjust text colors for better contrast */
+.md-nav__link {
+    color: #e0e0e0 !important;
+}
+
+.md-nav__link:hover {
+    color: var(--md-accent-fg-color) !important;
+}
+
+.md-nav__item--active > .md-nav__link {
+    color: var(--md-accent-fg-color) !important;
+}
+
+/* Content text color */
+.md-typeset {
+    color: #e0e0e0;
+}
+
+/* Code blocks */
+.md-typeset pre {
+    background-color: #1f1f1f;
+}
+
+.md-typeset code {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+/* Tables */
+.md-typeset table:not([class]) {
+    background-color: #1f1f1f;
+}
+
+.md-typeset table:not([class]) th {
+    background-color: #000000;
+}
+
+/* Search */
+.md-search__input {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.md-search__input::placeholder {
+    color: #e0e0e0;
+}
+
+/* Sidebar */
+.md-nav--primary .md-nav__title {
+    background-color: #000000 !important;
+    color: #ffffff;
+}
+
+/* Footer */
+.md-footer {
+    background-color: #000000;
+}
+
+.md-footer-nav {
+    background-color: #000000;
+}
+
+.md-footer-meta {
+    background-color: #000000;
+}
+
+/* Admonitions */
+.md-typeset .admonition,
+.md-typeset details {
+    background-color: #1f1f1f;
+    border-color: var(--md-accent-fg-color);
+}
