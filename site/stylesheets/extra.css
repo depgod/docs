@@ -12,15 +12,22 @@
 /* Import JetBrains Mono Nerd Font */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
-/* Apply JetBrains Mono to everything */
-* {
+/* Base font settings */
+body {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Code blocks */
+code, pre, .highlight {
     font-family: 'JetBrains Mono', monospace !important;
 }
 
-/* Adjust font sizes for better readability */
-body {
-    font-size: 14px;
-    line-height: 1.6;
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-weight: 700;
 }
 
 /* Main content background */
@@ -36,33 +43,42 @@ body {
 /* Navigation background */
 .md-nav {
     background-color: #2f2f2f;
-    padding: 0 !important;
 }
 
 /* Header and tabs */
 .md-header {
-    background-color: #000000 !important;
-    color: #ffffff;
+    background-color: #2f2f2f;
 }
 
 .md-tabs {
-    background-color: #000000 !important;
-    color: #ffffff;
+    background-color: #2f2f2f;
 }
 
-/* Adjust text colors for better contrast */
+/* Navigation text colors */
 .md-nav__link {
     color: rgba(255, 255, 255, 0.7) !important;
-    font-size: 0.95em;
-    padding: 0 !important;
 }
 
 .md-nav__link:hover {
-    color: var(--md-accent-fg-color) !important;
+    color: #ffd180 !important;
 }
 
-.md-nav__item--active > .md-nav__link {
-    color: var(--md-accent-fg-color) !important;
+.md-nav__link--active {
+    color: #ffab40 !important;
+    font-weight: bold;
+}
+
+/* Tab colors */
+.md-tabs__link {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.md-tabs__link--active {
+    color: #ffab40 !important;
+}
+
+.md-tabs__link:hover {
+    color: #ffd180 !important;
 }
 
 /* Content text color */
@@ -71,16 +87,17 @@ body {
     line-height: 1.6;
 }
 
-/* Code blocks */
-.md-typeset pre {
-    background-color: #1f1f1f;
+/* Code block styling */
+.highlight {
+    background-color: #2f2f2f !important;
 }
 
-.md-typeset code {
-    background-color: #1f1f1f;
-    color: #e0e0e0;
-    font-family: 'JetBrains Mono', monospace !important;
-    font-size: 13px !important;
+.highlight .nx {
+    color: #ffd180 !important;
+}
+
+.highlight .o {
+    color: #ffab40 !important;
 }
 
 /* Tables */
@@ -107,25 +124,15 @@ table {
     color: #e0e0e0;
 }
 
-/* Sidebar */
-.md-nav--primary .md-nav__title {
-    background-color: #000000 !important;
-    color: #ffffff;
+/* Search bar */
+[data-md-toggle="search"]:checked ~ .md-header .md-search__input {
+    background-color: #2f2f2f;
+    border-color: var(--md-accent-fg-color);
 }
 
-/* Footer */
-.md-footer {
-    background-color: #000000;
+/* Annotations */
+.md-annotation__index {
     font-family: 'JetBrains Mono', monospace !important;
-    font-size: 13px;
-}
-
-.md-footer-nav {
-    background-color: #000000;
-}
-
-.md-footer-meta {
-    background-color: #000000;
 }
 
 /* Admonitions */
@@ -133,129 +140,4 @@ table {
 .md-typeset details {
     background-color: #1f1f1f;
     border-color: var(--md-accent-fg-color);
-}
-
-/* Navigation container */
-.md-nav__list {
-    padding: 0;
-}
-
-/* Basic navigation item styling */
-.md-nav__item {
-    margin: 0.2em 0;
-    position: relative;
-}
-
-/* Major section titles with arrows */
-.md-nav__item--nested > .md-nav__link {
-    color: #ffab40 !important;
-    font-weight: bold;
-    font-size: 1em;
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.2em 0.6em 0.2em 0.6em;
-    margin: 0.2em 0;
-    border-bottom: 1px solid #ffab40;
-}
-
-/* Custom arrow icon for expandable sections */
-.md-nav__item--nested > .md-nav__link::after {
-    content: "❯";
-    color: #ffab40;
-    font-size: 1em;
-    margin-left: 0.5em;
-    margin-right: 0.2em;
-}
-
-/* Subsection container */
-.md-nav__item--nested .md-nav {
-    padding-left: 1em;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 0.2em 0 0.2em 0.6em;
-}
-
-/* Subsection links */
-.md-nav__item--nested .md-nav .md-nav__link {
-    color: rgba(255, 255, 255, 0.7) !important;
-    font-weight: normal;
-    font-size: 0.95em;
-    padding: 0.2em 0.6em !important;
-    border: none;
-}
-
-/* Active item styling */
-.md-nav__link--active {
-    color: #ffab40 !important;
-    font-weight: bold;
-}
-
-/* Hover effects */
-.md-nav__link:hover {
-    color: #ffd180 !important;
-}
-
-/* Regular navigation links */
-.md-nav__link {
-    color: rgba(255, 255, 255, 0.7) !important;
-    display: block;
-    margin: 0.2em 0;
-    font-size: 0.95em;
-    padding: 0.2em 0.6em !important;
-}
-
-/* Documentation title */
-.md-nav--primary > .md-nav__title {
-    color: #ffab40 !important;
-    font-weight: bold;
-    font-size: 1em;
-    padding: 0.3em 0.6em;
-    margin-bottom: 0.5em;
-    border-bottom: 1px solid #ffab40;
-}
-
-/* Top level items */
-.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
-    padding: 0.2em 0;
-}
-
-/* Ensure navigation visibility */
-.md-nav {
-    display: block !important;
-}
-
-/* Override default collapse behavior */
-.md-nav__toggle ~ .md-nav {
-    display: block !important;
-}
-
-/* Tab styling */
-.md-tabs__link {
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-weight: 500;
-}
-
-.md-tabs__link--active {
-    color: #ffab40 !important;
-    font-weight: bold;
-}
-
-.md-tabs__link:hover {
-    color: #ffd180 !important;
-}
-
-/* Headers */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'JetBrains Mono', monospace !important;
-    font-weight: 700;
-}
-
-/* Make code annotations use JetBrains Mono */
-.md-annotation__index {
-    font-family: 'JetBrains Mono', monospace !important;
-}
-
-/* Hide default Material theme arrows */
-.md-nav__icon {
-    display: none !important;
 }
