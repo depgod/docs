@@ -81,6 +81,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.darkmode.dev/documentation/kubernetes/kubernetes-networking/</loc>
+         <lastmod>2025-03-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.darkmode.dev/documentation/linux/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>

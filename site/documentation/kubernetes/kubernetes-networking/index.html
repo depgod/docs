@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://docs.darkmode.dev/documentation/kubernetes/kubectl-cheat-sheet/">
+        <link rel="canonical" href="https://docs.darkmode.dev/documentation/kubernetes/kubernetes-networking/">
       
       <link rel="icon" href="../../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.7">
     
     
       
-        <title>Kubectl Cheat Sheet - DevOps Notes</title>
+        <title>Kubernetes Networking - DevOps Notes</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kubectl-command-cheat-sheet" class="md-skip">
+        <a href="#understanding-kubernetes-network-backends" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Kubectl Cheat Sheet
+              Kubernetes Networking
             
           </span>
         </div>
@@ -559,228 +559,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Kubectl Cheat Sheet
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../kubectl-cheat-sheet/" class="md-nav__link">
         Kubectl Cheat Sheet
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#cluster-management" class="md-nav__link">
-    Cluster Management
-  </a>
-  
-    <nav class="md-nav" aria-label="Cluster Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cluster-information" class="md-nav__link">
-    Cluster Information
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#context-and-configuration" class="md-nav__link">
-    Context and Configuration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resource-management" class="md-nav__link">
-    Resource Management
-  </a>
-  
-    <nav class="md-nav" aria-label="Resource Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pods" class="md-nav__link">
-    Pods
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deployments" class="md-nav__link">
-    Deployments
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services" class="md-nav__link">
-    Services
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitoring-and-debugging" class="md-nav__link">
-    Monitoring and Debugging
-  </a>
-  
-    <nav class="md-nav" aria-label="Monitoring and Debugging">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#logs-and-events" class="md-nav__link">
-    Logs and Events
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#resource-usage" class="md-nav__link">
-    Resource Usage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    Troubleshooting
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration-and-security" class="md-nav__link">
-    Configuration and Security
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuration and Security">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configmaps-and-secrets" class="md-nav__link">
-    ConfigMaps and Secrets
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rbac" class="md-nav__link">
-    RBAC
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-operations" class="md-nav__link">
-    Advanced Operations
-  </a>
-  
-    <nav class="md-nav" aria-label="Advanced Operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#resource-quotas-and-limits" class="md-nav__link">
-    Resource Quotas and Limits
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#namespace-operations" class="md-nav__link">
-    Namespace Operations
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tips-and-tricks" class="md-nav__link">
-    Tips and Tricks
-  </a>
-  
-    <nav class="md-nav" aria-label="Tips and Tricks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#useful-aliases" class="md-nav__link">
-    Useful Aliases
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#output-formatting" class="md-nav__link">
-    Output Formatting
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-resources" class="md-nav__link">
-    Additional Resources
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -804,11 +587,364 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../kubernetes-networking/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Kubernetes Networking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Kubernetes Networking
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-backend-basics" class="md-nav__link">
+    Network Backend Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Backend Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-cni" class="md-nav__link">
+    What is CNI?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-network-backends" class="md-nav__link">
+    Common Network Backends
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Network Backends">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-flannel-the-simple-solution" class="md-nav__link">
+    1. Flannel: The Simple Solution
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Flannel: The Simple Solution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    Key Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-flannel" class="md-nav__link">
+    When to Use Flannel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-not-to-use" class="md-nav__link">
+    When Not to Use
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-calico-the-production-standard" class="md-nav__link">
+    2. Calico: The Production Standard
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Calico: The Production Standard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features_1" class="md-nav__link">
+    Key Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation_1" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-calico" class="md-nav__link">
+    When to Use Calico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-not-to-use_1" class="md-nav__link">
+    When Not to Use
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cilium-the-modern-choice" class="md-nav__link">
+    3. Cilium: The Modern Choice
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Cilium: The Modern Choice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features_2" class="md-nav__link">
+    Key Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation_2" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-cilium" class="md-nav__link">
+    When to Use Cilium
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-not-to-use_2" class="md-nav__link">
+    When Not to Use
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-the-right-backend" class="md-nav__link">
+    Choosing the Right Backend
+  </a>
+  
+    <nav class="md-nav" aria-label="Choosing the Right Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-matrix" class="md-nav__link">
+    Decision Matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-scenarios" class="md-nav__link">
+    Common Scenarios
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-development-environment" class="md-nav__link">
+    1. Development Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-production-microservices" class="md-nav__link">
+    2. Production Microservices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-enterprise-cluster" class="md-nav__link">
+    3. Enterprise Cluster
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-policy-examples" class="md-nav__link">
+    Network Policy Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Policy Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-policy-with-calico" class="md-nav__link">
+    Basic Policy with Calico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-policy-with-cilium" class="md-nav__link">
+    Application-Layer Policy with Cilium
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-tips" class="md-nav__link">
+    Troubleshooting Tips
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pod-communication-issues" class="md-nav__link">
+    1. Pod Communication Issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-network-policy-problems" class="md-nav__link">
+    2. Network Policy Problems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-performance-issues" class="md-nav__link">
+    3. Performance Issues
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    Best Practices
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-general-guidelines" class="md-nav__link">
+    1. General Guidelines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-production-setup" class="md-nav__link">
+    2. Production Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-resource-planning" class="md-nav__link">
+    3. Resource Planning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    Additional Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -974,195 +1110,298 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/depgod/depgod.github.io/edit/main/docs/documentation/kubernetes/kubectl-cheat-sheet.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/depgod/depgod.github.io/edit/main/docs/documentation/kubernetes/kubernetes-networking.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-<h1 id="kubectl-command-cheat-sheet">Kubectl Command Cheat Sheet</h1>
-<p>This comprehensive cheat sheet provides a quick reference for commonly used kubectl commands, organized by category for easy access.</p>
-<h2 id="cluster-management">Cluster Management</h2>
-<h3 id="cluster-information">Cluster Information</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># View cluster information</span>
-kubectl<span class="w"> </span>cluster-info
-
-<span class="c1"># Check the health status of cluster components</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>componentstatuses
-
-<span class="c1"># View nodes in the cluster</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>nodes
-kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>-o<span class="w"> </span>wide<span class="w">  </span><span class="c1"># Detailed view</span>
-
-<span class="c1"># Get API versions available</span>
-kubectl<span class="w"> </span>api-versions
-</code></pre></div>
-<h3 id="context-and-configuration">Context and Configuration</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># View kubeconfig settings</span>
-kubectl<span class="w"> </span>config<span class="w"> </span>view
-
-<span class="c1"># Show current context</span>
-kubectl<span class="w"> </span>config<span class="w"> </span>current-context
-
-<span class="c1"># List all contexts</span>
-kubectl<span class="w"> </span>config<span class="w"> </span>get-contexts
-
-<span class="c1"># Switch to a different context</span>
-kubectl<span class="w"> </span>config<span class="w"> </span>use-context<span class="w"> </span>&lt;context-name&gt;
-</code></pre></div>
-<h2 id="resource-management">Resource Management</h2>
-<h3 id="pods">Pods</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># List all pods</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>pods
-kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A<span class="w">  </span><span class="c1"># across all namespaces</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w">  </span><span class="c1"># in specific namespace</span>
-
-<span class="c1"># Get detailed pod information</span>
-kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>&lt;pod-name&gt;
-
-<span class="c1"># Delete a pod</span>
-kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>&lt;pod-name&gt;
-kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>&lt;pod-name&gt;<span class="w"> </span>--force<span class="w">  </span><span class="c1"># Force deletion</span>
-
-<span class="c1"># Execute command in pod</span>
-kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;pod-name&gt;<span class="w"> </span>--<span class="w"> </span>/bin/bash
-</code></pre></div>
-<h3 id="deployments">Deployments</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># List deployments</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>deployments
-
-<span class="c1"># Create deployment</span>
-kubectl<span class="w"> </span>create<span class="w"> </span>deployment<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--image<span class="o">=</span>&lt;image&gt;
-
-<span class="c1"># Scale deployment</span>
-kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--replicas<span class="o">=</span>&lt;count&gt;
-
-<span class="c1"># Update image</span>
-kubectl<span class="w"> </span><span class="nb">set</span><span class="w"> </span>image<span class="w"> </span>deployment/&lt;name&gt;<span class="w"> </span>&lt;container&gt;<span class="o">=</span>&lt;image&gt;
-
-<span class="c1"># Rollout commands</span>
-kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/&lt;name&gt;
-kubectl<span class="w"> </span>rollout<span class="w"> </span><span class="nb">history</span><span class="w"> </span>deployment/&lt;name&gt;
-kubectl<span class="w"> </span>rollout<span class="w"> </span>undo<span class="w"> </span>deployment/&lt;name&gt;
-</code></pre></div>
-<h3 id="services">Services</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># List services</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>services
-
-<span class="c1"># Create service</span>
-kubectl<span class="w"> </span>expose<span class="w"> </span>deployment<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--port<span class="o">=</span>&lt;port&gt;<span class="w"> </span>--type<span class="o">=</span>&lt;type&gt;
-
-<span class="c1"># Delete service</span>
-kubectl<span class="w"> </span>delete<span class="w"> </span>service<span class="w"> </span>&lt;name&gt;
-</code></pre></div>
-<h2 id="monitoring-and-debugging">Monitoring and Debugging</h2>
-<h3 id="logs-and-events">Logs and Events</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># View pod logs</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>&lt;pod-name&gt;
-kubectl<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>&lt;pod-name&gt;<span class="w">  </span><span class="c1"># Follow logs</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>&lt;pod-name&gt;<span class="w"> </span>-c<span class="w"> </span>&lt;container-name&gt;<span class="w">  </span><span class="c1"># Specific container</span>
-
-<span class="c1"># View cluster events</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>events
-kubectl<span class="w"> </span>get<span class="w"> </span>events<span class="w"> </span>--sort-by<span class="o">=</span><span class="s1">&#39;.metadata.creationTimestamp&#39;</span>
-</code></pre></div>
-<h3 id="resource-usage">Resource Usage</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Node resource usage</span>
-kubectl<span class="w"> </span>top<span class="w"> </span>node
-
-<span class="c1"># Pod resource usage</span>
-kubectl<span class="w"> </span>top<span class="w"> </span>pod
-kubectl<span class="w"> </span>top<span class="w"> </span>pod<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;
-</code></pre></div>
-<h3 id="troubleshooting">Troubleshooting</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Check pod status</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>&lt;pod-name&gt;<span class="w"> </span>-o<span class="w"> </span>yaml
-
-<span class="c1"># Port forwarding</span>
-kubectl<span class="w"> </span>port-forward<span class="w"> </span>&lt;pod-name&gt;<span class="w"> </span>&lt;local-port&gt;:&lt;pod-port&gt;
-
-<span class="c1"># Proxy to cluster</span>
-kubectl<span class="w"> </span>proxy
-</code></pre></div>
-<h2 id="configuration-and-security">Configuration and Security</h2>
-<h3 id="configmaps-and-secrets">ConfigMaps and Secrets</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Create ConfigMap</span>
-kubectl<span class="w"> </span>create<span class="w"> </span>configmap<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--from-file<span class="o">=</span>&lt;path&gt;
-kubectl<span class="w"> </span>create<span class="w"> </span>configmap<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--from-literal<span class="o">=</span><span class="nv">key</span><span class="o">=</span>value
-
-<span class="c1"># Create Secret</span>
-kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--from-literal<span class="o">=</span><span class="nv">key</span><span class="o">=</span>value
-kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>tls<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--cert<span class="o">=</span>&lt;path/to/cert&gt;<span class="w"> </span>--key<span class="o">=</span>&lt;path/to/key&gt;
-</code></pre></div>
-<h3 id="rbac">RBAC</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># View roles</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>roles
-kubectl<span class="w"> </span>get<span class="w"> </span>clusterroles
-
-<span class="c1"># View role bindings</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>rolebindings
-kubectl<span class="w"> </span>get<span class="w"> </span>clusterrolebindings
-</code></pre></div>
-<h2 id="advanced-operations">Advanced Operations</h2>
-<h3 id="resource-quotas-and-limits">Resource Quotas and Limits</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># View resource quotas</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>resourcequota
-kubectl<span class="w"> </span>describe<span class="w"> </span>resourcequota
-
-<span class="c1"># View limit ranges</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>limitrange
-kubectl<span class="w"> </span>describe<span class="w"> </span>limitrange
-</code></pre></div>
-<h3 id="namespace-operations">Namespace Operations</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Create namespace</span>
-kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>&lt;name&gt;
-
-<span class="c1"># Set default namespace</span>
-kubectl<span class="w"> </span>config<span class="w"> </span>set-context<span class="w"> </span>--current<span class="w"> </span>--namespace<span class="o">=</span>&lt;name&gt;
-
-<span class="c1"># Delete namespace</span>
-kubectl<span class="w"> </span>delete<span class="w"> </span>namespace<span class="w"> </span>&lt;name&gt;
-</code></pre></div>
-<h2 id="tips-and-tricks">Tips and Tricks</h2>
-<h3 id="useful-aliases">Useful Aliases</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Common aliases for kubectl</span>
-<span class="nb">alias</span><span class="w"> </span><span class="nv">k</span><span class="o">=</span><span class="s1">&#39;kubectl&#39;</span>
-<span class="nb">alias</span><span class="w"> </span><span class="nv">kg</span><span class="o">=</span><span class="s1">&#39;kubectl get&#39;</span>
-<span class="nb">alias</span><span class="w"> </span><span class="nv">kd</span><span class="o">=</span><span class="s1">&#39;kubectl describe&#39;</span>
-<span class="nb">alias</span><span class="w"> </span><span class="nv">krm</span><span class="o">=</span><span class="s1">&#39;kubectl delete&#39;</span>
-</code></pre></div>
-<h3 id="output-formatting">Output Formatting</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Different output formats</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-o<span class="w"> </span>wide<span class="w">  </span><span class="c1"># Additional details</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-o<span class="w"> </span>yaml<span class="w">  </span><span class="c1"># YAML format</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-o<span class="w"> </span>json<span class="w">  </span><span class="c1"># JSON format</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.items[*].metadata.name}&#39;</span><span class="w">  </span><span class="c1"># Custom format</span>
-</code></pre></div>
+<h1 id="understanding-kubernetes-network-backends">Understanding Kubernetes Network Backends</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Kubernetes networking can be complex, but choosing the right network backend (CNI plugin) is crucial for your cluster's success. This guide helps you understand common networking backends and when to use them.</p>
+<h2 id="network-backend-basics">Network Backend Basics</h2>
+<pre class="mermaid"><code>graph TD
+    A[Kubernetes Cluster] --&gt; B[Network Backend/CNI]
+    B --&gt; C[Pod-to-Pod Communication]
+    B --&gt; D[Network Policies]
+    B --&gt; E[Service Networking]
+    style B fill:#f96,stroke:#333</code></pre>
+<h3 id="what-is-cni">What is CNI?</h3>
+<p>Container Network Interface (CNI) is a standard that defines how container networking should be configured. Network backends implement this standard to provide:</p>
+<ul>
+<li>Pod-to-pod communication</li>
+<li>Network policy enforcement</li>
+<li>Service networking</li>
+<li>External access</li>
+</ul>
+<h2 id="common-network-backends">Common Network Backends</h2>
+<h3 id="1-flannel-the-simple-solution">1. Flannel: The Simple Solution</h3>
 <div class="admonition tip">
-<p class="admonition-title">Pro Tips</p>
+<p class="admonition-title">Best For</p>
 <ul>
-<li>Use <code>kubectl explain &lt;resource&gt;</code> to get documentation about resources</li>
-<li>Use <code>--dry-run=client -o yaml</code> to generate resource YAML without creating it</li>
-<li>Use labels and selectors for efficient resource management</li>
-<li>Always use namespaces to organize resources</li>
-<li>Set up auto-completion for easier command line usage</li>
+<li>Development environments</li>
+<li>Small clusters</li>
+<li>Learning Kubernetes</li>
+<li>Simple requirements</li>
 </ul>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Best Practices</p>
+<h4 id="key-features">Key Features</h4>
 <ul>
-<li>Always use resource limits for containers</li>
-<li>Implement RBAC policies for security</li>
-<li>Regularly backup etcd data</li>
-<li>Use readiness and liveness probes</li>
-<li>Keep your kubectl version in sync with cluster version</li>
+<li>Easy to set up</li>
+<li>Minimal configuration</li>
+<li>Low overhead</li>
+<li>Layer 3 networking</li>
+</ul>
+<h4 id="installation">Installation</h4>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+</code></pre></div>
+<h4 id="when-to-use-flannel">When to Use Flannel</h4>
+<ul>
+<li>You're new to Kubernetes</li>
+<li>You need a simple development environment</li>
+<li>Your cluster has basic networking needs</li>
+<li>You want minimal configuration overhead</li>
+</ul>
+<h4 id="when-not-to-use">When Not to Use</h4>
+<ul>
+<li>You need network policies</li>
+<li>You require advanced security features</li>
+<li>You have performance-critical applications</li>
+<li>You need cross-cluster networking</li>
+</ul>
+<h3 id="2-calico-the-production-standard">2. Calico: The Production Standard</h3>
+<div class="admonition tip">
+<p class="admonition-title">Best For</p>
+<ul>
+<li>Production environments</li>
+<li>Security-focused deployments</li>
+<li>Large clusters</li>
+<li>Multi-tenant environments</li>
 </ul>
 </div>
+<h4 id="key-features_1">Key Features</h4>
+<ul>
+<li>Network policy support</li>
+<li>BGP routing</li>
+<li>Performance optimized</li>
+<li>Security controls</li>
+</ul>
+<h4 id="installation_1">Installation</h4>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://docs.projectcalico.org/manifests/calico.yaml
+</code></pre></div>
+<h4 id="when-to-use-calico">When to Use Calico</h4>
+<ul>
+<li>You need network policy enforcement</li>
+<li>You want BGP routing capabilities</li>
+<li>You have a large-scale deployment</li>
+<li>You require performance monitoring</li>
+</ul>
+<h4 id="when-not-to-use_1">When Not to Use</h4>
+<ul>
+<li>You need a simple setup for development</li>
+<li>You have limited resources</li>
+<li>You don't need advanced networking features</li>
+</ul>
+<h3 id="3-cilium-the-modern-choice">3. Cilium: The Modern Choice</h3>
+<div class="admonition tip">
+<p class="admonition-title">Best For</p>
+<ul>
+<li>Microservices architectures</li>
+<li>High-performance requirements</li>
+<li>Security-critical applications</li>
+<li>Observability needs</li>
+</ul>
+</div>
+<h4 id="key-features_2">Key Features</h4>
+<ul>
+<li>eBPF-based networking</li>
+<li>Application-aware policies</li>
+<li>Advanced observability</li>
+<li>Load balancing</li>
+</ul>
+<h4 id="installation_2">Installation</h4>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>cilium<span class="w"> </span>https://helm.cilium.io/
+helm<span class="w"> </span>install<span class="w"> </span>cilium<span class="w"> </span>cilium/cilium<span class="w"> </span>--namespace<span class="w"> </span>kube-system
+</code></pre></div>
+<h4 id="when-to-use-cilium">When to Use Cilium</h4>
+<ul>
+<li>You need application-layer visibility</li>
+<li>You want modern security features</li>
+<li>You require high performance</li>
+<li>You need detailed networking metrics</li>
+</ul>
+<h4 id="when-not-to-use_2">When Not to Use</h4>
+<ul>
+<li>You have older kernel versions (&lt;4.9)</li>
+<li>You need a simple networking solution</li>
+<li>You have limited system resources</li>
+</ul>
+<h2 id="choosing-the-right-backend">Choosing the Right Backend</h2>
+<h3 id="decision-matrix">Decision Matrix</h3>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Flannel</th>
+<th>Calico</th>
+<th>Cilium</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ease of Setup</td>
+<td>★★★★★</td>
+<td>★★★</td>
+<td>★★</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>★★★</td>
+<td>★★★★</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>Security Features</td>
+<td>★</td>
+<td>★★★★</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>Resource Usage</td>
+<td>★★★★★</td>
+<td>★★★</td>
+<td>★★</td>
+</tr>
+<tr>
+<td>Enterprise Support</td>
+<td>★</td>
+<td>★★★★★</td>
+<td>★★★★</td>
+</tr>
+<tr>
+<td>Learning Curve</td>
+<td>★★★★★</td>
+<td>★★★</td>
+<td>★★</td>
+</tr>
+</tbody>
+</table>
+<h3 id="common-scenarios">Common Scenarios</h3>
+<h4 id="1-development-environment">1. Development Environment</h4>
+<div class="highlight"><pre><span></span><code><span class="nt">Recommendation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flannel</span>
+<span class="nt">Reasons</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Simple setup</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimal resources</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Quick start</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sufficient for development</span>
+</code></pre></div>
+<h4 id="2-production-microservices">2. Production Microservices</h4>
+<div class="highlight"><pre><span></span><code><span class="nt">Recommendation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cilium</span>
+<span class="nt">Reasons</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Application-aware policies</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">High performance</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Advanced observability</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Modern security features</span>
+</code></pre></div>
+<h4 id="3-enterprise-cluster">3. Enterprise Cluster</h4>
+<div class="highlight"><pre><span></span><code><span class="nt">Recommendation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Calico</span>
+<span class="nt">Reasons</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Proven track record</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enterprise support</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Network policies</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BGP routing</span>
+</code></pre></div>
+<h2 id="network-policy-examples">Network Policy Examples</h2>
+<h3 id="basic-policy-with-calico">Basic Policy with Calico</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NetworkPolicy</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">allow-frontend</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">podSelector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">backend</span>
+<span class="w">  </span><span class="nt">ingress</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">from</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">podSelector</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">frontend</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+<span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+</code></pre></div>
+<h3 id="application-layer-policy-with-cilium">Application-Layer Policy with Cilium</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cilium.io/v2</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CiliumNetworkPolicy</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http-policy</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">endpointSelector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api</span>
+<span class="w">  </span><span class="nt">ingress</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">fromEndpoints</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">frontend</span>
+<span class="w">    </span><span class="nt">toPorts</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;80&quot;</span>
+<span class="w">        </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+<span class="w">      </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">http</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GET</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/api/v1&quot;</span>
+</code></pre></div>
+<h2 id="troubleshooting-tips">Troubleshooting Tips</h2>
+<h3 id="1-pod-communication-issues">1. Pod Communication Issues</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Test pod connectivity</span>
+kubectl<span class="w"> </span>run<span class="w"> </span>test-pod<span class="w"> </span>--image<span class="o">=</span>busybox<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>--<span class="w"> </span>ping<span class="w"> </span>&lt;target-pod-ip&gt;
+
+<span class="c1"># Check CNI configuration</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cni
+</code></pre></div>
+<h3 id="2-network-policy-problems">2. Network Policy Problems</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Verify policy</span>
+kubectl<span class="w"> </span>describe<span class="w"> </span>networkpolicy<span class="w"> </span>&lt;policy-name&gt;
+
+<span class="c1"># Check CNI logs</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>-l<span class="w"> </span>k8s-app<span class="o">=</span>calico-node<span class="w">  </span><span class="c1"># For Calico</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>-l<span class="w"> </span>k8s-app<span class="o">=</span>cilium<span class="w">  </span><span class="c1"># For Cilium</span>
+</code></pre></div>
+<h3 id="3-performance-issues">3. Performance Issues</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check CNI pod status</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>-o<span class="w"> </span>wide<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cni
+
+<span class="c1"># View metrics (Cilium)</span>
+cilium<span class="w"> </span>status
+</code></pre></div>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-general-guidelines">1. General Guidelines</h3>
+<ul>
+<li>Start with Flannel for learning</li>
+<li>Use Calico for standard production workloads</li>
+<li>Choose Cilium for modern microservices</li>
+</ul>
+<h3 id="2-production-setup">2. Production Setup</h3>
+<ul>
+<li>Always enable network policies</li>
+<li>Monitor CNI pod health</li>
+<li>Keep CNI version updated</li>
+<li>Document your network architecture</li>
+</ul>
+<h3 id="3-resource-planning">3. Resource Planning</h3>
+<ul>
+<li>Consider node resources</li>
+<li>Plan IP address ranges</li>
+<li>Account for future growth</li>
+<li>Monitor network performance</li>
+</ul>
 <h2 id="additional-resources">Additional Resources</h2>
 <ul>
-<li><a href="https://kubernetes.io/docs/home/">Official Kubernetes Documentation</a></li>
-<li><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands">Kubectl Reference Docs</a></li>
-<li><a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">Kubernetes Cheat Sheet</a></li>
+<li><a href="https://github.com/containernetworking/cni">CNI Specification</a></li>
+<li><a href="https://github.com/flannel-io/flannel">Flannel Documentation</a></li>
+<li><a href="https://docs.projectcalico.org/">Calico Documentation</a></li>
+<li><a href="https://docs.cilium.io/">Cilium Documentation</a></li>
 </ul>
 
               
@@ -1182,7 +1421,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> <
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../../argocd-setup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ArgoCD Setup" rel="prev">
+        <a href="../k9s-guide/" class="md-footer__link md-footer__link--prev" aria-label="Previous: K9s CLI Guide" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1191,20 +1430,20 @@ kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> <
               <span class="md-footer__direction">
                 Previous
               </span>
-              ArgoCD Setup
+              K9s CLI Guide
             </div>
           </div>
         </a>
       
       
         
-        <a href="../k9s-guide/" class="md-footer__link md-footer__link--next" aria-label="Next: K9s CLI Guide" rel="next">
+        <a href="../../selfhosting/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              K9s CLI Guide
+              Overview
             </div>
           </div>
           <div class="md-footer__button md-icon">
