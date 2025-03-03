@@ -9,12 +9,25 @@ theme:
   logo: assets/logo.png
   favicon: assets/logo.png
   font:
-    text: JetBrains Mono Nerd Font
-    code: JetBrains Mono Nerd Font
+    text: JetBrains Mono
+    code: JetBrains Mono
   palette:
-    scheme: slate
-    primary: black
-    accent: orange
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: deep-orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep-orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     - navigation.instant
     - navigation.top
