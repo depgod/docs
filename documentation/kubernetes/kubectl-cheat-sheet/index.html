@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://depgod.github.io/documentation/selfhosting/why-selfhost/">
+        <link rel="canonical" href="https://depgod.github.io/documentation/kubernetes/kubectl-cheat-sheet/">
       
       <link rel="icon" href="../../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.7">
     
     
       
-        <title>Why Self-Host? - DevOps Notes</title>
+        <title>Kubectl Cheat Sheet - DevOps Notes</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#why-self-host-a-philosophy-of-digital-independence" class="md-skip">
+        <a href="#kubectl-command-cheat-sheet" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Why Self-Host?
+              Kubectl Cheat Sheet
             
           </span>
         </div>
@@ -473,14 +473,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_7" type="checkbox" id="__nav_1_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_7" type="checkbox" id="__nav_1_7" checked>
       
       
       
@@ -557,11 +559,228 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../kubernetes/kubectl-cheat-sheet/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Kubectl Cheat Sheet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Kubectl Cheat Sheet
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-management" class="md-nav__link">
+    Cluster Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Cluster Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cluster-information" class="md-nav__link">
+    Cluster Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-and-configuration" class="md-nav__link">
+    Context and Configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-management" class="md-nav__link">
+    Resource Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pods" class="md-nav__link">
+    Pods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployments" class="md-nav__link">
+    Deployments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    Services
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-debugging" class="md-nav__link">
+    Monitoring and Debugging
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring and Debugging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logs-and-events" class="md-nav__link">
+    Logs and Events
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-usage" class="md-nav__link">
+    Resource Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-and-security" class="md-nav__link">
+    Configuration and Security
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration and Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configmaps-and-secrets" class="md-nav__link">
+    ConfigMaps and Secrets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rbac" class="md-nav__link">
+    RBAC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-operations" class="md-nav__link">
+    Advanced Operations
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resource-quotas-and-limits" class="md-nav__link">
+    Resource Quotas and Limits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-operations" class="md-nav__link">
+    Namespace Operations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-and-tricks" class="md-nav__link">
+    Tips and Tricks
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips and Tricks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#useful-aliases" class="md-nav__link">
+    Useful Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-formatting" class="md-nav__link">
+    Output Formatting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    Additional Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -573,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/k9s-guide/" class="md-nav__link">
+      <a href="../k9s-guide/" class="md-nav__link">
         K9s CLI Guide
       </a>
     </li>
@@ -592,16 +811,14 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_8" type="checkbox" id="__nav_1_8" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_8" type="checkbox" id="__nav_1_8" >
       
       
       
@@ -624,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../selfhosting/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -636,215 +853,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Why Self-Host?
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../selfhosting/why-selfhost/" class="md-nav__link">
         Why Self-Host?
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-self-host" class="md-nav__link">
-    Why Self-Host?
-  </a>
-  
-    <nav class="md-nav" aria-label="Why Self-Host?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-privacy-and-data-sovereignty" class="md-nav__link">
-    1. Privacy and Data Sovereignty
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-learning-and-skill-development" class="md-nav__link">
-    2. Learning and Skill Development
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-customization-and-freedom" class="md-nav__link">
-    3. Customization and Freedom
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-cost-effectiveness" class="md-nav__link">
-    4. Cost Effectiveness
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-can-you-self-host" class="md-nav__link">
-    What Can You Self-Host?
-  </a>
-  
-    <nav class="md-nav" aria-label="What Can You Self-Host?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#essential-services" class="md-nav__link">
-    Essential Services
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting Started
-  </a>
-  
-    <nav class="md-nav" aria-label="Getting Started">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-start-small" class="md-nav__link">
-    1. Start Small
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-essential-knowledge-areas" class="md-nav__link">
-    2. Essential Knowledge Areas
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-hardware-considerations" class="md-nav__link">
-    3. Hardware Considerations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-security-best-practices" class="md-nav__link">
-    4. Security Best Practices
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-challenges-and-solutions" class="md-nav__link">
-    Common Challenges and Solutions
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Challenges and Solutions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-reliability" class="md-nav__link">
-    1. Reliability
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-security" class="md-nav__link">
-    2. Security
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-maintenance" class="md-nav__link">
-    3. Maintenance
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources-for-learning" class="md-nav__link">
-    Resources for Learning
-  </a>
-  
-    <nav class="md-nav" aria-label="Resources for Learning">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#communities" class="md-nav__link">
-    Communities
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    Documentation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    Conclusion
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -947,224 +960,196 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/depgod/depgod.github.io/edit/main/docs/documentation/selfhosting/why-selfhost.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/depgod/depgod.github.io/edit/main/docs/documentation/kubernetes/kubectl-cheat-sheet.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-<h1 id="why-self-host-a-philosophy-of-digital-independence">Why Self-Host? A Philosophy of Digital Independence</h1>
-<p>Self-hosting is more than just running services on your own hardware—it's a philosophy of digital independence, privacy, and skill development. This guide explores why you might want to self-host, what benefits it brings, and how to get started on your self-hosting journey.</p>
-<div class="admonition abstract">
-<p class="admonition-title">Quick Overview</p>
-<ul>
-<li>Take control of your digital life</li>
-<li>Learn valuable technical skills</li>
-<li>Reduce dependency on third-party services</li>
-<li>Save money in the long run</li>
-</ul>
-</div>
-<h2 id="why-self-host">Why Self-Host?</h2>
-<h3 id="1-privacy-and-data-sovereignty">1. Privacy and Data Sovereignty</h3>
-<ul>
-<li><strong>Control Over Your Data</strong>: Your data resides on your own infrastructure. You know exactly where it is, how it's stored, and who has access to it.</li>
-<li><strong>No Third-Party Access</strong>: Your personal information isn't being mined for advertising or analytics by big tech companies.</li>
-<li><strong>Compliance</strong>: Easier compliance with data protection regulations (GDPR, CCPA) as you control the entire data lifecycle.</li>
-</ul>
-<h3 id="2-learning-and-skill-development">2. Learning and Skill Development</h3>
-<ul>
-<li><strong>Practical Experience</strong>: <ul>
-<li>Linux system administration</li>
-<li>Network configuration and security</li>
-<li>Docker and containerization</li>
-<li>Reverse proxies and SSL certificates</li>
-<li>Backup strategies and disaster recovery</li>
-</ul>
-</li>
-<li><strong>Career Growth</strong>: These skills are highly valuable in DevOps and System Administration roles.</li>
-<li><strong>Understanding Modern Tech</strong>: Better understanding of how modern cloud services work "under the hood".</li>
-</ul>
-<h3 id="3-customization-and-freedom">3. Customization and Freedom</h3>
-<ul>
-<li><strong>Full Control</strong>: Customize every aspect of your services to your exact needs.</li>
-<li><strong>No Vendor Lock-in</strong>: Freedom to switch technologies or migrate services as needed.</li>
-<li><strong>Feature Independence</strong>: Not waiting for providers to implement features you need.</li>
-</ul>
-<h3 id="4-cost-effectiveness">4. Cost Effectiveness</h3>
-<ul>
-<li><strong>Long-term Savings</strong>: While initial setup requires investment, running services on your own hardware can be more cost-effective long-term.</li>
-<li><strong>Resource Optimization</strong>: Utilize the same hardware for multiple services.</li>
-<li><strong>No Subscription Fees</strong>: Eliminate monthly fees for various cloud services.</li>
-</ul>
-<h2 id="what-can-you-self-host">What Can You Self-Host?</h2>
-<div class="admonition example">
-<p class="admonition-title">Popular Self-Hosted Services</p>
-<p>Here are some of the most common services people choose to self-host:</p>
-</div>
-<h3 id="essential-services">Essential Services</h3>
-<ol>
-<li>
-<p><strong>Communication</strong></p>
-<ul>
-<li>Email servers</li>
-<li>Chat platforms (Matrix, XMPP)</li>
-<li>VoIP solutions</li>
-</ul>
-</li>
-<li>
-<p><strong>Storage and Sync</strong></p>
-<ul>
-<li>File sync (Nextcloud, Seafile)</li>
-<li>Password managers (Vaultwarden)</li>
-<li>Note-taking apps (Joplin Server)</li>
-</ul>
-</li>
-<li>
-<p><strong>Media</strong></p>
-<ul>
-<li>Media servers (Jellyfin, Plex)</li>
-<li>Music streaming (Navidrome)</li>
-<li>Photo galleries (PhotoPrism)</li>
-</ul>
-</li>
-<li>
-<p><strong>Productivity</strong></p>
-<ul>
-<li>Office suites (Collabora Online)</li>
-<li>Project management (Wekan)</li>
-<li>Wiki systems (BookStack)</li>
-</ul>
-</li>
-</ol>
-<h2 id="getting-started">Getting Started</h2>
+<h1 id="kubectl-command-cheat-sheet">Kubectl Command Cheat Sheet</h1>
+<p>This comprehensive cheat sheet provides a quick reference for commonly used kubectl commands, organized by category for easy access.</p>
+<h2 id="cluster-management">Cluster Management</h2>
+<h3 id="cluster-information">Cluster Information</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># View cluster information</span>
+kubectl<span class="w"> </span>cluster-info
+
+<span class="c1"># Check the health status of cluster components</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>componentstatuses
+
+<span class="c1"># View nodes in the cluster</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>nodes
+kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>-o<span class="w"> </span>wide<span class="w">  </span><span class="c1"># Detailed view</span>
+
+<span class="c1"># Get API versions available</span>
+kubectl<span class="w"> </span>api-versions
+</code></pre></div>
+<h3 id="context-and-configuration">Context and Configuration</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># View kubeconfig settings</span>
+kubectl<span class="w"> </span>config<span class="w"> </span>view
+
+<span class="c1"># Show current context</span>
+kubectl<span class="w"> </span>config<span class="w"> </span>current-context
+
+<span class="c1"># List all contexts</span>
+kubectl<span class="w"> </span>config<span class="w"> </span>get-contexts
+
+<span class="c1"># Switch to a different context</span>
+kubectl<span class="w"> </span>config<span class="w"> </span>use-context<span class="w"> </span>&lt;context-name&gt;
+</code></pre></div>
+<h2 id="resource-management">Resource Management</h2>
+<h3 id="pods">Pods</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># List all pods</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A<span class="w">  </span><span class="c1"># across all namespaces</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w">  </span><span class="c1"># in specific namespace</span>
+
+<span class="c1"># Get detailed pod information</span>
+kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>&lt;pod-name&gt;
+
+<span class="c1"># Delete a pod</span>
+kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>&lt;pod-name&gt;
+kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>&lt;pod-name&gt;<span class="w"> </span>--force<span class="w">  </span><span class="c1"># Force deletion</span>
+
+<span class="c1"># Execute command in pod</span>
+kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;pod-name&gt;<span class="w"> </span>--<span class="w"> </span>/bin/bash
+</code></pre></div>
+<h3 id="deployments">Deployments</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># List deployments</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>deployments
+
+<span class="c1"># Create deployment</span>
+kubectl<span class="w"> </span>create<span class="w"> </span>deployment<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--image<span class="o">=</span>&lt;image&gt;
+
+<span class="c1"># Scale deployment</span>
+kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--replicas<span class="o">=</span>&lt;count&gt;
+
+<span class="c1"># Update image</span>
+kubectl<span class="w"> </span><span class="nb">set</span><span class="w"> </span>image<span class="w"> </span>deployment/&lt;name&gt;<span class="w"> </span>&lt;container&gt;<span class="o">=</span>&lt;image&gt;
+
+<span class="c1"># Rollout commands</span>
+kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/&lt;name&gt;
+kubectl<span class="w"> </span>rollout<span class="w"> </span><span class="nb">history</span><span class="w"> </span>deployment/&lt;name&gt;
+kubectl<span class="w"> </span>rollout<span class="w"> </span>undo<span class="w"> </span>deployment/&lt;name&gt;
+</code></pre></div>
+<h3 id="services">Services</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># List services</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>services
+
+<span class="c1"># Create service</span>
+kubectl<span class="w"> </span>expose<span class="w"> </span>deployment<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--port<span class="o">=</span>&lt;port&gt;<span class="w"> </span>--type<span class="o">=</span>&lt;type&gt;
+
+<span class="c1"># Delete service</span>
+kubectl<span class="w"> </span>delete<span class="w"> </span>service<span class="w"> </span>&lt;name&gt;
+</code></pre></div>
+<h2 id="monitoring-and-debugging">Monitoring and Debugging</h2>
+<h3 id="logs-and-events">Logs and Events</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># View pod logs</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>&lt;pod-name&gt;
+kubectl<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>&lt;pod-name&gt;<span class="w">  </span><span class="c1"># Follow logs</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>&lt;pod-name&gt;<span class="w"> </span>-c<span class="w"> </span>&lt;container-name&gt;<span class="w">  </span><span class="c1"># Specific container</span>
+
+<span class="c1"># View cluster events</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>events
+kubectl<span class="w"> </span>get<span class="w"> </span>events<span class="w"> </span>--sort-by<span class="o">=</span><span class="s1">&#39;.metadata.creationTimestamp&#39;</span>
+</code></pre></div>
+<h3 id="resource-usage">Resource Usage</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Node resource usage</span>
+kubectl<span class="w"> </span>top<span class="w"> </span>node
+
+<span class="c1"># Pod resource usage</span>
+kubectl<span class="w"> </span>top<span class="w"> </span>pod
+kubectl<span class="w"> </span>top<span class="w"> </span>pod<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;
+</code></pre></div>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check pod status</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>&lt;pod-name&gt;<span class="w"> </span>-o<span class="w"> </span>yaml
+
+<span class="c1"># Port forwarding</span>
+kubectl<span class="w"> </span>port-forward<span class="w"> </span>&lt;pod-name&gt;<span class="w"> </span>&lt;local-port&gt;:&lt;pod-port&gt;
+
+<span class="c1"># Proxy to cluster</span>
+kubectl<span class="w"> </span>proxy
+</code></pre></div>
+<h2 id="configuration-and-security">Configuration and Security</h2>
+<h3 id="configmaps-and-secrets">ConfigMaps and Secrets</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create ConfigMap</span>
+kubectl<span class="w"> </span>create<span class="w"> </span>configmap<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--from-file<span class="o">=</span>&lt;path&gt;
+kubectl<span class="w"> </span>create<span class="w"> </span>configmap<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--from-literal<span class="o">=</span><span class="nv">key</span><span class="o">=</span>value
+
+<span class="c1"># Create Secret</span>
+kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--from-literal<span class="o">=</span><span class="nv">key</span><span class="o">=</span>value
+kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>tls<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--cert<span class="o">=</span>&lt;path/to/cert&gt;<span class="w"> </span>--key<span class="o">=</span>&lt;path/to/key&gt;
+</code></pre></div>
+<h3 id="rbac">RBAC</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># View roles</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>roles
+kubectl<span class="w"> </span>get<span class="w"> </span>clusterroles
+
+<span class="c1"># View role bindings</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>rolebindings
+kubectl<span class="w"> </span>get<span class="w"> </span>clusterrolebindings
+</code></pre></div>
+<h2 id="advanced-operations">Advanced Operations</h2>
+<h3 id="resource-quotas-and-limits">Resource Quotas and Limits</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># View resource quotas</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>resourcequota
+kubectl<span class="w"> </span>describe<span class="w"> </span>resourcequota
+
+<span class="c1"># View limit ranges</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>limitrange
+kubectl<span class="w"> </span>describe<span class="w"> </span>limitrange
+</code></pre></div>
+<h3 id="namespace-operations">Namespace Operations</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create namespace</span>
+kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>&lt;name&gt;
+
+<span class="c1"># Set default namespace</span>
+kubectl<span class="w"> </span>config<span class="w"> </span>set-context<span class="w"> </span>--current<span class="w"> </span>--namespace<span class="o">=</span>&lt;name&gt;
+
+<span class="c1"># Delete namespace</span>
+kubectl<span class="w"> </span>delete<span class="w"> </span>namespace<span class="w"> </span>&lt;name&gt;
+</code></pre></div>
+<h2 id="tips-and-tricks">Tips and Tricks</h2>
+<h3 id="useful-aliases">Useful Aliases</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Common aliases for kubectl</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">k</span><span class="o">=</span><span class="s1">&#39;kubectl&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">kg</span><span class="o">=</span><span class="s1">&#39;kubectl get&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">kd</span><span class="o">=</span><span class="s1">&#39;kubectl describe&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">krm</span><span class="o">=</span><span class="s1">&#39;kubectl delete&#39;</span>
+</code></pre></div>
+<h3 id="output-formatting">Output Formatting</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Different output formats</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-o<span class="w"> </span>wide<span class="w">  </span><span class="c1"># Additional details</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-o<span class="w"> </span>yaml<span class="w">  </span><span class="c1"># YAML format</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-o<span class="w"> </span>json<span class="w">  </span><span class="c1"># JSON format</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.items[*].metadata.name}&#39;</span><span class="w">  </span><span class="c1"># Custom format</span>
+</code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">Start Your Journey</p>
-<p>Begin with simple services and gradually expand as you gain confidence.</p>
+<p class="admonition-title">Pro Tips</p>
+<ul>
+<li>Use <code>kubectl explain &lt;resource&gt;</code> to get documentation about resources</li>
+<li>Use <code>--dry-run=client -o yaml</code> to generate resource YAML without creating it</li>
+<li>Use labels and selectors for efficient resource management</li>
+<li>Always use namespaces to organize resources</li>
+<li>Set up auto-completion for easier command line usage</li>
+</ul>
 </div>
-<h3 id="1-start-small">1. Start Small</h3>
-<ul>
-<li>Begin with a single, simple service</li>
-<li>Focus on learning the basics:<ul>
-<li>Server setup and maintenance</li>
-<li>Basic security practices</li>
-<li>Backup procedures</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-essential-knowledge-areas">2. Essential Knowledge Areas</h3>
-<ul>
-<li>
-<p><strong>Linux Basics</strong></p>
-<ul>
-<li>Command line navigation</li>
-<li>Package management</li>
-<li>User management</li>
-<li>File permissions</li>
-</ul>
-</li>
-<li>
-<p><strong>Networking</strong></p>
-<ul>
-<li>DNS configuration</li>
-<li>Port forwarding</li>
-<li>Firewall setup</li>
-<li>Basic network security</li>
-</ul>
-</li>
-<li>
-<p><strong>Docker</strong></p>
-<ul>
-<li>Container concepts</li>
-<li>Docker Compose</li>
-<li>Image management</li>
-<li>Volume persistence</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-hardware-considerations">3. Hardware Considerations</h3>
-<ul>
-<li><strong>Start with</strong>: <ul>
-<li>Old PC/laptop</li>
-<li>Raspberry Pi</li>
-<li>Small form factor PC</li>
-</ul>
-</li>
-<li><strong>Consider</strong>: <ul>
-<li>Power consumption</li>
-<li>Noise levels</li>
-<li>Reliability</li>
-<li>Expansion possibilities</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-security-best-practices">4. Security Best Practices</h3>
-<ul>
-<li>Regular system updates</li>
-<li>Strong password policies</li>
-<li>Network segmentation</li>
-<li>Regular backups</li>
-<li>SSL certificate management</li>
-<li>Firewall configuration</li>
-</ul>
-<h2 id="common-challenges-and-solutions">Common Challenges and Solutions</h2>
 <div class="admonition warning">
-<p class="admonition-title">Be Prepared</p>
-<p>Self-hosting comes with responsibilities. Here are common challenges and how to address them:</p>
+<p class="admonition-title">Best Practices</p>
+<ul>
+<li>Always use resource limits for containers</li>
+<li>Implement RBAC policies for security</li>
+<li>Regularly backup etcd data</li>
+<li>Use readiness and liveness probes</li>
+<li>Keep your kubectl version in sync with cluster version</li>
+</ul>
 </div>
-<h3 id="1-reliability">1. Reliability</h3>
+<h2 id="additional-resources">Additional Resources</h2>
 <ul>
-<li><strong>Challenge</strong>: Ensuring 24/7 service availability</li>
-<li><strong>Solutions</strong>:<ul>
-<li>UPS for power backup</li>
-<li>Monitoring systems</li>
-<li>Automated restart procedures</li>
-<li>Regular maintenance schedules</li>
+<li><a href="https://kubernetes.io/docs/home/">Official Kubernetes Documentation</a></li>
+<li><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands">Kubectl Reference Docs</a></li>
+<li><a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">Kubernetes Cheat Sheet</a></li>
 </ul>
-</li>
-</ul>
-<h3 id="2-security">2. Security</h3>
-<ul>
-<li><strong>Challenge</strong>: Protecting services from attacks</li>
-<li><strong>Solutions</strong>:<ul>
-<li>Regular security audits</li>
-<li>VPN for remote access</li>
-<li>Intrusion detection systems</li>
-<li>Automated update systems</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-maintenance">3. Maintenance</h3>
-<ul>
-<li><strong>Challenge</strong>: Managing regular upkeep</li>
-<li><strong>Solutions</strong>:<ul>
-<li>Automation scripts</li>
-<li>Docker for easy updates</li>
-<li>Documentation of procedures</li>
-<li>Monitoring and alerting</li>
-</ul>
-</li>
-</ul>
-<h2 id="resources-for-learning">Resources for Learning</h2>
-<h3 id="communities">Communities</h3>
-<ul>
-<li><a href="https://reddit.com/r/selfhosted">r/selfhosted</a></li>
-<li><a href="https://reddit.com/r/homelab">r/homelab</a></li>
-<li>Self-hosted Discord communities</li>
-<li>Linux user groups</li>
-</ul>
-<h3 id="documentation">Documentation</h3>
-<ul>
-<li><a href="https://docs.docker.com/">Docker Documentation</a></li>
-<li><a href="https://www.kernel.org/doc/html/latest/">Linux Documentation</a></li>
-<li>Service-specific wikis</li>
-<li>Security best practices guides</li>
-</ul>
-<h2 id="conclusion">Conclusion</h2>
-<p>Self-hosting is a journey of learning, independence, and technical growth. While it requires initial investment in time and learning, the benefits of privacy, control, and skill development make it a rewarding endeavor. Start small, focus on security and reliability, and gradually expand your self-hosted infrastructure as your knowledge and confidence grow.</p>
-<div class="admonition tip">
-<p class="admonition-title">Remember</p>
-<p>The goal isn't to self-host everything immediately, but to thoughtfully choose which services make sense for your needs and gradually build your digital independence.</p>
-</div>
 
               
             </article>
@@ -1183,7 +1168,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
+        <a href="../../../argocd-setup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ArgoCD Setup" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1192,20 +1177,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Overview
+              ArgoCD Setup
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../linux/" class="md-footer__link md-footer__link--next" aria-label="Next: Linux" rel="next">
+        <a href="../k9s-guide/" class="md-footer__link md-footer__link--next" aria-label="Next: K9s CLI Guide" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Linux
+              K9s CLI Guide
             </div>
           </div>
           <div class="md-footer__button md-icon">

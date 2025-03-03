@@ -1,0 +1,1389 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://depgod.github.io/documentation/kubernetes/k9s-guide/">
+      
+      <link rel="icon" href="../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.7">
+    
+    
+      
+        <title>K9s CLI Guide - DevOps Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.9d5733d3.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#k9s-terminal-ui-for-kubernetes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="DevOps Notes" class="md-header__button md-logo" aria-label="DevOps Notes" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DevOps Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              K9s CLI Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/depgod/depgod.github.io/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        Documentation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../about/" class="md-tabs__link">
+      About
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../contact/" class="md-tabs__link">
+      Contact
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DevOps Notes" class="md-nav__button md-logo" aria-label="DevOps Notes" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    DevOps Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/depgod/depgod.github.io/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Documentation Contents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contents/" class="md-nav__link">
+        Contents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../markdown_basics/" class="md-nav__link">
+        Markdown Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../versioning/" class="md-nav__link">
+        Versioning Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_5">
+          CI/CD
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CI/CD" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          CI/CD
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cicd/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cicd/github-actions-sonarqube-docker/" class="md-nav__link">
+        GitHub Actions with SonarQube & Harbor
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_6">
+          Infrastructure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Infrastructure" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Infrastructure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/ansible-guide/" class="md-nav__link">
+        Ansible Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_7" type="checkbox" id="__nav_1_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_7">
+          Kubernetes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Kubernetes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_7">
+          <span class="md-nav__icon md-icon"></span>
+          Kubernetes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../multipass-k8s-cluster/" class="md-nav__link">
+        Multipass Local Cluster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../k3s-ha-cluster/" class="md-nav__link">
+        HA K3s Cluster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../argocd-setup/" class="md-nav__link">
+        ArgoCD Setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubectl-cheat-sheet/" class="md-nav__link">
+        Kubectl Cheat Sheet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          K9s CLI Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        K9s CLI Guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-k9s" class="md-nav__link">
+    Why Use K9s?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-package-managers" class="md-nav__link">
+    Using Package Managers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-binary-release" class="md-nav__link">
+    Using Binary Release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-container-image" class="md-nav__link">
+    Using Container Image
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    Basic Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-k9s" class="md-nav__link">
+    Starting K9s
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features-and-commands" class="md-nav__link">
+    Key Features and Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Features and Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    Navigation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-views" class="md-nav__link">
+    Resource Views
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pod-management" class="md-nav__link">
+    Pod Management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-context-management" class="md-nav__link">
+    Cluster Context Management
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-cluster-configuration" class="md-nav__link">
+    Multi-Cluster Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Cluster Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-different-kubeconfig-files" class="md-nav__link">
+    Using Different Kubeconfig Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-cluster-specific-aliases" class="md-nav__link">
+    Creating Cluster-Specific Aliases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customization" class="md-nav__link">
+    Customization
+  </a>
+  
+    <nav class="md-nav" aria-label="Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file" class="md-nav__link">
+    Configuration File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skin-customization" class="md-nav__link">
+    Skin Customization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    Best Practices
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-resource-organization" class="md-nav__link">
+    1. Resource Organization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-performance-optimization" class="md-nav__link">
+    2. Performance Optimization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-security-considerations" class="md-nav__link">
+    3. Security Considerations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-workflow-efficiency" class="md-nav__link">
+    4. Workflow Efficiency
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-cluster-management" class="md-nav__link">
+    5. Cluster Management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-troubleshooting" class="md-nav__link">
+    6. Troubleshooting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    Common Issues
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    Additional Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_8" type="checkbox" id="__nav_1_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_8">
+          Self-Hosting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Self-Hosting" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_8">
+          <span class="md-nav__icon md-icon"></span>
+          Self-Hosting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selfhosting/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../selfhosting/why-selfhost/" class="md-nav__link">
+        Why Self-Host?
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/" class="md-nav__link">
+        Networking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous/" class="md-nav__link">
+        Miscellaneous
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        Contact
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/depgod/depgod.github.io/edit/main/docs/documentation/kubernetes/k9s-guide.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+<h1 id="k9s-terminal-ui-for-kubernetes">K9s: Terminal UI for Kubernetes</h1>
+<p>K9s is a powerful terminal-based UI for interacting with Kubernetes clusters. It provides an intuitive interface to navigate, observe, and manage your applications and resources.</p>
+<p><img alt="K9s Interface" src="../../../assets/images/k9s-interface.png" /></p>
+<h2 id="why-use-k9s">Why Use K9s?</h2>
+<p>K9s offers several advantages over traditional kubectl commands:</p>
+<ol>
+<li><strong>Real-time Monitoring</strong>: Live updates of cluster resources</li>
+<li><strong>Intuitive Navigation</strong>: Easy keyboard shortcuts and commands</li>
+<li><strong>Resource Management</strong>: Quick access to logs, shell, and resource editing</li>
+<li><strong>Cluster Context Switching</strong>: Seamless switching between multiple clusters</li>
+<li><strong>Resource Filtering</strong>: Powerful search and filtering capabilities</li>
+<li><strong>Plugin System</strong>: Extensible with custom plugins</li>
+<li><strong>Resource Metrics</strong>: CPU/Memory usage visualization</li>
+</ol>
+<h2 id="installation">Installation</h2>
+<h3 id="using-package-managers">Using Package Managers</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Debian/Ubuntu</label><label for="__tabbed_1_2">RedHat/Fedora</label><label for="__tabbed_1_3">Arch Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Using apt (Recommended)</span>
+curl<span class="w"> </span>-fsSL<span class="w"> </span>https://pkgs.k9s.dev/key.gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/k9s-archive-keyring.gpg
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [signed-by=/usr/share/keyrings/k9s-archive-keyring.gpg] https://pkgs.k9s.dev/deb stable main&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/k9s.list
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>k9s
+
+<span class="c1"># Using snap</span>
+sudo<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>k9s
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Using dnf</span>
+sudo<span class="w"> </span>dnf<span class="w"> </span>config-manager<span class="w"> </span>--add-repo<span class="w"> </span>https://pkgs.k9s.dev/rpm/k9s.repo
+sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>k9s
+
+<span class="c1"># Alternative: Direct RPM installation</span>
+<span class="nv">VERSION</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>https://api.github.com/repos/derailed/k9s/releases/latest<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>tag_name<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;&quot;&#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">4</span><span class="k">)</span>
+curl<span class="w"> </span>-LO<span class="w"> </span>https://github.com/derailed/k9s/releases/download/<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>/k9s_Linux_amd64.rpm
+sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>k9s_Linux_amd64.rpm
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Using pacman</span>
+sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>k9s
+
+<span class="c1"># Using yay (AUR)</span>
+yay<span class="w"> </span>-S<span class="w"> </span>k9s-bin
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="using-binary-release">Using Binary Release</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Download latest binary</span>
+<span class="nv">VERSION</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>https://api.github.com/repos/derailed/k9s/releases/latest<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>tag_name<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;&quot;&#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">4</span><span class="k">)</span>
+curl<span class="w"> </span>-LO<span class="w"> </span>https://github.com/derailed/k9s/releases/download/<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>/k9s_Linux_amd64.tar.gz
+
+<span class="c1"># Extract and install</span>
+tar<span class="w"> </span>xzf<span class="w"> </span>k9s_Linux_amd64.tar.gz
+sudo<span class="w"> </span>install<span class="w"> </span>-o<span class="w"> </span>root<span class="w"> </span>-g<span class="w"> </span>root<span class="w"> </span>-m<span class="w"> </span><span class="m">0755</span><span class="w"> </span>k9s<span class="w"> </span>/usr/local/bin/k9s
+
+<span class="c1"># Verify installation</span>
+k9s<span class="w"> </span>version
+</code></pre></div>
+<h3 id="using-container-image">Using Container Image</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Run using Docker</span>
+docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-v<span class="w"> </span>~/.kube/config:/root/.kube/config<span class="w"> </span>ghcr.io/derailed/k9s
+
+<span class="c1"># Run using Podman</span>
+podman<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>-v<span class="w"> </span>~/.kube/config:/root/.kube/config<span class="w"> </span>ghcr.io/derailed/k9s
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Installation Best Practices</p>
+<ul>
+<li>Always verify GPG keys and signatures when installing via package managers</li>
+<li>Keep K9s updated to benefit from the latest features and security fixes</li>
+<li>Consider using the container image in restricted environments</li>
+<li>Back up your K9s configuration before upgrading</li>
+</ul>
+</div>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="starting-k9s">Starting K9s</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Start with default context</span>
+k9s
+
+<span class="c1"># Start with specific context</span>
+k9s<span class="w"> </span>--context<span class="w"> </span>my-cluster
+
+<span class="c1"># Start in a specific namespace</span>
+k9s<span class="w"> </span>-n<span class="w"> </span>kube-system
+</code></pre></div>
+<h2 id="key-features-and-commands">Key Features and Commands</h2>
+<h3 id="navigation">Navigation</h3>
+<ul>
+<li><code>0-9</code>: Switch to namespace</li>
+<li><code>:</code>: Enter command mode</li>
+<li><code>/</code>: Enter filter mode</li>
+<li><code>esc</code>: Go back/Clear filter</li>
+<li><code>ctrl-a</code>: Show all resources</li>
+<li><code>ctrl-d</code>: Delete resource</li>
+<li><code>ctrl-k</code>: Kill pod</li>
+<li><code>?</code>: Show help</li>
+</ul>
+<h3 id="resource-views">Resource Views</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Access different resources using commands</span>
+:pods<span class="w">          </span><span class="c1"># View pods</span>
+:deployments<span class="w">   </span><span class="c1"># View deployments</span>
+:services<span class="w">      </span><span class="c1"># View services</span>
+:nodes<span class="w">         </span><span class="c1"># View nodes</span>
+:configmaps<span class="w">    </span><span class="c1"># View configmaps</span>
+:secrets<span class="w">       </span><span class="c1"># View secrets</span>
+</code></pre></div>
+<h3 id="pod-management">Pod Management</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># While in pod view</span>
+l<span class="w">              </span><span class="c1"># View logs</span>
+s<span class="w">              </span><span class="c1"># Shell into container</span>
+d<span class="w">              </span><span class="c1"># Describe pod</span>
+e<span class="w">              </span><span class="c1"># Edit pod</span>
+y<span class="w">              </span><span class="c1"># YAML view</span>
+ctrl-k<span class="w">         </span><span class="c1"># Kill pod</span>
+</code></pre></div>
+<h3 id="cluster-context-management">Cluster Context Management</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Switch contexts</span>
+:context<span class="w">       </span><span class="c1"># List available contexts</span>
+ctrl-c<span class="w">         </span><span class="c1"># Open context switch menu</span>
+</code></pre></div>
+<h2 id="multi-cluster-configuration">Multi-Cluster Configuration</h2>
+<h3 id="using-different-kubeconfig-files">Using Different Kubeconfig Files</h3>
+<ol>
+<li>
+<p><strong>Default Configuration</strong>:
+<div class="highlight"><pre><span></span><code><span class="c1"># K9s uses default kubeconfig at ~/.kube/config</span>
+k9s
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Specific Kubeconfig</strong>:
+<div class="highlight"><pre><span></span><code><span class="c1"># Use a specific kubeconfig file</span>
+k9s<span class="w"> </span>--kubeconfig<span class="o">=</span>/path/to/kubeconfig
+
+<span class="c1"># Set environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">KUBECONFIG</span><span class="o">=</span>/path/to/kubeconfig
+k9s
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Multiple Kubeconfig Files</strong>:
+<div class="highlight"><pre><span></span><code><span class="c1"># Merge multiple kubeconfig files</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">KUBECONFIG</span><span class="o">=</span>~/.kube/config-cluster1:~/.kube/config-cluster2
+k9s
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="creating-cluster-specific-aliases">Creating Cluster-Specific Aliases</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add to your ~/.bashrc or ~/.zshrc</span>
+<span class="nb">alias</span><span class="w"> </span>k9s-prod<span class="o">=</span><span class="s2">&quot;k9s --kubeconfig=/path/to/prod-kubeconfig&quot;</span>
+<span class="nb">alias</span><span class="w"> </span>k9s-dev<span class="o">=</span><span class="s2">&quot;k9s --kubeconfig=/path/to/dev-kubeconfig&quot;</span>
+<span class="nb">alias</span><span class="w"> </span>k9s-staging<span class="o">=</span><span class="s2">&quot;k9s --kubeconfig=/path/to/staging-kubeconfig&quot;</span>
+</code></pre></div>
+<h2 id="customization">Customization</h2>
+<h3 id="configuration-file">Configuration File</h3>
+<p>K9s uses a configuration file located at <code>~/.k9s/config.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">k9s</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">refreshRate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">maxConnRetry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">  </span><span class="nt">enableMouse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">headless</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">logoless</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">crumbsless</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">noIcons</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">logger</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">tail</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">    </span><span class="nt">buffer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5000</span>
+<span class="w">    </span><span class="nt">sinceSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">60</span>
+<span class="w">    </span><span class="nt">fullScreenLogs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">textWrap</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">showTime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">currentContext</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minikube</span>
+<span class="w">  </span><span class="nt">currentCluster</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minikube</span>
+<span class="w">  </span><span class="nt">clusters</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">minikube</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">namespace</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">        </span><span class="nt">favorites</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kube-system</span>
+<span class="w">      </span><span class="nt">view</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pods</span>
+<span class="w">      </span><span class="nt">featureGates</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">nodeShell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="nt">shellPod</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox:1.31</span>
+<span class="w">        </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">        </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</code></pre></div>
+<h3 id="skin-customization">Skin Customization</h3>
+<p>Create a custom skin at <code>~/.k9s/skin.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">k9s</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">body</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">fgColor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dodgerblue</span>
+<span class="w">    </span><span class="nt">bgColor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+<span class="w">    </span><span class="nt">logoColor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">orange</span>
+<span class="w">  </span><span class="nt">prompt</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">fgColor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cadetblue</span>
+<span class="w">    </span><span class="nt">bgColor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+<span class="w">    </span><span class="nt">suggestColor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dodgerblue</span>
+<span class="w">  </span><span class="nt">info</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">fgColor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">orange</span>
+<span class="w">    </span><span class="nt">sectionColor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">white</span>
+</code></pre></div>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-resource-organization">1. Resource Organization</h3>
+<ul>
+<li>Use namespaces as logical groupings for resources</li>
+<li>Create custom resource views for different workflows</li>
+<li>Utilize labels and filters for efficient resource management</li>
+<li>Set up port-forwarding for frequently accessed services</li>
+</ul>
+<h3 id="2-performance-optimization">2. Performance Optimization</h3>
+<ul>
+<li>Increase refresh rate in large clusters (&gt;1000 pods)</li>
+<li>Filter by namespace when working in specific areas</li>
+<li>Use readonly mode for monitoring to reduce API calls</li>
+<li>Limit resource views to relevant namespaces</li>
+</ul>
+<h3 id="3-security-considerations">3. Security Considerations</h3>
+<ul>
+<li>Maintain separate kubeconfig files for each environment</li>
+<li>Enable readonly mode for audit and review tasks</li>
+<li>Follow the principle of least privilege with RBAC</li>
+<li>Regularly rotate cluster credentials</li>
+<li>Use context-specific configurations</li>
+</ul>
+<h3 id="4-workflow-efficiency">4. Workflow Efficiency</h3>
+<ul>
+<li>Master essential keyboard shortcuts (<code>:</code>, <code>/</code>, <code>ctrl+a</code>)</li>
+<li>Configure custom skins for better visibility</li>
+<li>Set up command aliases for common operations</li>
+<li>Use hotkeys for frequent namespace switches</li>
+<li>Configure persistent views for regular tasks</li>
+</ul>
+<h3 id="5-cluster-management">5. Cluster Management</h3>
+<ul>
+<li>Monitor resource utilization with built-in metrics</li>
+<li>Set up custom resource views for different roles</li>
+<li>Use benchmarks for performance monitoring</li>
+<li>Configure alerts for critical resources</li>
+</ul>
+<h3 id="6-troubleshooting">6. Troubleshooting</h3>
+<ul>
+<li>Enable logging for debugging sessions</li>
+<li>Use describe and events for detailed resource info</li>
+<li>Set up custom views for error tracking</li>
+<li>Configure proper log buffer sizes</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues">Common Issues</h3>
+<ol>
+<li>
+<p><strong>Connection Problems</strong>:
+<div class="highlight"><pre><span></span><code><span class="c1"># Check kubeconfig</span>
+k9s<span class="w"> </span>info
+
+<span class="c1"># Verify cluster access</span>
+kubectl<span class="w"> </span>cluster-info
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Performance Issues</strong>:
+<div class="highlight"><pre><span></span><code><span class="c1"># Adjust refresh rate in ~/.k9s/config.yml</span>
+<span class="nt">k9s</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">refreshRate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">  </span><span class="c1"># Increase refresh interval</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Resource Access</strong>:
+<div class="highlight"><pre><span></span><code><span class="c1"># Check RBAC permissions</span>
+kubectl<span class="w"> </span>auth<span class="w"> </span>can-i<span class="w"> </span>--list
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://k9scli.io/">Official K9s Documentation</a></li>
+<li><a href="https://github.com/derailed/k9s">GitHub Repository</a></li>
+<li><a href="https://github.com/derailed/k9s/releases">K9s Release Notes</a></li>
+<li><a href="https://k9scli.io/topics/plugins/">K9s Plugins</a></li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../kubectl-cheat-sheet/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kubectl Cheat Sheet" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Kubectl Cheat Sheet
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../selfhosting/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Overview
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "toc.integrate", "content.code.copy"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.5e67fbfe.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e87a5f81.min.js"></script>
+      
+    
+  </body>
+</html>
