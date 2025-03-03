@@ -9,6 +9,20 @@
     --md-accent-bg-color--light: #ffffffb3;
 }
 
+/* Import JetBrains Mono Nerd Font */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* Apply JetBrains Mono to everything */
+* {
+    font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* Adjust font sizes for better readability */
+body {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
 /* Main content background */
 .md-main {
     background-color: #2f2f2f;
@@ -37,7 +51,8 @@
 
 /* Adjust text colors for better contrast */
 .md-nav__link {
-    color: #e0e0e0 !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 14px;
 }
 
 .md-nav__link:hover {
@@ -51,6 +66,7 @@
 /* Content text color */
 .md-typeset {
     color: #e0e0e0;
+    line-height: 1.6;
 }
 
 /* Code blocks */
@@ -61,6 +77,8 @@
 .md-typeset code {
     background-color: #1f1f1f;
     color: #e0e0e0;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 13px !important;
 }
 
 /* Tables */
@@ -72,9 +90,15 @@
     background-color: #000000;
 }
 
+table {
+    font-size: 14px;
+}
+
 /* Search */
 .md-search__input {
     background-color: rgba(255,255,255,0.1);
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px;
 }
 
 .md-search__input::placeholder {
@@ -90,6 +114,8 @@
 /* Footer */
 .md-footer {
     background-color: #000000;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 13px;
 }
 
 .md-footer-nav {
@@ -105,4 +131,124 @@
 .md-typeset details {
     background-color: #1f1f1f;
     border-color: var(--md-accent-fg-color);
+}
+
+/* Base styles for all navigation items */
+.md-nav__item {
+    color: rgba(255, 255, 255, 0.7) !important;
+    margin: 0.3em 0;
+}
+
+/* Make regular navigation links visible */
+.md-nav__link {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Style for main section titles */
+.md-nav__item--section > .md-nav__link {
+    color: #ffab40 !important;  /* Orange */
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 0.8em;
+}
+
+/* Style for active/selected items */
+.md-nav__link--active {
+    color: #ffab40 !important;  /* Orange */
+    font-weight: bold;
+}
+
+/* Style for navigation items on hover */
+.md-nav__link:hover {
+    color: #ffd180 !important;  /* Light orange */
+}
+
+/* Add subtle dividers between main sections */
+.md-nav__item--section {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5em;
+}
+
+/* Indent subsections for better hierarchy */
+.md-nav__item .md-nav .md-nav__link {
+    padding-left: 1.5em;
+    position: relative;
+}
+
+/* Add subtle line to show hierarchy */
+.md-nav__item .md-nav .md-nav__link::before {
+    content: "";
+    position: absolute;
+    left: 0.5em;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Make subsection items visible */
+.md-nav__item .md-nav__item {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Ensure nested navigation is visible */
+.md-nav--secondary .md-nav__link {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Make tab labels more visible */
+.md-tabs__link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500;
+}
+
+/* Active tab styling */
+.md-tabs__link--active {
+    color: #ffab40 !important;  /* Orange */
+    font-weight: bold;
+}
+
+/* Hover effect for tabs */
+.md-tabs__link:hover {
+    color: #ffd180 !important;  /* Light orange */
+}
+
+/* Style for top-level items in Documentation tab */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Make section titles stand out */
+.md-nav__item--section > .md-nav__link {
+    color: #ffab40 !important;
+    font-weight: bold;
+}
+
+/* Fix Documentation title appearance */
+.md-nav--primary > .md-nav__title {
+    color: #ffab40 !important;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 0.5em 0;
+}
+
+/* Ensure all navigation is visible */
+.md-nav {
+    display: block !important;
+}
+
+/* Override any default hiding behavior */
+.md-nav__toggle ~ .md-nav {
+    display: block !important;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-weight: 700;
+}
+
+/* Make code annotations use JetBrains Mono */
+.md-annotation__index {
+    font-family: 'JetBrains Mono', monospace !important;
 }

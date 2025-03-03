@@ -1,5 +1,5 @@
 site_name: DevOps Notes
-site_url: https://docs.darkmode.dev/
+site_url: https://depgod.github.io/
 repo_url: https://github.com/depgod/depgod.github.io
 edit_uri: edit/main/docs/
 
@@ -8,13 +8,15 @@ theme:
   language: en
   logo: assets/logo.png
   favicon: assets/logo.png
+  font:
+    text: JetBrains Mono Nerd Font
+    code: JetBrains Mono Nerd Font
   palette:
     scheme: slate
     primary: black
-    accent: indigo
+    accent: orange
   features:
     - navigation.instant
-    - navigation.sections
     - navigation.top
     - navigation.tabs
     - navigation.tabs.sticky

@@ -1,112 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://docs.darkmode.dev/</loc>
+         <loc>https://depgod.github.io/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/about/</loc>
+         <loc>https://depgod.github.io/about/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/argocd-setup/</loc>
+         <loc>https://depgod.github.io/argocd-setup/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/contact/</loc>
+         <loc>https://depgod.github.io/contact/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/k3s-ha-cluster/</loc>
+         <loc>https://depgod.github.io/k3s-ha-cluster/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/markdown_basics/</loc>
+         <loc>https://depgod.github.io/markdown_basics/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/multipass-k8s-cluster/</loc>
+         <loc>https://depgod.github.io/multipass-k8s-cluster/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/versioning/</loc>
+         <loc>https://depgod.github.io/versioning/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/documentation/</loc>
+         <loc>https://depgod.github.io/documentation/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/documentation/contents/</loc>
+         <loc>https://depgod.github.io/documentation/contents/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/documentation/cicd/</loc>
+         <loc>https://depgod.github.io/documentation/cicd/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/documentation/cicd/github-actions-sonarqube-docker/</loc>
+         <loc>https://depgod.github.io/documentation/cicd/github-actions-sonarqube-docker/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/documentation/infrastructure/</loc>
+         <loc>https://depgod.github.io/documentation/infrastructure/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/documentation/infrastructure/ansible-guide/</loc>
+         <loc>https://depgod.github.io/documentation/infrastructure/ansible-guide/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/documentation/kubernetes/k9s-guide/</loc>
+         <loc>https://depgod.github.io/documentation/kubernetes/k9s-guide/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/documentation/kubernetes/kubectl-cheat-sheet/</loc>
+         <loc>https://depgod.github.io/documentation/kubernetes/kubectl-cheat-sheet/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/documentation/kubernetes/kubernetes-networking/</loc>
+         <loc>https://depgod.github.io/documentation/kubernetes/kubernetes-networking/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/documentation/linux/</loc>
+         <loc>https://depgod.github.io/documentation/linux/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/documentation/miscellaneous/</loc>
+         <loc>https://depgod.github.io/documentation/miscellaneous/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/documentation/networking/</loc>
+         <loc>https://depgod.github.io/documentation/networking/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/documentation/selfhosting/</loc>
+         <loc>https://depgod.github.io/documentation/selfhosting/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.darkmode.dev/documentation/selfhosting/why-selfhost/</loc>
+         <loc>https://depgod.github.io/documentation/selfhosting/why-selfhost/</loc>
          <lastmod>2025-03-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
