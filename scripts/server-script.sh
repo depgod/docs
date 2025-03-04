@@ -2,26 +2,46 @@
 
 set -e  # Exit on error
 
+##############################################
+# Kubernetes & Docker Setup Script (Idempotent)
+#
+# This script installs and configures:
+# - Docker and Containerd for Kubernetes
+# - Kubernetes components (kubeadm, kubelet, kubectl)
+# - Disables swap (required for K8s)
+# - Configures log rotation for 7-day retention
+# - Ensures everything is installed idempotently
+# - Provides next steps after installation
+#
+# OS Compatibility: Debian 11+ / Ubuntu 22.04 LTS
+##############################################
+
+# Colors for better readability
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
 CYAN=$(tput setaf 6)
 RESET=$(tput sgr0)
 
+# Function to check if a command exists
 command_exists() {
     command -v "$1" &>/dev/null
 }
 
+# Update system and install dependencies
 echo "${CYAN}🔄 Updating system packages...${RESET}"
 sudo apt update -y && sudo apt upgrade -y
 
+# Install required dependencies
 echo "${CYAN}📦 Installing required dependencies...${RESET}"
 sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release software-properties-common
 
+# Disable Swap
 echo "${CYAN}⚠️ Disabling swap...${RESET}"
 sudo swapoff -a
 sudo sed -i '/swap/d' /etc/fstab
 
+# Install Docker if not installed
 if ! command_exists docker; then
     echo "${GREEN}🐳 Installing Docker...${RESET}"
     sudo apt install -y docker-ce docker-ce-cli
@@ -30,6 +50,7 @@ else
     echo "${YELLOW}✅ Docker is already installed.${RESET}"
 fi
 
+# Install Containerd if not installed
 if ! command_exists containerd; then
     echo "${GREEN}📦 Installing Containerd...${RESET}"
     sudo apt install -y containerd.io
@@ -38,6 +59,7 @@ else
     echo "${YELLOW}✅ Containerd is already installed.${RESET}"
 fi
 
+# Configure Containerd only if needed
 if ! grep -q "SystemdCgroup = true" /etc/containerd/config.toml 2>/dev/null; then
     echo "${CYAN}⚙️ Configuring Containerd...${RESET}"
     sudo mkdir -p /etc/containerd
@@ -49,6 +71,7 @@ else
     echo "${YELLOW}✅ Containerd is already configured.${RESET}"
 fi
 
+# Install Kubernetes Components if not installed
 if ! command_exists kubectl; then
     echo "${GREEN}☸️ Installing Kubernetes components...${RESET}"
     if [ ! -f /etc/apt/keyrings/kubernetes-apt-keyring.gpg ]; then
@@ -72,6 +95,7 @@ else
     echo "${YELLOW}✅ Kubernetes components are already installed.${RESET}"
 fi
 
+# Set up log rotation if not already configured
 LOGROTATE_CONFIG="/etc/logrotate.d/custom-logs"
 if [ ! -f "$LOGROTATE_CONFIG" ]; then
     echo "${CYAN}⚙️ Setting up log rotation...${RESET}"
@@ -93,7 +117,8 @@ else
     echo "${YELLOW}✅ Log rotation is already set up.${RESET}"
 fi
 
-echo "${GREEN}\n🚀 Installation Complete! Next Steps:${RESET}"
+# Post-Installation Steps
+echo "${GREEN}🚀 Installation Complete! Next Steps:${RESET}"
 echo "------------------------------------"
 echo "🔹 Verify Docker:     ${CYAN}docker --version${RESET}"
 echo "🔹 Verify Containerd: ${CYAN}containerd --version${RESET}"
