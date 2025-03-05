@@ -65,6 +65,7 @@ nav:
     - Linux: documentation/linux/index.md
     - Networking: documentation/networking/index.md
     - Miscellaneous: documentation/miscellaneous/index.md
+    - Wireless Drivers and Kernel Modules: something.md
   - About: about.md
   - Contact: contact.md
 
