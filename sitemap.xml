@@ -21,11 +21,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://depgod.github.io/fixing-missing-wireless-drivers-and-kernel-modules-on-xubuntu/</loc>
-         <lastmod>2025-03-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://depgod.github.io/k3s-ha-cluster/</loc>
          <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
@@ -37,6 +32,11 @@
     </url>
     <url>
          <loc>https://depgod.github.io/multipass-k8s-cluster/</loc>
+         <lastmod>2025-03-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://depgod.github.io/something/</loc>
          <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
