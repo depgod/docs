@@ -2,112 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://depgod.github.io/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/about/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/argocd-setup/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/contact/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://depgod.github.io/fixing-missing-wireless-drivers-and-kernel-modules-on-xubuntu/</loc>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/k3s-ha-cluster/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/markdown_basics/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/multipass-k8s-cluster/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/versioning/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/documentation/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/documentation/contents/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/documentation/cicd/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/documentation/cicd/github-actions-sonarqube-docker/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/documentation/infrastructure/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/documentation/infrastructure/ansible-guide/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/documentation/kubernetes/k9s-guide/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/documentation/kubernetes/kubectl-cheat-sheet/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/documentation/kubernetes/kubernetes-networking/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/documentation/linux/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/documentation/miscellaneous/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://depgod.github.io/documentation/miscellaneous/fixing-missing-wireless-drivers-and-kernel-modules-on-xubuntu/</loc>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/documentation/networking/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/documentation/selfhosting/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://depgod.github.io/documentation/selfhosting/why-selfhost/</loc>
-         <lastmod>2025-03-04</lastmod>
+         <lastmod>2025-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
